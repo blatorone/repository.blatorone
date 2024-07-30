@@ -123,9 +123,9 @@ Många befintliga tillägg integreras redan med den här utanför lådan-tjänst
         </assets>
     </extension>
 </addon>
-<addon id="repository.blatorone" name="Blatorone Repository" provider-name="blatorone" version="1.0.2">
+<addon id="repository.blatorone" name="Blatorone Repository" provider-name="blatorone" version="1.0.3">
 	    <extension point="xbmc.addon.repository" name="Blatorone repo">
-            <dir minversion="20.9.1">
+            <dir>
                 <info compressed="false">https://blatorone.github.io/repository.blatorone/repo/addons.xml</info>
                 <checksum>https://blatorone.github.io/repository.blatorone/repo/addons.xml.md5</checksum>
                 <datadir zip="true">https://blatorone.github.io/repository.blatorone/repo/</datadir>
