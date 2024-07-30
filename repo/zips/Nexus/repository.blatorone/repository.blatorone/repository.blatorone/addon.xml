@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.blatorone" name="Blatorone Repository" provider-name="blatorone" version="1.0.2">
+	    <extension point="xbmc.addon.repository" name="Blatorone repo">
+            <dir minversion="20.9.1">
+                <info compressed="false">https://blatorone.github.io/repository.blatorone/repo/addons.xml</info>
+                <checksum>https://blatorone.github.io/repository.blatorone/repo/addons.xml.md5</checksum>
+                <datadir zip="true">https://blatorone.github.io/repository.blatorone/repo/</datadir>
+            </dir>
+            <dir minversion="20.9.1">
+                <info compressed="false">https://blatorone.github.io/repository.blatorone/repo/zips/Omega/addons.xml</info>
+                <checksum>https://blatorone.github.io/repository.blatorone/repo/zips/Omega/addons.xml.md5</checksum>
+                <datadir zip="true">https://blatorone.github.io/repository.blatorone/repo/zips/Omega/</datadir>
+            </dir>
+            <dir minversion="19.9.701" maxversion="20.9.700">
+                <info compressed="false">https://blatorone.github.io/repository.blatorone/repo/zips/Nexus/addons.xml</info>
+                <checksum>https://blatorone.github.io/repository.blatorone/repo/zips/Nexus/addons.xml.md5</checksum>
+                <datadir zip="true">https://blatorone.github.io/repository.blatorone/repo/zips/Nexus/</datadir>
+            </dir>
+            <dir minversion="20.9.1">
+                <info compressed="false">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/omega/zips/addons.xml</info>
+                <checksum>https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/omega/zips/addons.xml.md5</checksum>
+                <datadir zip="true">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/omega/zips/</datadir>
+            </dir>
+        </extension>
+        <extension point="xbmc.addon.metadata">
+            <summary>Kodi</summary>
+            <description lang="de">Addons von blatorone</description>
+            <disclaimer></disclaimer>
+            <platform>all</platform>
+            <assets>
+			    <icon>icon.png</icon>
+		    </assets>
+        </extension>
+</addon>
