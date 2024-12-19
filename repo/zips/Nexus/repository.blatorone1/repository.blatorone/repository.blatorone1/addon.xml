@@ -4,12 +4,12 @@
             <dir>
                 <info compressed="false">https://blatorone.github.io/repository.blatorone1/repo/addons.xml</info>
                 <checksum>https://blatorone.github.io/repository.blatorone1/repo/addons.xml.md5</checksum>
-                <datadir zip="true">https://blatorone.github.io/repository1.blatorone/repo/</datadir>
+                <datadir zip="true">https://blatorone.github.io/repository.blatorone1/repo/</datadir>
             </dir>
             <dir minversion="20.9.1">
                 <info compressed="false">https://blatorone.github.io/repository.blatorone1/repo/zips/Omega/addons.xml</info>
                 <checksum>https://blatorone.github.io/repository.blatorone1/repo/zips/Omega/addons.xml.md5</checksum>
-                <datadir zip="true">https://blatorone.github.io/repository1.blatorone1/repo/zips/Omega/</datadir>
+                <datadir zip="true">https://blatorone.github.io/repository.blatorone1/repo/zips/Omega/</datadir>
             </dir>
             <dir minversion="19.9.701" maxversion="20.9.700">
                 <info compressed="false">https://blatorone.github.io/repository.blatorone1/repo/zips/Nexus/addons.xml</info>
