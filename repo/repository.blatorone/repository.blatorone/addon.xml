@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.blatorone1" name="Blatorone Repository1" provider-name="blatorone" version="1.0.3">
+<addon id="repository.blatorone1" name="Blatorone Repository1" provider-name="blatorone" version="1.0.4">
 	    <extension point="xbmc.addon.repository" name="Blatorone repo">
             <dir>
                 <info compressed="false">https://blatorone.github.io/repository.blatorone1/repo/addons.xml</info>
