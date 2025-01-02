@@ -30,6 +30,5 @@
             <screenshot>resources/screenshot-06.jpg</screenshot>
         </assets>
     </extension>
-    <?xml version="1.0" encoding="UTF-8"?>
 </addon>
 
