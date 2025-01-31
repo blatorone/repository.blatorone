@@ -33,7 +33,6 @@
 </extension>
 </addon>
 
-    
 <addon id="plugin.audio.ilovemusic" name="I Love Music" version="3.0.2" provider-name="adiko01">
     <requires>
 		<import addon="xbmc.python" version="3.0.2"/>
