@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="1109" type="window">
+    <defaultcontrol always="true">200</defaultcontrol>
+    <controls>
+        <!--background-->
+        <include>globalBackground</include>
+        <control type="multiimage">
+					<visible>String.IsEmpty(Skin.String(homeBackgroundimage))</visible>
+					<animation effect="fade" start="0" end="100" time="1000">WindowOpen</animation>
+					<include>dimensionsFullscreen</include>
+					<imagepath>$VAR[homeBackgroundLocation]</imagepath>
+					<timeperimage>45000</timeperimage>
+					<fadetime>4000</fadetime>
+					<pauseatend>10000</pauseatend>
+					<randomize>true</randomize>
+					<loop>yes</loop>
+					<aspectratio>scale</aspectratio>
+					<colordiffuse>99ffffff</colordiffuse>
+				</control>
+				<control type="image">
+					<animation effect="fade" start="0" end="100" time="1000">WindowOpen</animation>
+					<include>dimensionsFullscreen</include>
+					<texture>$VAR[homeBackgroundLocation]</texture>
+					<fadetime>200</fadetime>
+					<aspectratio>keep</aspectratio>
+				</control>
+        <!--Battery level-->
+        <include>Battery</include>
+         <!--Backbutton touchscreen-->
+        <include>Backbutton</include>
+        <control type="group">
+            <posx>490</posx>
+            <posy>row-5-begin</posy>
+            <!--animations-->
+            <include>fadeInOut</include>
+            <control type="image">
+                <posx>-12</posx>
+                <posy>-12</posy>
+                <width>1030</width>
+                <height>720</height>
+                <texture>colors/black.png</texture>
+                <colordiffuse>overlay</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>14-col</width>
+                <height>2-row</height>
+                <texture>masks/discsurface.png</texture>
+                <colordiffuse>$VAR[highlight]</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <!--title-->
+            <control type="label">
+                <posx>24</posx>
+                <posy>0</posy>
+                <width>14-col</width>
+                <height>2-row</height>
+                <font>dialogTitle</font>
+                <label>$LOCALIZE[309]</label>
+                <textcolor>$VAR[Home]</textcolor>
+                <shadowcolor></shadowcolor>
+            </control>
+            
+            <!--options-->
+            
+            <control type="grouplist" id="200">
+                <posx>0</posx>
+                <posy>84</posy>
+                <width>14-col</width>
+                <height>17-row</height>
+                <onleft>8000</onleft>
+                <itemgap>0</itemgap>
+                <orientation>vertical</orientation>
+                
+                <control type="button" id="17">
+                    
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus>lang/United-Kingdom.png</textureradioonfocus>
+                    <textureradioonnofocus>lang/United-Kingdom.png</textureradioonnofocus>
+                    <textureradioofffocus>lang/United-Kingdom.png</textureradioofffocus>
+                    <textureradiooffnofocus>lang/United-Kingdom.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>English</label>
+                    <onclick>InstallAddon(resource.language.en_gb)</onclick>
+                    <onclick>SetGUILanguage(resource.language.en_gb)</onclick>
+                    <enable>!String.IsEqual(System.Language,English)</enable>
+                </control>
+                <control type="button" id="1">
+                    
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus>lang/Germany.png</textureradioonfocus>
+                    <textureradioonnofocus>lang/Germany.png</textureradioonnofocus>
+                    <textureradioofffocus>lang/Germany.png</textureradioofffocus>
+                    <textureradiooffnofocus>lang/Germany.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>German</label>
+                    <onclick>InstallAddon(resource.language.de_de)</onclick>
+                    <onclick>SetGUILanguage(resource.language.de_de)</onclick>
+                    <enable>!String.IsEqual(System.Language,German)</enable>
+                </control>
+               
+                <control type="button" id="3">
+                    
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus>lang/Poland.png</textureradioonfocus>
+                    <textureradioonnofocus>lang/Poland.png</textureradioonnofocus>
+                    <textureradioofffocus>lang/Poland.png</textureradioofffocus>
+                    <textureradiooffnofocus>lang/Poland.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>Polish</label>
+                    <onclick>InstallAddon(resource.language.pl_pl)</onclick>
+                    <onclick>SetGUILanguage(resource.language.pl_pl)</onclick>
+                    <enable>!String.IsEqual(System.Language,Polish)</enable>
+                </control>
+                
+                <control type="button" id="5">
+                    
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus>lang/Russia.png</textureradioonfocus>
+                    <textureradioonnofocus>lang/Russia.png</textureradioonnofocus>
+                    <textureradioofffocus>lang/Russia.png</textureradioofffocus>
+                    <textureradiooffnofocus>lang/Russia.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>Russian</label>
+                    <onclick>InstallAddon(resource.language.ru_ru)</onclick>
+                    <onclick>SetGUILanguage(resource.language.ru_ru)</onclick>
+                    <enable>!String.IsEqual(System.Language,Russian)</enable>
+                </control>
+                
+                <control type="button" id="7">
+                    
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus>lang/Turkey.png</textureradioonfocus>
+                    <textureradioonnofocus>lang/Turkey.png</textureradioonnofocus>
+                    <textureradioofffocus>lang/Turkey.png</textureradioofffocus>
+                    <textureradiooffnofocus>lang/Turkey.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>Turkish</label>
+                    <onclick>InstallAddon(resource.language.tr_tr)</onclick>
+                    <onclick>SetGUILanguage(resource.language.tr_tr)</onclick>
+                    <enable>!String.IsEqual(System.Language,Turkish)</enable>
+                </control>
+                
+                <control type="button" id="11">
+                    
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus>lang/Australia.png</textureradioonfocus>
+                    <textureradioonnofocus>lang/Australia.png</textureradioonnofocus>
+                    <textureradioofffocus>lang/Australia.png</textureradioofffocus>
+                    <textureradiooffnofocus>lang/Australia.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>English (Australia)</label>
+                    <onclick>InstallAddon(resource.language.en_au)</onclick>
+                    <onclick>SetGUILanguage(resource.language.en_au)</onclick>
+                    <enable>!String.IsEqual(System.Language,English (Australia))</enable>
+                </control>
+                
+                <control type="button" id="13">
+                    
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus>lang/New-Zealand.png</textureradioonfocus>
+                    <textureradioonnofocus>lang/New-Zealand.png</textureradioonnofocus>
+                    <textureradioofffocus>lang/New-Zealand.png</textureradioofffocus>
+                    <textureradiooffnofocus>lang/New-Zealand.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>English (New Zealand)</label>
+                    <onclick>InstallAddon(resource.language.en_nz)</onclick>
+                    <onclick>SetGUILanguage(resource.language.en_nz)</onclick>
+                    <enable>!String.IsEqual(System.Language,English (New Zealand))</enable>
+                </control>
+                
+                <control type="button" id="15">
+                    
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus>lang/United-States.png</textureradioonfocus>
+                    <textureradioonnofocus>lang/United-States.png</textureradioonnofocus>
+                    <textureradioofffocus>lang/United-States.png</textureradioofffocus>
+                    <textureradiooffnofocus>lang/United-States.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>English (US)</label>
+                    <onclick>InstallAddon(resource.language.en_us)</onclick>
+                    <onclick>SetGUILanguage(resource.language.en_us)</onclick>
+                    <enable>!String.IsEqual(System.Language,English (US))</enable>
+                </control>
+                    
+                
+                
+                
+
+            </control>
+            <control type="grouplist" id="300">
+                <posx>905</posx>
+                <posy>86</posy>
+                <width>14-col</width>
+                <height>17-row</height>
+                <onleft>8000</onleft>
+                <itemgap>2</itemgap>
+                <orientation>vertical</orientation>
+                <control type="image">
+                        <width>80</width>
+					    <height>80</height>
+                        <aspectratio>scale</aspectratio>
+                        <texture>lang/United-Kingdom.png</texture>
+                        
+                        <bordersize>5</bordersize>
+                </control><control type="image">
+                        <width>80</width>
+					    <height>80</height>
+                        <aspectratio>scale</aspectratio>
+                        <texture>lang/Germany.png</texture>
+                        
+                        <bordersize>5</bordersize>
+                </control>
+                <control type="image">
+                        <width>80</width>
+					    <height>80</height>
+                        <aspectratio>scale</aspectratio>
+                        <texture>lang/Poland.png</texture>
+                        
+                        <bordersize>5</bordersize>
+                </control><control type="image">
+                        <width>80</width>
+					    <height>80</height>
+                        <aspectratio>scale</aspectratio>
+                        <texture>lang/Russia.png</texture>
+                        
+                        <bordersize>5</bordersize>
+                </control>
+                <control type="image">
+                        <width>80</width>
+					    <height>80</height>
+                        <aspectratio>scale</aspectratio>
+                        <texture>lang/Turkey.png</texture>
+                        
+                        <bordersize>5</bordersize>
+                </control>
+                <control type="image">
+                        <width>80</width>
+					    <height>80</height>
+                        <aspectratio>scale</aspectratio>
+                        <texture>lang/Australia.png</texture>
+                        
+                        <bordersize>5</bordersize>
+                </control>
+                <control type="image">
+                        <width>80</width>
+					    <height>80</height>
+                        <aspectratio>scale</aspectratio>
+                        <texture>lang/New-Zealand.png</texture>
+                        
+                        <bordersize>5</bordersize>
+                </control><control type="image">
+                        <width>80</width>
+					    <height>80</height>
+                        <aspectratio>scale</aspectratio>
+                        <texture>lang/United-States.png</texture>
+                        
+                        <bordersize>5</bordersize>
+                </control>
+            </control>
+            <control type="image">
+                        <posx>900</posx>
+                        <posy>-5</posy>
+                        <width>80</width>
+					    <height>80</height>
+                        <aspectratio>scale</aspectratio>
+                        <texture>lang/$INFO[System.Language].png</texture>
+                        
+                        <bordersize>5</bordersize>
+                </control>
+        </control>
+        <!--debugging-->
+        <include>DebugGrid</include>
+        <control type="label">
+            <include>DialogID</include>
+            <label>custom_Language.xml</label>
+        </control>
+    </controls>
+</window>
