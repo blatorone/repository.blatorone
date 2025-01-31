@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<onload condition="!integer.IsGreater(Container(996).NumItems,0)">control.setfocus(9004)</onload>
+    <include>OpenClose_FadeSlide_Left</include>
+    <controls>
+		<!--Backbutton touchscreen-->
+        <include>Backbutton</include>
+		<!--Battery Level-->
+        <include>Battery</include>
+        <include>modalDialog2</include>
+		<!--Battery Level-->
+        <include>Battery</include>
+		<control type="image">
+            <width>500</width>
+        	<height>270</height>
+            <texture>masks/discsurface.png</texture>
+            <colordiffuse>$VAR[highlight]</colordiffuse>
+            <aspectratio>stretch</aspectratio>
+        </control>
+		<control type="label">
+			<visible>integer.IsGreater(Container(996).NumItems,0) + !string.isempty(listitem.tvshowtitle)</visible>
+			<posx>20</posx>
+			<posy>1-row</posy>
+			<width>500</width>
+			<height>5-row</height>
+			<font>pageTitle</font>
+			<textcolor>$VAR[Home]</textcolor>
+			<label>[COLOR $VAR[selected]][B]$LOCALIZE[31179][/B][/COLOR][CR][CR]$INFO[listitem.tvshowtitle][CR]$INFO[listitem.title]</label>
+		</control>
+		<control type="label">
+			<visible>!integer.IsGreater(Container(996).NumItems,0) + !string.isempty(listitem.tvshowtitle)</visible>
+			<posx>20</posx>
+			<posy>1-row</posy>
+			<width>500</width>
+			<height>5-row</height>
+			<font>pageTitle</font>
+			<textcolor>$VAR[Home]</textcolor>
+			<label>[COLOR $VAR[selected]][B]$LOCALIZE[31179][/B][/COLOR][CR]$INFO[container(996).content]</label>
+		</control>
+		<control type="label">
+			<visible>integer.IsGreater(Container(996).NumItems,0) + string.isempty(listitem.tvshowtitle)</visible>
+			<posx>20</posx>
+			<posy>1-row</posy>
+			<width>500</width>
+			<height>5-row</height>
+			<font>pageTitle</font>
+			<textcolor>textActive</textcolor>
+			<label>[COLOR $VAR[selected]][B]$LOCALIZE[31179][/B][/COLOR][CR]$INFO[listitem.title]</label>
+		</control>
+		<control type="label">
+			<visible>!integer.IsGreater(Container(996).NumItems,0) + string.isempty(listitem.tvshowtitle)</visible>
+			<posx>20</posx>
+			<posy>1-row</posy>
+			<width>500</width>
+			<height>5-row</height>
+			<font>pageTitle</font>
+			<textcolor>textActive</textcolor>
+			<label>[COLOR $VAR[selected]][B]$LOCALIZE[31179][/B][/COLOR][CR]$INFO[container(996).content]</label>
+		</control>
+		<control type="grouplist" id="996">
+            <posx>0</posx>
+            <posy>8-row</posy>
+            <itemgap>0</itemgap>
+			<onright>9004</onright>
+			<width>500</width>
+	        <height>16-row</height>
+        </control>
+		<control type="group">
+			<control type="grouplist" id="9004">
+				<visible>!integer.IsGreater(Container(996).NumItems,0)</visible>
+				<posx>0</posx>
+	            <posy>8-row</posy>
+	            <itemgap>0</itemgap>
+	            <width>500</width>
+	            <height>16-row</height>
+	            <itemgap>0</itemgap>
+				<onleft>996</onleft>
+				<onright>Back</onright>
+	            <include condition="Window.isactive(Videos) | window.isactive(videoplaylist) | window.isactive(tvchannels) | window.isactive(tvguide) | window.isactive(TVRecordings) | window.isactive(tvtimers)">videoSideMenu</include>
+	            <include condition="Window.isactive(Music) | window.isactive(musicplaylist) | window.isactive(radiochannels)">musicSideMenu</include>
+	            <include condition="window.isactive(pictures)">picturesSideMenu</include>
+	            <include condition="window.isactive(addonbrowser)">addonsSideMenu</include>
+				<include condition="window.isactive(games)">gameSideMenu</include>
+	        </control>
+	        <control type="button" id="1000">
+	            <description>Buttons</description>
+	            <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+	            <focusedcolor>$VAR[Home]</focusedcolor>
+	            <width>500</width>
+	        </control>
+		</control>
+        <!--debugging-->
+        <include>DebugGrid</include>
+        <control type="label">
+            <include>DialogID</include>
+            <label>DialogContextMenu.xml</label>
+        </control>
+    </controls>
+</window>

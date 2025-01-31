@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="window" id="1191">
+	
+	<onload>ActivateWindow(1126)</onload>
+	<onload>SetFocus(64)</onload>
+	<onunload>ClearProperty(ShowMoreDetails,fullscreeninfo)</onunload>
+	<onunload>ClearProperty(ShowCast,fullscreeninfo)</onunload>
+	<onunload>ClearProperty(ShowPlot,fullscreeninfo)</onunload>
+	<onunload>ClearProperty(LiveTVNext,fullscreeninfo)</onunload>
+	<onunload>Dialog.Close(all,true)</onunload>
+	<zorder>0</zorder>
+	<controls>
+		
+		<include condition="System.AddonIsEnabled(script.embuary.helper) + VideoPlayer.Content(movies)">EmbuaryHelperContentList</include>
+		<include condition="!VideoPlayer.Content(LiveTV)">FullscreenInfo</include>
+		<include condition="VideoPlayer.Content(LiveTV)">LiveTVFullscreenInfo</include>
+	</controls>
+</window>

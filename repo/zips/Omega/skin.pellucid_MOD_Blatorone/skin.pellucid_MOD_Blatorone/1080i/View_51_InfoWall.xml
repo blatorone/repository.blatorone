@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<!-- Wall -->
+	<include name="View_51_InfoWall">
+		
+		<control type="group">
+			<visible>Control.IsVisible(51) + !Window.IsActive(addoninformation) + [$EXP[isAddonMovieOrTVshow] |  container.content(songs)]</visible>
+			<control type="image">
+						<visible>Control.IsVisible(51)</visible>
+			    		<include>ViewAnimation</include>
+	            		<include>dimensionsFullscreen</include>
+	            		<texture fallback="backgroundimage.jpg">$INFO[listitem.art(fanart)]</texture>
+	            		<colordiffuse>FF555555</colordiffuse>
+	            		<aspectratio>scale</aspectratio>
+						<fadetime>250</fadetime>
+	        </control>
+			<include>ViewAnimation</include>
+			
+			<include>Battery</include>
+			
+            <control type="panel" id="51">
+				<visible>$EXP[isAddonMovieOrTVshow] | container.content(songs)</visible>
+                <viewtype label="$LOCALIZE[31316]">$LOCALIZE[31316]</viewtype>
+				
+                <posx>100</posx>
+				<posy>0</posy>
+				<width>850</width>
+				<height>950</height>
+				<onleft>9000</onleft>
+				<onright>60</onright>
+                <ondown>51</ondown>
+                <onup>51</onup>
+				<onback>Container.Refresh</onback>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime tween="cubic" easing="out">600</scrolltime>
+				<itemlayout width="198" height="307">
+				<control type="group">
+					<visible>String.IsEmpty(ListItem.Art(poster))</visible>
+				<control type="image">
+					<left>-15</left>
+					<top>-15</top>
+					<width>240</width>
+					<height>350</height>
+					<texture>masks/discsurface50%.png</texture>
+					<bordertexture border="21" infill="false">shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+				</control>
+				<control type="image">
+					<left>-15</left>
+					<top>-15</top>
+					<width>240</width>
+						<height>350</height>
+					<texture colordiffuse="grey">masks/discsurface50%.png</texture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				
+				<control type="image">
+					<left>0</left>
+					<top>-1</top>
+					<width>210</width>
+					<height>210</height>
+					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>20</bordersize>
+				</control>
+				<control type="textbox">
+					<left>10</left>
+					<top>180</top>
+					<width>190</width>
+					<height>120</height>
+					<font>buttonTitle</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label]</label>
+					
+					<visible>!ListItem.IsParentFolder</visible>
+				</control>
+			</control>
+					<control type="group">
+					<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>210</width>
+						<height>320</height>
+						<aspectratio>stretch</aspectratio>
+						<texture fallback="DefaultMovies.png">$INFO[ListItem.icon]</texture>
+						<bordersize>6</bordersize>
+						
+						<colordiffuse>99ffffff</colordiffuse>
+					</control>
+					<control type="textbox">
+							
+							<posx>-15</posx>
+							<posy>50</posy>
+							<width>245</width>
+							<height>300</height>
+							<aligny>center</aligny>
+							<align>center</align>
+							<font>dialogTitle</font>
+							<wrapmultiline>true</wrapmultiline>
+							<textcolor>red</textcolor>
+							<label>$VAR[TV_Movie_Status_label]</label>
+						</control>
+					<control type="progress">
+				        	<visible>ListItem.IsResumable + !String.IsEqual(ListItem.PercentPlayed,0) + !Skin.HasSetting(Disable.progress)</visible>
+                        	<description>Progress Bar</description>
+                        	<posx>6</posx>
+                        	<posy>298</posy>
+                        	<width>198</width>
+                        	<height>15</height>
+                        	<texturebg colordiffuse="grey">masks/discsurface.png</texturebg>
+                        	<midtexture colordiffuse="$VAR[highlight]">masks/discsurface.png</midtexture>
+                        	<info>ListItem.PercentPlayed</info>
+                    	</control>
+					
+					<control type="group">
+						<visible>!String.isEmpty(ListItem.RatingandVotes) + !Skin.HasSetting(Disable.rating)</visible>
+						<animation condition="true" effect="fade" end="70" time="0">conditional</animation>
+						<posx>6</posx>
+						<posy>6</posy>
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>56</width>
+							<height>56</height>
+							<aspectratio>stretch</aspectratio>
+							<texture flipx="true" colordiffuse="$VAR[highlight]">masks/newContent.png</texture>
+							<colordiffuse>$VAR[highlight]</colordiffuse>
+						</control>
+						<control type="label">
+							<visible>true</visible>
+							<posx>5</posx>
+							<posy>14</posy>
+							<width>36</width>
+							<height>36</height>
+							<aligny>center</aligny>
+							<angle>50</angle>
+							<font>buttonTitle2</font>
+							<textcolor>$VAR[home]</textcolor>
+							<label>$INFO[ListItem.Rating]</label>
+						</control>
+					</control>
+					<control type="group">
+						<visible>!String.IsEmpty(ListItem.PlayCount) + !Skin.HasSetting(Disable.overlays)</visible>
+						<animation condition="true" effect="fade" end="70" time="0">conditional</animation>
+						<posx>166</posx>
+						<posy>6</posy>
+						<control type="image">
+							<posx>-18</posx>
+							<posy>0</posy>
+							<width>56</width>
+							<height>56</height>
+							<aspectratio>stretch</aspectratio>
+							<texture>masks/newContent.png</texture>
+							<colordiffuse>$VAR[highlight]</colordiffuse>
+						</control>
+						<control type="label">
+							<visible>!String.IsEmpty(ListItem.PlayCount) + !Skin.HasSetting(Disable.overlays)</visible>
+							<posx>9</posx>
+							<posy>-4</posy>
+							<width>36</width>
+							<height>36</height>
+							<aligny>center</aligny>
+							<font>symbol</font>
+							<textcolor>$VAR[home]</textcolor>
+							<label></label>
+						</control>
+					</control>
+					<control type="group">
+						<visible>ListItem.IsResumable + !String.IsEqual(ListItem.PercentPlayed,0)  + !Skin.HasSetting(Disable.overlays)</visible>
+						<animation condition="true" effect="fade" end="70" time="0">conditional</animation>
+						<posx>166</posx>
+						<posy>6</posy>
+						<control type="image">
+							<posx>-18</posx>
+							<posy>0</posy>
+							<width>56</width>
+							<height>56</height>
+							<aspectratio>stretch</aspectratio>
+							<texture>masks/newContent.png</texture>
+							<colordiffuse>$VAR[highlight]</colordiffuse>
+						</control>
+						<control type="label">
+							<visible>ListItem.IsResumable + !String.IsEqual(ListItem.PercentPlayed,0)  + !Skin.HasSetting(Disable.overlays)</visible>
+							<posx>9</posx>
+							<posy>-4</posy>
+							<width>36</width>
+							<height>36</height>
+							<aligny>center</aligny>
+							<font>symbol</font>
+							<textcolor>$VAR[home]</textcolor>
+							<label></label>
+						</control>
+						<control type="label">
+							<visible>true</visible>
+							<posx>1</posx>
+							<posy>-4</posy>
+							<width>36</width>
+							<height>36</height>
+							<aligny>center</aligny>
+							<font>thumbTitle</font>
+							<textcolor>textActive</textcolor>
+							<label></label>
+						</control>
+					</control>
+					</control>
+				</itemlayout>
+				
+				<focusedlayout width="198" height="307">
+				<control type="group">
+				<include>focusThumb</include>
+					<visible>String.IsEmpty(ListItem.Art(poster))</visible>
+				<control type="image">
+					<left>-15</left>
+					<top>-15</top>
+					<width>240</width>
+					<height>350</height>
+					<texture>masks/discsurface50%.png</texture>
+					<bordertexture border="21" infill="false">shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+				</control>
+				<control type="image">
+					<left>-15</left>
+					<top>-15</top>
+					<width>240</width>
+						<height>350</height>
+					<texture colordiffuse="$VAR[highlight]">masks/discsurface.png</texture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				
+				<control type="image">
+					<left>0</left>
+					<top>-1</top>
+					<width>210</width>
+					<height>210</height>
+					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>20</bordersize>
+				</control>
+				<control type="textbox">
+					<left>10</left>
+					<top>180</top>
+					<width>190</width>
+					<height>120</height>
+					<font>buttonTitle</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>$VAR[selected]</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+					
+					<visible>!ListItem.IsParentFolder</visible>
+				</control>
+			</control>
+			<control type="group">
+					<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>210</width>
+						<height>320</height>
+							<aspectratio>stretch</aspectratio>
+							<texture colordiffuse="$VAR[highlight]">masks/discsurface.png</texture>
+							<bordersize>0</bordersize>
+							<bordertexture border="0" infill="false" colordiffuse="$VAR[highlight]">Colors/border_frame.png</bordertexture>
+						</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>210</width>
+						<height>320</height>
+							<aspectratio>stretch</aspectratio>
+							<texture fallback="DefaultMovies.png">$INFO[listitem.icon]</texture>
+							<bordersize>5</bordersize>
+						</control>
+						<control type="textbox">
+							
+							<posx>-15</posx>
+							<posy>50</posy>
+							<width>245</width>
+							<height>300</height>
+							<aligny>center</aligny>
+							<align>center</align>
+							<font>dialogTitle</font>
+							<wrapmultiline>true</wrapmultiline>
+							<textcolor>red</textcolor>
+							<label>$VAR[TV_Movie_Status_label]</label>
+						</control>
+						<control type="progress">
+				        	<visible>ListItem.IsResumable + !String.IsEqual(ListItem.PercentPlayed,0) + !Skin.HasSetting(Disable.progress)</visible>
+                        	<description>Progress Bar</description>
+                        	<posx>6</posx>
+                        	<posy>298</posy>
+                        	<width>198</width>
+                        	<height>15</height>
+                        	<texturebg colordiffuse="grey">masks/discsurface.png</texturebg>
+                        	<midtexture colordiffuse="$VAR[highlight]">masks/discsurface.png</midtexture>
+                        	<info>ListItem.PercentPlayed</info>
+                    	</control>
+					<control type="group">
+						<visible>!String.isEmpty(ListItem.RatingandVotes) + !Skin.HasSetting(Disable.rating)</visible>
+						<animation condition="true" effect="fade" end="70" time="0">conditional</animation>
+						<posx>5</posx>
+						<posy>5</posy>
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>56</width>
+							<height>56</height>
+							<aspectratio>stretch</aspectratio>
+							<texture flipx="true" colordiffuse="$VAR[highlight]">masks/newContent.png</texture>
+							<colordiffuse>$VAR[highlight]</colordiffuse>
+						</control>
+						<control type="label">
+							<visible>true</visible>
+							<posx>5</posx>
+							<posy>14</posy>
+							<width>36</width>
+							<height>36</height>
+							<aligny>center</aligny>
+							<angle>50</angle>
+							<font>buttonTitle2</font>
+							<textcolor>$VAR[home]</textcolor>
+							<label>$INFO[ListItem.Rating]</label>
+						</control>
+					</control>
+					<control type="group">
+						<visible>!String.IsEmpty(ListItem.PlayCount) + !Skin.HasSetting(Disable.overlays)</visible>
+						<animation condition="true" effect="fade" end="70" time="0">conditional</animation>
+						<posx>167</posx>
+						<posy>5</posy>
+						<control type="image">
+							<posx>-18</posx>
+							<posy>0</posy>
+							<width>56</width>
+							<height>56</height>
+							<aspectratio>stretch</aspectratio>
+							<texture>masks/newContent.png</texture>
+							<colordiffuse>$VAR[highlight]</colordiffuse>
+						</control>
+						<control type="label">
+							<visible>!String.IsEmpty(ListItem.PlayCount) + !Skin.HasSetting(Disable.overlays)</visible>
+							<posx>9</posx>
+							<posy>-4</posy>
+							<width>36</width>
+							<height>36</height>
+							<aligny>center</aligny>
+							<font>symbol</font>
+							<textcolor>$VAR[home]</textcolor>
+							<label></label>
+						</control>
+					</control>
+					<control type="group">
+						<visible>ListItem.IsResumable + !String.IsEqual(ListItem.PercentPlayed,0)  + !Skin.HasSetting(Disable.overlays)</visible>
+						<animation condition="true" effect="fade" end="70" time="0">conditional</animation>
+						<posx>167</posx>
+						<posy>5</posy>
+						<control type="image">
+							<posx>-18</posx>
+							<posy>0</posy>
+							<width>56</width>
+							<height>56</height>
+							<aspectratio>stretch</aspectratio>
+							<texture>masks/newContent.png</texture>
+							<colordiffuse>$VAR[highlight]</colordiffuse>
+						</control>
+						<control type="label">
+							<visible>ListItem.IsResumable + !String.IsEqual(ListItem.PercentPlayed,0)  + !Skin.HasSetting(Disable.overlays)</visible>
+							<posx>9</posx>
+							<posy>-4</posy>
+							<width>36</width>
+							<height>36</height>
+							<aligny>center</aligny>
+							<font>symbol</font>
+							<textcolor>$VAR[home]</textcolor>
+							<label></label>
+						</control>
+						<control type="label">
+							<visible>true</visible>
+							<posx>1</posx>
+							<posy>-4</posy>
+							<width>36</width>
+							<height>36</height>
+							<aligny>center</aligny>
+							<font>thumbTitle</font>
+							<textcolor>textActive</textcolor>
+							<label></label>
+						</control>
+					</control>
+					</control>
+					
+				</focusedlayout>
+		
+				
+            </control>
+				<control type="group">
+					<posx>970</posx>
+                	<posy>0</posy>
+					<!--
+					<control type="image">
+                    	<posx>-20</posx>
+                	<posy>0</posy>
+                    	<width>940</width>
+                    	<height>955</height>
+                    	<texture>colors/black.png</texture>
+                    	<colordiffuse>overlay</colordiffuse>
+                    	<aspectratio>stretch</aspectratio>
+						<bordertexture border="5" infill="false" colordiffuse="$VAR[highlight]">Colors/border_frame.png</bordertexture>
+                        <bordersize>5</bordersize>
+                	</control>
+					-->
+					<control type="group">
+						<control type="label">
+								<left>4</left>
+								<top>4</top>
+								<width>900</width>
+								<height>2-row</height>			
+								<font>menuTitle3</font>
+								<textcolor>grey</textcolor>
+								<shadowcolor>ff8a795d</shadowcolor>
+								<wrapmultiline>true</wrapmultiline>
+								<label>$INFO[ListItem.title]</label>
+						</control>
+						<control type="label">
+								<width>900</width>
+								<height>2-row</height>			
+								<font>menuTitle3</font>
+								<textcolor>$VAR[highlight]</textcolor>
+								<shadowcolor>ff8a795d</shadowcolor>
+								<wrapmultiline>true</wrapmultiline>
+								<label>$INFO[ListItem.title]</label>
+						</control>
+					</control>
+					<control type="grouplist">
+			
+							<posy>65</posy>
+						
+						<control type="label">			
+								<font>menuTitle</font>
+								<textcolor>textDisabled</textcolor>
+								<shadowcolor>ff8a795d</shadowcolor>
+								<label>$INFO[ListItem.genre]</label>
+						</control>
+						<control type="label">			
+								<font>menuTitle</font>
+								<textcolor>textDisabled</textcolor>
+								<shadowcolor>ff8a795d</shadowcolor>
+								<label>$INFO[ListItem.premiered] • $VAR[Durationtiminmin]</label>
+								<visible>integer.IsGreater(ListItem.duration,120)</visible>
+						</control>
+						<control type="textbox">
+						
+                    		<width>850</width>
+							<height>750</height>
+							<font>textbox</font>
+							<textcolor>textActive</textcolor>
+							<shadowcolor>ff8a795d</shadowcolor>
+							<label>$INFO[ListItem.Tagline][CR][CR]$VAR[VideoPlotVar]</label>
+							<autoscroll delay="3000" time="3000" repeat="4000">true</autoscroll>
+						</control>
+						<control type="button">
+						<visible>Skin.hassetting(Touch)</visible>
+                    		<posx>-20</posx>
+                			<posy>0</posy>
+                    		<width>940</width>
+                    		<height>955</height>
+                    		<focusedcolor></focusedcolor>
+            				<texturefocus></texturefocus>
+            				<colordiffuse></colordiffuse>
+							<onclick>Back</onclick>
+                		</control>
+					</control>
+					<control type="button">
+						<visible>Skin.hassetting(Touch) + !Skin.HasSetting(crosskey)</visible>
+                    		<posx>-20</posx>
+                			<posy>0</posy>
+                    		<width>940</width>
+                    		<height>955</height>
+                    		<focusedcolor></focusedcolor>
+            				<texturefocus></texturefocus>
+            				<colordiffuse></colordiffuse>
+							<onclick>Back</onclick>
+                		</control>
+				</control>
+				
+        	</control>
+
+	</include>
+</includes>
