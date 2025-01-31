@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.blatorone" name="Blatorone Repository" provider-name="blatorone" version="1.0.6">
+<addon id="repository.blatorone" name="Blatorone Repository" provider-name="blatorone" version="1.0.7">
 	    <extension point="xbmc.addon.repository" name="Blatorone repo">
             <dir>
                 <info compressed="false">https://blatorone.github.io/repository.blatorone/repo/addons.xml</info>
                 <checksum>https://blatorone.github.io/repository.blatorone/repo/addons.xml.md5</checksum>
                 <datadir zip="true">https://blatorone.github.io/repository.blatorone/repo/</datadir>
             </dir>
-            <dir minversion="20.9.1">
+            <dir minversion="21.0.0">
                 <info compressed="false">https://blatorone.github.io/repository.blatorone/repo/zips/Omega/addons.xml</info>
                 <checksum>https://blatorone.github.io/repository.blatorone/repo/zips/Omega/addons.xml.md5</checksum>
                 <datadir zip="true">https://blatorone.github.io/repository.blatorone/repo/zips/Omega/</datadir>
