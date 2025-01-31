@@ -55,13 +55,13 @@
                 <content>
                     <item id="1">
                         <label>13016</label>
-                        <visible>System.CanPowerDown + !Skin.HasSetting(exitFirst)</visible>
+                        <visible>System.CanPowerDown + Skin.HasSetting(exitFirst)</visible>
                         <thumb></thumb>
                         <onclick>Powerdown()</onclick>
                     </item>
                     <item id="2">
                         <description>Exit to desktop</description>
-                        <visible>Skin.HasSetting(exitFirst)</visible>
+                        <visible>!Skin.HasSetting(exitFirst)</visible>
                         <label>13012</label>
                         <thumb></thumb>
                         <onclick>Quit()</onclick>
@@ -94,14 +94,14 @@
                     </item>
                     <item id="7">
                         <description>Exit to desktop</description>
-                        <visible>!Skin.HasSetting(exitFirst)</visible>
+                        <visible>Skin.HasSetting(exitFirst)</visible>
                         <label>13012</label>
                         <thumb></thumb>
                         <onclick>Quit()</onclick>
                     </item>
                     <item id="8">
                         <label>13016</label>
-                        <visible>System.CanPowerDown + Skin.HasSetting(exitFirst)</visible>
+                        <visible>System.CanPowerDown + !Skin.HasSetting(exitFirst)</visible>
                         <thumb></thumb>
                         <onclick>Powerdown()</onclick>
                     </item>

@@ -180,7 +180,7 @@
                     <width>14-col</width>
                     <label>31142</label>
                     <onclick>Skin.ToggleSetting(exitFirst)</onclick>
-                    <selected>Skin.HasSetting(exitFirst)</selected>
+                    <selected>!Skin.HasSetting(exitFirst)</selected>
                 </control>
                 <control type="radiobutton" id="35">
                     <visible>Container(8000).Hasfocus(1)</visible>
