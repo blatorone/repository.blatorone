@@ -1002,3 +1002,11 @@ msgstr ""
 msgctxt "#31366"
 msgid "Volume Down"
 msgstr ""
+
+msgctxt "#31367"
+msgid "Changelog version:"
+msgstr ""
+
+msgctxt "#31368"
+msgid "In Cinema"
+msgstr ""

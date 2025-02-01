@@ -6,6 +6,9 @@
 	<onunload>ClearProperty(TextViewerContent,Home)</onunload>
 	<onunload>ClearProperty(AddonNews,Home)</onunload>
 	<onunload>ClearProperty(FAQ,skinsettings)</onunload>
+	<onunload>ClearProperty(TextViewer_Text,Home)</onunload>
+	<onunload>ClearProperty(TextViewer_Test,Home)</onunload>
+
 	<controls>
 	<include>Backbuttoncross</include>
 		<control type="button" id="64">
@@ -34,8 +37,9 @@
 			<include condition="String.IsEmpty(Window(Home).Property(AddonNews))">DialogOpenCloseAnimation</include>
 			<animation effect="fade" time="100" delay="200" condition="!String.IsEmpty(Window(Home).Property(AddonNews))">WindowOpen</animation>
 			<animation effect="fade" time="50" condition="!String.IsEmpty(Window(Home).Property(AddonNews))">WindowClose</animation>
-			<left>270</left>
+			<left>100</left>
 			<top>72.5</top>
+
 			<control type="image">
 				<left>20</left>
 				<width>1342</width>
@@ -55,6 +59,12 @@
 				<textcolor>dialogheader</textcolor>
 				<label>$INFO[Window(Home).Property(TextViewerHeader)]</label>
 			</control>
+			<include content="DialogBackgroundCommons">
+				<param name="width" value="84%" />
+				<param name="height" value="770" />
+				<param name="header_label" value="$INFO[Window(home).Property(TextViewer_Test)]" />
+				<param name="header_id" value="1" />
+			</include>
 			<control type="label">
 				<left>62</left>
 				<top>90</top>
@@ -68,13 +78,26 @@
 			<control type="textbox">
 				<left>62</left>
 				<top>145</top>
-				<width>1256</width>
+				<width>1250</width>
 				<height>750</height>
 				<align>justify</align>
 				<font>font16_textbox</font>
 				<textcolor>grey</textcolor>
 				<pagecontrol>61</pagecontrol>
+				<wrapmultiline>true</wrapmultiline>
 				<label>$INFO[Window(home).Property(TextViewer_Text)]</label>
+			</control>
+			
+			
+			<control type="label">
+				<left>62</left>
+				<top>40</top>
+				<width>1256</width>
+				<height>40</height>
+				<font>regular</font>
+				<align>center</align>
+				<textcolor>$VAR[highlight]</textcolor>
+				<label>$INFO[Window(DialogAddonInfo).Property(TextViewer_Text)]</label>
 			</control>
 			<control type="textbox">
 				<left>62</left>

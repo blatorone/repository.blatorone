@@ -3650,6 +3650,61 @@
                 <include>Backbuttoncross</include>
 					
 	</include>
+	<include name="DialogBackgroundCommons">
+	
+		<control type="button">
+			<left>-2000</left>
+			<top>-2000</top>
+			<width>6000</width>
+			<height>6000</height>
+			<texturefocus />
+			<texturenofocus />
+			<onclick>Action(close)</onclick>
+		</control>
+		<control type="group">
+			<width>$PARAM[width]</width>
+			<height>$PARAM[height]</height>
+			<control type="image">
+				<left>20</left>
+				<width>1342</width>
+				<height>100</height>
+				<texture colordiffuse="$VAR[Highlight]">colors/white.png</texture>
+			</control>
+			
+			
+			<control type="label" id="$PARAM[header_id]">
+				<left>40</left>
+				<top>0</top>
+				<right>100</right>
+				<height>70</height>
+				<font>font32_title</font>
+				<label>$PARAM[header_label]</label>
+				<aligny>center</aligny>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="button" id="22002">
+				<description>button overlay to avoid closing in dialog area</description>
+				<left>0</left>
+				<top>0</top>
+				<right>0</right>
+				<bottom>0</bottom>
+				<texturefocus />
+				<texturenofocus />
+				<onclick>noop</onclick>
+			</control>
+	
+			<control type="button">
+				<right>10</right>
+				<top>11</top>
+				<width>48</width>
+				<height>48</height>
+				<texturefocus>dialogs/close.png</texturefocus>
+				<texturenofocus>dialogs/close.png</texturenofocus>
+				<onclick>Action(close)</onclick>
+				<visible>Skin.HasSetting(touchmode)</visible>
+			</control>
+		</control>
+	</include>
 	
 	
 </includes>

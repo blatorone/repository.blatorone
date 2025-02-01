@@ -294,6 +294,15 @@
                             <thumb></thumb>
                             <onclick>SendClick(146,8)</onclick>
                         </item>
+                        <item id="20">
+                            <visible>!String.IsEmpty(ListItem.AddonNews)</visible>
+                            <label>Changelog</label>
+                            <label2></label2>
+                            <thumb></thumb>
+                            <onclick>SetProperty(TextViewer_Test,[B]Versionsänderung: $INFO[ListItem.AddonVersion][/B],home)</onclick>
+                            <onclick>SetProperty(TextViewer_Text,$ESCINFO[ListItem.AddonNews],home)</onclick>
+                            <onclick>ActivateWindow(1140)</onclick>
+                        </item>
                         <item id="5">
                             <visible>Control.IsEnabled(10)</visible>
                             <label>$LOCALIZE[39024]</label>
@@ -331,6 +340,8 @@
                             <thumb></thumb>
                             <onclick>Back</onclick>
                         </item>
+                         
+                        
                     </content>
                 </control>
             </control>

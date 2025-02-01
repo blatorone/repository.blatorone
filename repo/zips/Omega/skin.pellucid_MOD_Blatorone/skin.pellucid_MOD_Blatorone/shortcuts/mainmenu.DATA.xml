@@ -63,13 +63,34 @@
         <thumb>$INFO[Listitem.thumb]</thumb>
         <action>ActivateWindow(TVChannels)</action>
     </shortcut>
-    <shortcut>
+     <shortcut>
         <visible>PVR.HasRadioChannels</visible>
         <label>31250</label>
         <label2>32034</label2>
         <icon>DefaultAddon.png</icon>
         <thumb />
         <action>ActivateWindow(Radiochannels)</action>
+    </shortcut>
+     <shortcut>
+        <label>31368</label>
+        <label2>32034</label2>
+        <icon>kodilogo.png</icon>
+        <thumb>$INFO[Listitem.thumb]</thumb>
+        <action>ActivateWindow(Videos,"plugin://plugin.video.themoviedb.helper/?info=now_playing&amp;tmdb_type=movie&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)]&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)]",return)</action>
+    </shortcut>
+      <shortcut>
+        <label>31088</label>
+        <label2>32034</label2>
+        <icon>DefaultAddon.png</icon>
+        <thumb />
+        <action>ActivateWindow(Videos,Addons,return)</action>
+    </shortcut>
+    <shortcut>
+        <label>31090</label>
+        <label2>32034</label2>
+        <icon>DefaultAddon.png</icon>
+        <thumb />
+        <action>ActivateWindow(Music,Addons,return)</action>
     </shortcut>
 	<shortcut>
 		<visible>Library.HasContent(Movies) + !System.HasAddon(plugin.video.themoviedb.helper)</visible>
@@ -119,20 +140,7 @@
         <thumb />
         <action>PlayerControl(Partymode(music))</action>
     </shortcut>
-     <shortcut>
-        <label>31088</label>
-        <label2>32034</label2>
-        <icon>DefaultAddon.png</icon>
-        <thumb />
-        <action>ActivateWindow(Videos,Addons,return)</action>
-    </shortcut>
-    <shortcut>
-        <label>31090</label>
-        <label2>32034</label2>
-        <icon>DefaultAddon.png</icon>
-        <thumb />
-        <action>ActivateWindow(Music,Addons,return)</action>
-    </shortcut>
+   
     <shortcut>
         <label>31232</label>
         <label2>32034</label2>

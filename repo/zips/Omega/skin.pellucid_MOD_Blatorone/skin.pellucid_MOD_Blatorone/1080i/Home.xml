@@ -1116,6 +1116,18 @@
 			<ondown>setfocus(9000,0)</ondown>
 			<onclick>setfocus(9000,0)</onclick>
         </control>
+
+		<control type="list" id="99999">
+            <posx>-4</posx>
+            <posy>-4</posy>
+            <width>4</width>
+            <height>4</height>
+            <enable>false</enable>
+            <preloaditems>2</preloaditems>
+            <itemlayout/>
+            <focusedlayout/>
+            <content>$VAR[test]</content>
+		</control>
 		<!--Settings visible Button-->
 		<!-- not in use since mastermode on homescreen
 

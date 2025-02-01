@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="skin.pellucid_MOD_Blatorone" version="2.0.145" name="Pellucid MOD Blatorone" provider-name="Blatorone">
+<addon id="skin.pellucid_MOD_Blatorone" version="2.0.146" name="Pellucid MOD Blatorone" provider-name="Blatorone">
 <requires>
 <import addon="xbmc.gui" version="5.17.0"/>
 <import addon="script.skinshortcuts" version="1.1.4"/>
@@ -20,6 +20,8 @@
 <description lang="de_de">Hergestellt fürs Wohnzimmer,Pellucid ist ein sauberes und angenehme design. Kodi design erfahrungen für maximale benutzung und minimalem Aufwand. Skin Kurzbefehl addon support ist verfügbar für volle Menü anpassungen.</description>
 <platform>all</platform>
 <license>Creative Commons Attribution-Noncommercial-Share Alike 4.0</license>
+<news>Changelog Anzeige in den Addons hinzugefügt und Im Kino als Shortcut auf Startmenü hinzugefügt. 
+</news>
 <assets>
 <icon>resources/icon.png</icon>
 <fanart>resources/fanart.jpg</fanart>
