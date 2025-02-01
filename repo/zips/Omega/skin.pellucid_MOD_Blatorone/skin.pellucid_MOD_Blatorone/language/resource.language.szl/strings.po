@@ -1,6 +1,6 @@
 # Kodi Media Center language file
 # Addon Name: Pellucid MOD Blatorone
-# Addon id: skin.pellucid_MOD_Alex
+# Addon id: skin.pellucid_MOD_Blatorone
 # Addon Provider: blatorone
 msgid ""
 msgstr ""

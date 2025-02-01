@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="skin.pellucid_MOD_Blatorone" version="2.0.144" name="Pellucid MOD Blatorone" provider-name="Blatorone">
+<addon id="skin.pellucid_MOD_Blatorone" version="2.0.145" name="Pellucid MOD Blatorone" provider-name="Blatorone">
 <requires>
 <import addon="xbmc.gui" version="5.17.0"/>
 <import addon="script.skinshortcuts" version="1.1.4"/>
@@ -14,8 +14,8 @@
 <res width="1920" height="1080" aspect="16:9" default="ture" folder="1080i"/>
 </extension>
 <extension point="xbmc.addon.metadata">
-<summary lang="en_GB">A skin for Kodi by Alex</summary>
-<summary lang="de_de">Ein skin für Kodi von Alex</summary>
+<summary lang="en_GB">A skin for Kodi by Blatorone</summary>
+<summary lang="de_de">Ein skin für Kodi von Blatorone</summary>
 <description lang="en_GB">Built for the living room, Pellucid is a clean and carefully designed Kodi experience designed for maximum usability and minimum fuss. Skin Shortcuts addon support is available for full menu customisation.</description>
 <description lang="de_de">Hergestellt fürs Wohnzimmer,Pellucid ist ein sauberes und angenehme design. Kodi design erfahrungen für maximale benutzung und minimalem Aufwand. Skin Kurzbefehl addon support ist verfügbar für volle Menü anpassungen.</description>
 <platform>all</platform>
