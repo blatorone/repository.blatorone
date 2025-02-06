@@ -930,7 +930,7 @@
 							<visible>Integer.IsGreater(System.AddonUpdateCount,0)</visible>
 							<label2>$INFO[System.AddonUpdateCount]</label2>
 							<label></label>
-							<onclick>ActivateWindow(addonbrowser,addons://outdated/,return)</onclick>
+							<onclick condition="Integer.IsGreater(System.AddonUpdateCount,0)">ActivateWindow(addonbrowser,addons://outdated/,return)</onclick>
 						</item>
 					</content>
 				</control>

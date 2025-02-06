@@ -7,7 +7,7 @@
 	<onunload>ClearProperty(AddonNews,Home)</onunload>
 	<onunload>ClearProperty(FAQ,skinsettings)</onunload>
 	<onunload>ClearProperty(TextViewer_Text,Home)</onunload>
-	<onunload>ClearProperty(TextViewer_Test,Home)</onunload>
+	
 
 	<controls>
 	<include>Backbuttoncross</include>
@@ -37,6 +37,7 @@
 			<include condition="String.IsEmpty(Window(Home).Property(AddonNews))">DialogOpenCloseAnimation</include>
 			<animation effect="fade" time="100" delay="200" condition="!String.IsEmpty(Window(Home).Property(AddonNews))">WindowOpen</animation>
 			<animation effect="fade" time="50" condition="!String.IsEmpty(Window(Home).Property(AddonNews))">WindowClose</animation>
+			<animation effect="slide" end="166,0" condition="!Window.IsActive(addoninformation)">Conditional</animation>
 			<left>100</left>
 			<top>72.5</top>
 
@@ -62,7 +63,7 @@
 			<include content="DialogBackgroundCommons">
 				<param name="width" value="84%" />
 				<param name="height" value="770" />
-				<param name="header_label" value="$INFO[Window(home).Property(TextViewer_Test)]" />
+				<param name="header_label" value="$INFO[Window(home).Property(TextViewerHeader)]" />
 				<param name="header_id" value="1" />
 			</include>
 			<control type="label">
@@ -140,5 +141,11 @@
 					    <param name="selectview">false</param>
                         <param name="color">keyboardInactive</param>
             </include>
+			 <!--debugging-->
+        <include>DebugGrid</include>
+        <control type="label">
+            <include>DialogID</include>
+            <label>Textviewer.xml</label>
+        </control>
 	</controls>
 </window>

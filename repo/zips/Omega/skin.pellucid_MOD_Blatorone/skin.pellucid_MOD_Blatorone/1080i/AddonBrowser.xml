@@ -3,6 +3,7 @@
     <defaultcontrol always="true">50</defaultcontrol>
 	<views>50,51</views>
 	<onunload>CancelAlarm(hidemenu,true)</onunload>
+    
     <controls>
         <include>globalBackground</include>
         <control type="multiimage">
@@ -215,6 +216,134 @@
 	                    <aspectratio>scale</aspectratio>
 				        <fadetime>0</fadetime>
 	            </control>
+
+
+                <control type="list" id="119">
+                    <right>80</right>
+                    <posy>0</posy>
+                    <width>6-col</width>
+                    <height>11-row</height>
+                    <itemgap>3</itemgap>
+                    <orientation>vertical</orientation>
+                    <onup>50</onup>
+                    <ondown>50</ondown>
+                    <onleft>51</onleft>
+                    <onright>60</onright>
+                    <itemlayout width="6-col" height="2-row">
+                        <control type="label">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>1-col</width>
+                            <height>2-row</height>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <font>symbolLarge</font>
+                            <textcolor>textActive</textcolor>
+                            <label>$INFO[ListItem.label2]</label>
+                        </control>
+                        <control type="label">
+                            <posx>1-col-indent</posx>
+                            <posy>-1</posy>
+                            <width>5-col-gutter</width>
+                            <height>2-row</height>
+                            <aligny>center</aligny>
+                            <font>buttonTitle</font>
+                            <textcolor>textActive</textcolor>
+                            <label>$INFO[ListItem.label]</label>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout width="6-col" height="2-row">
+                        <control type="image">
+							<animation type="focus">
+					            <effect type="fade" start="100" end="50" time="0"/>
+					        </animation>
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>1-col</width>
+                            <height>2-row</height>
+                            <aspectratio>stretch</aspectratio>
+                            <texture>masks/discsurface.png</texture>
+                            <colordiffuse>$VAR[highlight]</colordiffuse>
+                            <include>spinFocusIcon</include>
+                           
+                        </control>
+                        <control type="image">
+                            <posx>1-col</posx>
+                            <posy>0</posy>
+                            <width>3-col</width>
+                            <height>2-row</height>
+                            <aspectratio>stretch</aspectratio>
+                            <texture colordiffuse="$VAR[selected_box]">masks/discsurface.png</texture>
+                            
+                        </control>
+                        <control type="label">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>1-col</width>
+                            <height>2-row</height>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <font>symbolLarge</font>
+                            <textcolor>$VAR[Home]</textcolor>
+                            <label>$INFO[ListItem.label2]</label>
+                            <shadowcolor></shadowcolor>
+                           
+                        </control>
+                        <control type="label">
+                            <posx>1-col-indent</posx>
+                            <posy>-1</posy>
+                            <width>5-col-gutter</width>
+                            <height>2-row</height>
+                            <aligny>center</aligny>
+                            <font>buttonTitle</font>
+                            <textcolor>black</textcolor>
+                            <label>$INFO[ListItem.label]</label>
+                            <shadowcolor></shadowcolor>
+                            
+                        </control>
+                         <control type="label">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>1-col</width>
+                            <height>2-row</height>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <font>symbolLarge</font>
+                            <textcolor>textActive</textcolor>
+                            <label>$INFO[ListItem.label2]</label>
+                            <shadowcolor></shadowcolor>
+                            <visible>control.hasfocus(13) | control.hasfocus(50)</visible>
+                        </control>
+                        <control type="label">
+                            <posx>1-col-indent</posx>
+                            <posy>-1</posy>
+                            <width>5-col-gutter</width>
+                            <height>2-row</height>
+                            <aligny>center</aligny>
+                            <font>buttonTitle</font>
+                            <textcolor>textActive</textcolor>
+                            <label>$INFO[ListItem.label]</label>
+                            <shadowcolor></shadowcolor>
+                            <visible>control.hasfocus(13) | control.hasfocus(50)</visible>
+                        </control>
+                    </focusedlayout>
+                    <content>
+                        <item id="1">
+                            <visible>!String.IsEmpty(ListItem.AddonNews)</visible>
+                            <label>Changelog</label>
+                            <label2></label2>
+                            <thumb></thumb>
+                            <onclick>SetProperty(TextViewerHeader,Versionsänderung [B]$INFO[ListItem.label]: $INFO[ListItem.AddonVersion][/B],home)</onclick>
+                            <onclick>SetProperty(TextViewer_Text,$ESCINFO[ListItem.AddonNews],home)</onclick>
+                            <onclick>ActivateWindow(1140)</onclick>
+                        </item>
+                    </content>
+                </control>
+
+
+
+
+                
                 <control type="panel" id="51">
                     <visible>!String.IsEqual(container.folderpath,addons://)</visible>
                     <posx>0</posx>
@@ -222,7 +351,7 @@
                     <width>12-col</width>
                     <height>19-row</height>
                     <onleft>activateWindow(contextmenu)</onleft>
-                    <onright>60</onright>
+                    <onright>119</onright>
                     <ondown>51</ondown>
                     <onup>51</onup>
                     <pagecontrol>60</pagecontrol>
@@ -259,6 +388,19 @@
                             <font>symbolLarge</font>
                             <textcolor>textActive</textcolor>
                             <label></label>
+                            <shadowcolor></shadowcolor>
+                        </control>
+                         <control type="label">
+                            <visible>!String.IsEmpty(ListItem.AddonNews)</visible>
+                            <right>0</right>
+                            <posy>0</posy>
+                            <width>1-col</width>
+                            <height>2-row</height>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <font>symbolLarge</font>
+                            <textcolor>$VAR[highlight]</textcolor>
+                            <label></label>
                             <shadowcolor></shadowcolor>
                         </control>
                         <control type="label">
@@ -346,6 +488,19 @@
                                 <label></label>
                                 <shadowcolor></shadowcolor>
                             </control>
+                             <control type="label">
+                            <visible>!String.IsEmpty(ListItem.AddonNews)</visible>
+                            <right>0</right>
+                            <posy>0</posy>
+                            <width>1-col</width>
+                            <height>2-row</height>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <font>symbolLarge</font>
+                            <textcolor>$VAR[highlight]</textcolor>
+                            <label></label>
+                            <shadowcolor></shadowcolor>
+                        </control>
                         </control>
                         <control type="image">
                             <posx>1-col</posx>
@@ -380,7 +535,8 @@
                         </control>
 
                     </focusedlayout>
-                </control>                
+                </control>    
+                          
             </control>
             <control type="group">
                 <!--page scrollbar-->

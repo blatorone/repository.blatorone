@@ -255,6 +255,12 @@
                     <label>$LOCALIZE[24000] $LOCALIZE[10004]</label>
 					<onclick>ActivateWindow(10040,"addons://user/",return)</onclick>
                 </control>
+                 <control type="button" id="119">
+					<visible>Container(8000).Hasfocus(1)</visible>
+					<width>14-col</width>
+                    <label>$LOCALIZE[24000] $LOCALIZE[12014]</label>
+					<onclick>ActivateWindow(10040,"addons://recently_updated/",return)</onclick>
+                </control>
                 <control type="button" id="118">
 					<visible>Container(8000).Hasfocus(1)</visible>
 					<width>14-col</width>

@@ -299,7 +299,7 @@
                             <label>Changelog</label>
                             <label2></label2>
                             <thumb></thumb>
-                            <onclick>SetProperty(TextViewer_Test,[B]Versionsänderung: $INFO[ListItem.AddonVersion][/B],home)</onclick>
+                            <onclick>SetProperty(TextViewerHeader,Versionsänderung [B]$INFO[ListItem.label]: $INFO[ListItem.AddonVersion][/B],home)</onclick>
                             <onclick>SetProperty(TextViewer_Text,$ESCINFO[ListItem.AddonNews],home)</onclick>
                             <onclick>ActivateWindow(1140)</onclick>
                         </item>
