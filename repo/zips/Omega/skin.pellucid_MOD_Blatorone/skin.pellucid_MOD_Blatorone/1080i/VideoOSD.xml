@@ -860,7 +860,7 @@
         </control>
         <control type="textbox">
                        
-                        <visible>!Pvr.IsPlayingTv + !window.isactive(FullscreenInfo)</visible>
+                        <visible>!Pvr.IsPlayingTv + !window.isactive(FullscreenInfo) + String.IsEmpty(Videoplayer.TVShowTitle)</visible>
 						<left>30</left>
 						<posy>130</posy>
 	                    <width>8-col</width>
@@ -871,6 +871,21 @@
 	                    <textcolor>textDisabled</textcolor>
 						
 	                    <label>$INFO[videoplayer.Title]</label>
+                        <autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
+	                </control>
+                    <control type="textbox">
+                       
+                        <visible>!Pvr.IsPlayingTv + !window.isactive(FullscreenInfo) + !String.IsEmpty(Videoplayer.TVShowTitle)</visible>
+						<left>30</left>
+						<posy>130</posy>
+	                    <width>8-col</width>
+	                    <align>left</align>
+	                    <height>4-row</height>
+	                    <aligny>center</aligny>
+	                    <font>VideoOSDTitel</font>
+	                    <textcolor>textDisabled</textcolor>
+						
+	                    <label>$INFO[videoplayer.season]x$INFO[videoplayer.episode] $INFO[videoplayer.Title]</label>
                         <autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
 	                </control>
         <!--Battery Level-->
