@@ -18,8 +18,12 @@
         <animation type="conditional" condition="player.hasvideo + !VideoPlayer.IsFullscreen" reversible="true">
 		    		<effect type="slide" start="0" end="-450" time="200" delay="0"/>
 		        </animation>
-				<right>-25</right>
-                <posy>-25</posy>
+                <animation type="conditional" condition="Skin.HasSetting(show_battery)" reversible="true">
+		    		<effect type="slide" start="0" end="15,25" time="200" delay="0"/>
+                    <effect type="slide" start="0" end="-50" time="200" delay="0"/>
+		        </animation>
+				<right>-65</right>
+                <posy>-65</posy>
 				<width>288</width>
 				<height>200</height>
 				<align>center</align>
@@ -27,7 +31,7 @@
 				<scroll>true</scroll>
 				<font>sectionTitle</font>
 	            <label>[B]$INFO[System.Time][/B]</label>
-                <textcolor>$VAR[Home]</textcolor>
+                <textcolor>textActive</textcolor>
 		</control>
         <!--page container group--> 
         <control type="group">
