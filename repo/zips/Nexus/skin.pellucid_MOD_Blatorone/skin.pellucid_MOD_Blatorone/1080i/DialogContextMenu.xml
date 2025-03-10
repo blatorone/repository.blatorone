@@ -63,8 +63,44 @@
             <itemgap>0</itemgap>
 			<onright>9004</onright>
 			<width>500</width>
-	        <height>16-row</height>
+	        <height>19-row</height>
         </control>
+			<control type="group">
+				<posx>175</posx>
+	        	<posy>990</posy>
+					<control type="label">
+						<animation type="conditional" condition="control.hasfocus(996)" reversible="true">
+							<effect type="fade" start="100" end="0" time="500" delay="0"/>
+						</animation>
+	                    <posx>0</posx>
+	                    <posy>0</posy>
+	                    <width>1-col</width>
+	                    <height>2-row</height>
+	                    <align>center</align>
+	                    <aligny>center</aligny>
+	                    <font>symbolLarge</font>
+	                    <textcolor>textActive</textcolor>
+	                    <label></label>
+	                    <shadowcolor></shadowcolor>
+						<visible>Container(996).HasPrevious</visible>
+	                </control>
+					<control type="label">
+						<animation type="conditional" condition="control.hasfocus(996)" reversible="true">
+							<effect type="fade" start="100" end="0" time="500" delay="0"/>
+						</animation>
+	                    <posx>50</posx>
+	                    <posy>0</posy>
+	                    <width>1-col</width>
+	                    <height>2-row</height>
+	                    <align>center</align>
+	                    <aligny>center</aligny>
+	                    <font>symbolLarge</font>
+	                    <textcolor>textActive</textcolor>
+	                    <label></label>
+	                    <shadowcolor></shadowcolor>
+						<visible>Container(996).HasNext</visible>
+	                </control>
+			</control>
 		<control type="group">
 			<control type="grouplist" id="9004">
 				<visible>!integer.IsGreater(Container(996).NumItems,0)</visible>

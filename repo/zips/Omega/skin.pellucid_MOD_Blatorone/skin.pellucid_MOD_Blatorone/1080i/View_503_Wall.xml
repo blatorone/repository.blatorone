@@ -29,7 +29,7 @@
 					<width>315</width>
 					<height>475</height>
 					<texture>masks/discsurface50%.png</texture>
-					<bordertexture border="21" infill="false">shadow.png</bordertexture>
+					<bordertexture fallback="DefaultMovies.png" border="21" infill="false">shadow.png</bordertexture>
 					<bordersize>20</bordersize>
 				</control>
 				<control type="image">
@@ -59,7 +59,7 @@
 					<top>-1</top>
 					<width>272</width>
 					<height>270</height>
-					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<texture background="true">$INFO[ListItem.Icon]</texture>
 					<aspectratio>scale</aspectratio>
 					<bordersize>20</bordersize>
 				</control>
@@ -72,7 +72,7 @@
 						<width>290</width>
 						<height>450</height>
 						<aspectratio>stretch</aspectratio>
-						<texture fallback="defaultposter.png">$INFO[listitem.icon]</texture>
+						<texture fallback="defaultposter.png">$INFO[ListItem.Icon]</texture>
 						<bordersize>6</bordersize>
 						<colordiffuse>overlay</colordiffuse>
 					</control>
@@ -83,7 +83,7 @@
 						<width>290</width>
 						<height>450</height>
 						<aspectratio>stretch</aspectratio>
-						<texture>$INFO[ListItem.icon]</texture>
+						<texture>$INFO[ListItem.Icon]</texture>
 						<bordersize>6</bordersize>
 						<colordiffuse>99ffffff</colordiffuse>
 					</control>
@@ -269,7 +269,7 @@
 						<width>290</width>
 						<height>450</height>
 						<aspectratio>stretch</aspectratio>
-						<texture fallback="defaultposter.png">$INFO[listitem.icon]</texture>
+						<texture fallback="defaultposter.png">$INFO[ListItem.Icon]</texture>
 						<bordersize>6</bordersize>
 						<colordiffuse>overlay</colordiffuse>
 					</control>
@@ -280,7 +280,7 @@
 						<width>290</width>
 						<height>450</height>
 						<aspectratio>stretch</aspectratio>
-						<texture>$INFO[ListItem.icon]</texture>
+						<texture>$INFO[ListItem.Icon]</texture>
 						<bordersize>6</bordersize>
 						<colordiffuse>99ffffff</colordiffuse>
 					</control>
@@ -480,7 +480,7 @@
 							<width>290</width>
 							<height>450</height>
 							<aspectratio>stretch</aspectratio>
-							<texture fallback="defaultposter.png">$INFO[listitem.icon]</texture>
+							<texture fallback="defaultposter.png">$INFO[ListItem.Icon]</texture>
 							<bordersize>6</bordersize>
 						</control>
 						<control type="textbox">
@@ -666,7 +666,7 @@
 							<width>290</width>
 							<height>450</height>
 							<aspectratio>stretch</aspectratio>
-							<texture fallback="defaultposter.png">$INFO[listitem.icon]</texture>
+							<texture fallback="defaultposter.png">$INFO[ListItem.Icon]</texture>
 							<bordersize>6</bordersize>
 						</control>
 						<control type="textbox">
