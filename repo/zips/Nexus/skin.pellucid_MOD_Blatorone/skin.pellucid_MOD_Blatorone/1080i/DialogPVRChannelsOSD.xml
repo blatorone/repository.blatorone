@@ -22,10 +22,7 @@
 		</control>
 		<!--debugging-->
     	<include>DebugGrid</include>
-    		<control type="label">
-        		<include>DialogID</include>
-        			<label>DialogPVRChannelsOSD.xml</label>
-    		</control>
+    		
 		<control type="group">
 			<posx>1342</posx>
 			<posy>0</posy>
@@ -207,6 +204,7 @@
 					<param name="color">keyboardInactive</param>
 			</include>
 		</control>
+
 	</controls>
 	
 	

@@ -83,12 +83,33 @@
 				<scrolltime tween="sine" easing="out">400</scrolltime>
 				<itemlayout height="3-row">
 					<control type="image">
+						<visible>Integer.isGreater(ListItem.Progress,0) + Integer.isLess(ListItem.Progress,100)</visible>
 						<posx>16</posx>
 						<posy>20</posy>
 						<width>66</width>
 						<height>66</height>
 						<aspectratio scalediffuse="false">keep</aspectratio>
 						<texture fallback="colors/offblack.png" border="0">$INFO[Listitem.icon]</texture>
+					</control>
+					<control type="image">
+						<visible>Integer.isEqual(ListItem.Progress,100)</visible>
+						<posx>16</posx>
+						<posy>20</posy>
+						<width>66</width>
+						<height>66</height>
+						<aspectratio scalediffuse="false">keep</aspectratio>
+						<texture fallback="colors/black.png" border="0">$INFO[Listitem.icon]</texture>
+						<colordiffuse>cc6E6E6E</colordiffuse>
+					</control>
+					<control type="image">
+						<visible>Integer.isEqual(ListItem.Progress,0)</visible>
+						<posx>16</posx>
+						<posy>20</posy>
+						<width>66</width>
+						<height>66</height>
+						<aspectratio scalediffuse="false">keep</aspectratio>
+						<texture fallback="colors/black.png" border="0">$INFO[Listitem.icon]</texture>
+						<colordiffuse>cc6E6E6E</colordiffuse>
 					</control>
 					<control type="label">
                         <posx>96</posx>
@@ -100,7 +121,7 @@
                         <textcolor>textActive</textcolor>
 						<selectedcolor>yellow</selectedcolor>
                         <shadowcolor></shadowcolor>
-                        <label>$INFO[ListItem.ChannelName]</label>
+                        <label>$INFO[ListItem.StartTime]-$INFO[ListItem.EndTime]</label>
                     </control>
                     <control type="label">
                         <posx>96</posx>
@@ -114,9 +135,23 @@
                         <shadowcolor></shadowcolor>
                         <label>$INFO[ListItem.Title]</label>
                     </control>
+					<control type="label">
+						<visible>Integer.isGreater(ListItem.Progress,0) + Integer.isLess(ListItem.Progress,100)</visible>
+                        <posx>96</posx>
+                        <posy>34</posy>
+                        <width>450</width>
+                        <height>2-row</height>
+                        <aligny>center</aligny>
+                        <font>dialogTitle</font>
+                        <textcolor>$VAR[selected]</textcolor>
+
+                        <shadowcolor></shadowcolor>
+                        <label>$INFO[ListItem.Title]</label>
+                    </control>
 					<control type="progress"> 
                         <description>Progress Bar</description>
-                        <posx>16</posx>
+						<visible>Integer.isGreater(ListItem.Progress,0)</visible>
+						<posx>16</posx>
                         <posy>90</posy>
                         <width>66</width>
                         <height>15</height>
@@ -124,6 +159,7 @@
                         <midtexture colordiffuse="$VAR[highlight]">masks/discsurface.png</midtexture>
                         <info>ListItem.Progress</info>
                     </control>
+					
 				</itemlayout>
 				<focusedlayout height="3-row">
 					<control type="image">
@@ -153,7 +189,7 @@
                         <textcolor>$VAR[Home]</textcolor>
 						<selectedcolor>$VAR[selected]</selectedcolor>
                         <shadowcolor></shadowcolor>
-                        <label>$INFO[ListItem.ChannelName]</label>
+                        <label>$INFO[ListItem.StartTime]-$INFO[ListItem.EndTime]</label>
                     </control>
                     <control type="label">
                         <posx>96</posx>
@@ -169,6 +205,7 @@
                     </control>
 					<control type="progress"> 
                         <description>Progress Bar</description>
+						<visible>Integer.isGreater(ListItem.Progress,0)</visible>
                         <posx>16</posx>
                         <posy>88</posy>
                         <width>66</width>
@@ -200,6 +237,10 @@
 			</include>
 		</control>
 	</controls>
-	
+	<include>DebugGrid</include>
+        <control type="label">
+            <include>DialogID</include>
+            <label>DialogPlayerProcessInfo.xml</label>
+        </control>
 	
 </window>

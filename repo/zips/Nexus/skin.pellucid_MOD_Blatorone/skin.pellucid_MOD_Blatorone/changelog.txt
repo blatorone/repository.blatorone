@@ -1,3 +1,5 @@
+Version 2.0.151 Programmübersicht angepasst, Uhrzeit hinzugefügt
+
 Version 2.0.150 Context menu buttons hinzugefügt und liste vergrößert, umschreibung Icons aufruf in Wall
 
 
