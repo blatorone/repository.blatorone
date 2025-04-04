@@ -13,7 +13,7 @@
 	            		<aspectratio>scale</aspectratio>
 						<fadetime>250</fadetime>
 	        </control>
-    
+     
 		<control type="group">
 		<include>pageheadermovies_series</include>
 		 <!--Battery level-->
@@ -336,7 +336,65 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6000"/>
 						</include>
-                        <control type="togglebutton" id="9021">
+
+						<control type="togglebutton" id="9021">
+				            <font>regular</font>
+				            
+				            <include>Text_Movie_Series_width</include>
+                
+				            <align>left</align>
+				            <textoffsetx>30</textoffsetx>
+				            <textcolor>textActive</textcolor>
+				            <focusedcolor>$VAR[selected]</focusedcolor>
+				            <focusedcolor></focusedcolor>
+				            <texturefocus></texturefocus>
+                            
+                            <alttexturefocus></alttexturefocus>
+                            <alttexturenofocus></alttexturenofocus>
+				            <label>[COLOR $VAR[highlight]]Basierend auf Kürzlich gesehene Serien:[/COLOR] [B]$INFO[container(6100).Listitem.label][/B]</label>
+                            <onup>6000</onup>
+				            <ondown>6100</ondown>
+							<onright>6100</onright>
+				            <onclick>ActivateWindow(10025,"plugin://plugin.video.themoviedb.helper/?info=trakt_becauseyouwatched&amp;tmdb_type=tv",return)</onclick>
+			            	<visible>!Container(6100).IsUpdating + integer.IsGreater(Container(6100).NumItems,0)</visible>
+						</control>
+						<include content="WidgetListPoster">
+							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trakt_becauseyouwatched&amp;tmdb_type=tv"/>
+							<param name="widget_header" value="Basierend auf Kürzlich gesehene Serien"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6100"/>
+						</include>
+
+						<control type="togglebutton" id="9022">
+				            <font>regular</font>
+				            
+				            <include>Text_Movie_Series_width</include>
+                
+				            <align>left</align>
+				            <textoffsetx>30</textoffsetx>
+				            <textcolor>textActive</textcolor>
+				            <focusedcolor>$VAR[selected]</focusedcolor>
+				            <focusedcolor></focusedcolor>
+				            <texturefocus></texturefocus>
+                            
+                            <alttexturefocus></alttexturefocus>
+                            <alttexturenofocus></alttexturenofocus>
+				            <label>[COLOR $VAR[highlight]]Basierend auf den Meistgesehenen Serien:[/COLOR] [B]$INFO[container(6200).Listitem.label][/B]</label>
+                            <onup>6100</onup>
+				            <ondown>6200</ondown>
+							<onright>6200</onright>
+				            <onclick>ActivateWindow(10025,"plugin://plugin.video.themoviedb.helper/?info=trakt_becausemostwatched&amp;tmdb_type=tv",return)</onclick>
+			            	<visible>!Container(6200).IsUpdating + integer.IsGreater(Container(6200).NumItems,0)</visible>
+						</control>
+						<include content="WidgetListPoster">
+							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trakt_becausemostwatched&amp;tmdb_type=tv"/>
+							<param name="widget_header" value="Basierend auf den Meistgesehenen Serien"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6200"/>
+						</include>
+
+
+                        <control type="togglebutton" id="9023">
 				            <font>dialogTitle</font>
 				            
 				            <include>Text_Movie_Series_width</include>
@@ -350,21 +408,21 @@
                             
                             <alttexturefocus></alttexturefocus>
                             <alttexturenofocus></alttexturenofocus>
-				            <label>[COLOR $VAR[highlight]]Serien Kürzlich gesehen:[/COLOR] [B]$INFO[container(6100).Listitem.label][/B]</label>
-                            <onup>6000</onup>
-				            <ondown>6100</ondown>
-							<onright>6100</onright>
+				            <label>[COLOR $VAR[highlight]]Serien Kürzlich gesehen:[/COLOR] [B]$INFO[container(6300).Listitem.label][/B]</label>
+                            <onup>6200</onup>
+				            <ondown>6300</ondown>
+							<onright>6300</onright>
 				            <onclick>ActivateWindow(10025,"plugin://plugin.video.themoviedb.helper/?info=trakt_history&amp;tmdb_type=tv",return)</onclick>
-			            	<visible>!Container(6100).IsUpdating + integer.IsGreater(Container(6100).NumItems,0)</visible>
+			            	<visible>!Container(6300).IsUpdating + integer.IsGreater(Container(6300).NumItems,0)</visible>
 						</control>
 						<include content="WidgetListPoster">
 							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trakt_history&amp;tmdb_type=tv"/>
 							<param name="widget_header" value="Serien Kürzlich gesehen"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="6100"/>
+							<param name="list_id" value="6300"/>
 						</include>
 						
-                        <control type="togglebutton" id="9022">
+                        <control type="togglebutton" id="9024">
 				            <font>dialogTitle</font>
 				            
 				            <include>Text_Movie_Series_width</include>
@@ -378,18 +436,18 @@
                             
                             <alttexturefocus></alttexturefocus>
                             <alttexturenofocus></alttexturenofocus>
-				            <label>[COLOR $VAR[highlight]]Serien Beobachtungsliste:[/COLOR] [B]$INFO[container(6200).Listitem.label][/B]</label>
-                            <onup>6100</onup>
-				            <ondown>6200</ondown>
-							<onright>6200</onright>
+				            <label>[COLOR $VAR[highlight]]Serien Beobachtungsliste:[/COLOR] [B]$INFO[container(6400).Listitem.label][/B]</label>
+                            <onup>6300</onup>
+				            <ondown>6400</ondown>
+							<onright>6400</onright>
 				            <onclick>ActivateWindow(10025,"plugin://plugin.video.themoviedb.helper/?info=trakt_watchlist&amp;list_name=Serien%20Beobachtungsliste&amp;tmdb_type=tv",return)</onclick>
-			            	<visible>!Container(6200).IsUpdating + integer.IsGreater(Container(6200).NumItems,0)</visible>
+			            	<visible>!Container(6400).IsUpdating + integer.IsGreater(Container(6400).NumItems,0)</visible>
 						</control>
 						<include content="WidgetListPoster">
 							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trakt_watchlist&amp;list_name=Serien%20Beobachtungsliste&amp;tmdb_type=tv"/>
 							<param name="widget_header" value="Serien Beobachtungsliste"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="6200"/>
+							<param name="list_id" value="6400"/>
 						</include>
 						<!--not in use
                         <control type="togglebutton" id="9023">
@@ -420,7 +478,7 @@
 							<param name="list_id" value="6300"/>
 						</include>
 						-->
-                        <control type="togglebutton" id="9024">
+                        <control type="togglebutton" id="9025">
 				            <font>dialogTitle</font>
 				            
 				            <include>Text_Movie_Series_width</include>
@@ -434,47 +492,20 @@
                             
                             <alttexturefocus></alttexturefocus>
                             <alttexturenofocus></alttexturenofocus>
-				            <label>[COLOR $VAR[highlight]]Serien Favouriten:[/COLOR] [B]$INFO[container(6400).Listitem.label][/B]</label>
-                            <onup>6300</onup>
-				            <ondown>6400</ondown>
-							<onright>6400</onright>
+				            <label>[COLOR $VAR[highlight]]Serien Favouriten:[/COLOR] [B]$INFO[container(6500).Listitem.label][/B]</label>
+                            <onup>6400</onup>
+				            <ondown>6500</ondown>
+							<onright>6500</onright>
 				            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.themoviedb.helper/?info=trakt_favorites&amp;list_name=Serien%20Favoriten&amp;tmdb_type=tv&quot;,return)</onclick>
-			            	<visible>!Container(6400).IsUpdating + integer.IsGreater(Container(6400).NumItems,0)</visible>
+			            	<visible>!Container(6500).IsUpdating + integer.IsGreater(Container(6500).NumItems,0)</visible>
 						</control>
 						<include content="WidgetListPoster">
 							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trakt_favorites&amp;list_name=Serien%20Favoriten&amp;tmdb_type=tv"/>
 							<param name="widget_header" value="Serien Favoriten"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="6400"/>
-						</include>
-						
-						<control type="togglebutton" id="9025">
-				            <font>dialogTitle</font>
-				            
-				            <include>Text_Movie_Series_width</include>
-                
-				            <align>left</align>
-				            <textoffsetx>30</textoffsetx>
-				            <textcolor>textActive</textcolor>
-				            <focusedcolor>$VAR[selected]</focusedcolor>
-				            <focusedcolor></focusedcolor>
-				            <texturefocus></texturefocus>
-                            
-                            <alttexturefocus></alttexturefocus>
-                            <alttexturenofocus></alttexturenofocus>
-				            <label>[COLOR $VAR[highlight]]Netflix Top 10:[/COLOR] [B]$INFO[container(6500).Listitem.label][/B]</label>
-                            <onup>6400</onup>
-				            <ondown>6500</ondown>
-							<onright>6500</onright>
-				            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=netflix-top-10&amp;list_slug=netflix-top-10&amp;plugin_category=netflix-top-10&amp;user_slug=danqbudz&quot;,return)</onclick>
-			            	<visible>!Container(6500).IsUpdating + integer.IsGreater(Container(6500).NumItems,0)</visible>
-						</control>
-						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=netflix-top-10&amp;list_slug=netflix-top-10&amp;plugin_category=netflix-top-10&amp;user_slug=danqbudz"/>
-							<param name="widget_header" value="Netflix Top 10"/>
-							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6500"/>
 						</include>
+						
 						<control type="togglebutton" id="9026">
 				            <font>dialogTitle</font>
 				            
@@ -489,16 +520,16 @@
                             
                             <alttexturefocus></alttexturefocus>
                             <alttexturenofocus></alttexturenofocus>
-				            <label>[COLOR $VAR[highlight]]Amazon Prime Top 10:[/COLOR] [B]$INFO[container(6600).Listitem.label][/B]</label>
+				            <label>[COLOR $VAR[highlight]]Netflix Top 10:[/COLOR] [B]$INFO[container(6600).Listitem.label][/B]</label>
                             <onup>6500</onup>
 				            <ondown>6600</ondown>
 							<onright>6600</onright>
-				            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=prime-video-top-10&amp;list_slug=prime-video-top-10&amp;plugin_category=prime-video-top-10&amp;user_slug=danqbudz&quot;,return)</onclick>
+				            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=netflix-top-10&amp;list_slug=netflix-top-10&amp;plugin_category=netflix-top-10&amp;user_slug=danqbudz&quot;,return)</onclick>
 			            	<visible>!Container(6600).IsUpdating + integer.IsGreater(Container(6600).NumItems,0)</visible>
 						</control>
 						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=prime-video-top-10&amp;list_slug=prime-video-top-10&amp;plugin_category=prime-video-top-10&amp;user_slug=danqbudz"/>
-							<param name="widget_header" value="Amazon Prime Top 10"/>
+							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=netflix-top-10&amp;list_slug=netflix-top-10&amp;plugin_category=netflix-top-10&amp;user_slug=danqbudz"/>
+							<param name="widget_header" value="Netflix Top 10"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6600"/>
 						</include>
@@ -516,16 +547,16 @@
                             
                             <alttexturefocus></alttexturefocus>
                             <alttexturenofocus></alttexturenofocus>
-				            <label>[COLOR $VAR[highlight]]Disney+ Top 10:[/COLOR] [B]$INFO[container(6700).Listitem.label][/B]</label>
+				            <label>[COLOR $VAR[highlight]]Amazon Prime Top 10:[/COLOR] [B]$INFO[container(6700).Listitem.label][/B]</label>
                             <onup>6600</onup>
 				            <ondown>6700</ondown>
 							<onright>6700</onright>
-				            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=disney-plus-top-10&amp;list_slug=disney-plus-top-10&amp;plugin_category=disney-plus-top-10&amp;user_slug=danqbudz&quot;,return)</onclick>
+				            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=prime-video-top-10&amp;list_slug=prime-video-top-10&amp;plugin_category=prime-video-top-10&amp;user_slug=danqbudz&quot;,return)</onclick>
 			            	<visible>!Container(6700).IsUpdating + integer.IsGreater(Container(6700).NumItems,0)</visible>
 						</control>
 						<include content="WidgetListPoster">
-							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=disney-plus-top-10&amp;list_slug=disney-plus-top-10&amp;plugin_category=disney-plus-top-10&amp;user_slug=danqbudz"/>
-							<param name="widget_header" value="Disney+ Top 10"/>
+							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=prime-video-top-10&amp;list_slug=prime-video-top-10&amp;plugin_category=prime-video-top-10&amp;user_slug=danqbudz"/>
+							<param name="widget_header" value="Amazon Prime Top 10"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6700"/>
 						</include>
@@ -543,18 +574,45 @@
                             
                             <alttexturefocus></alttexturefocus>
                             <alttexturenofocus></alttexturenofocus>
-				            <label>[COLOR $VAR[highlight]]Apple TV Top 10:[/COLOR] [B]$INFO[container(6800).Listitem.label][/B]</label>
+				            <label>[COLOR $VAR[highlight]]Disney+ Top 10:[/COLOR] [B]$INFO[container(6800).Listitem.label][/B]</label>
                             <onup>6700</onup>
 				            <ondown>6800</ondown>
 							<onright>6800</onright>
-				            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=apple-tv-plus-top-10&amp;list_slug=apple-tv-plus-top-10&amp;plugin_category=apple-tv-plus-top-10&amp;user_slug=danqbudz&quot;,return)</onclick>
+				            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=disney-plus-top-10&amp;list_slug=disney-plus-top-10&amp;plugin_category=disney-plus-top-10&amp;user_slug=danqbudz&quot;,return)</onclick>
 			            	<visible>!Container(6800).IsUpdating + integer.IsGreater(Container(6800).NumItems,0)</visible>
+						</control>
+						<include content="WidgetListPoster">
+							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=disney-plus-top-10&amp;list_slug=disney-plus-top-10&amp;plugin_category=disney-plus-top-10&amp;user_slug=danqbudz"/>
+							<param name="widget_header" value="Disney+ Top 10"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6800"/>
+						</include>
+						<control type="togglebutton" id="9029">
+				            <font>dialogTitle</font>
+				            
+				            <include>Text_Movie_Series_width</include>
+                
+				            <align>left</align>
+				            <textoffsetx>30</textoffsetx>
+				            <textcolor>textActive</textcolor>
+				            <focusedcolor>$VAR[selected]</focusedcolor>
+				            <focusedcolor></focusedcolor>
+				            <texturefocus></texturefocus>
+                            
+                            <alttexturefocus></alttexturefocus>
+                            <alttexturenofocus></alttexturenofocus>
+				            <label>[COLOR $VAR[highlight]]Apple TV Top 10:[/COLOR] [B]$INFO[container(6900).Listitem.label][/B]</label>
+                            <onup>6800</onup>
+				            <ondown>6900</ondown>
+							<onright>6900</onright>
+				            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=apple-tv-plus-top-10&amp;list_slug=apple-tv-plus-top-10&amp;plugin_category=apple-tv-plus-top-10&amp;user_slug=danqbudz&quot;,return)</onclick>
+			            	<visible>!Container(6900).IsUpdating + integer.IsGreater(Container(6900).NumItems,0)</visible>
 						</control>
 						<include content="WidgetListPoster">
 							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=apple-tv-plus-top-10&amp;list_slug=apple-tv-plus-top-10&amp;plugin_category=apple-tv-plus-top-10&amp;user_slug=danqbudz"/>
 							<param name="widget_header" value="Apple TV Top 10"/>
 							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="6800"/>
+							<param name="list_id" value="6900"/>
 						</include>
 						</control>
 						
