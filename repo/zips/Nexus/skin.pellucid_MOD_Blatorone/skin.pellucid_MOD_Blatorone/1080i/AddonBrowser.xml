@@ -3,7 +3,7 @@
     <defaultcontrol always="true">50</defaultcontrol>
 	<views>50,51</views>
 	<onunload>CancelAlarm(hidemenu,true)</onunload>
-    
+    <onload condition="Integer.IsEqual(container.numitems,0)">Back</onload>
     <controls>
         <include>globalBackground</include>
         <control type="multiimage">
