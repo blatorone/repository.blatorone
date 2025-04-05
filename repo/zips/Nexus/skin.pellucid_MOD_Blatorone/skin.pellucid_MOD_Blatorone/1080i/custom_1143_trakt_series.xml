@@ -136,13 +136,13 @@
 				            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.themoviedb.helper/?info=watch_providers&amp;tmdb_type=tv&quot;,return)</onclick>
 			            	<visible>!Container(5100).IsUpdating + integer.IsGreater(Container(5100).NumItems,0)</visible>
 						</control>
-						<include content="WidgetListPoster">
+						<include content="WidgetListPosterProvider">
 							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=watch_providers&amp;tmdb_type=tv"/>
 							<param name="widget_header" value="Anbieter"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="5100"/>
 						</include>
-						
+						 
 						<!--
                         <control type="togglebutton" id="9014">
 				            <font>regular</font>

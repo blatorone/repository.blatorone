@@ -2116,7 +2116,7 @@
 				
 
 
-				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="50" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="200" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
 			</control>
             
 		</definition>
@@ -2422,7 +2422,7 @@
 				
 
 
-				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="50" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="200" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
 			</control>
             
 		</definition>
@@ -2671,7 +2671,7 @@
                     	</control>
 					</control>
 				</focusedlayout>
-				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="130" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="200" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
 			</control>
 		</definition>
 	</include>
@@ -2984,13 +2984,145 @@
 
 				</focusedlayout>
 				
-				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="130" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="200" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
 			</control>
 		</definition>
 	</include>
 
 	
-	
+	<include name="WidgetListPosterProvider">
+		<param name="onclick_condition">false</param>
+		<param name="browse_mode">auto</param>
+		<definition>
+			<include content="CategoryLabel">
+				<param name="label">$PARAM[widget_header1]</param>
+				<param name="list_id" value="$PARAM[list_id]"/>
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]"/>
+				<param name="posy" value="70"/>
+                <param name="posy2" value="85"/>
+				<param name="posx" value="50%"/>
+				<param name="posx2" value="50.8%"/>
+			</include>
+			<control type="panel" id="$PARAM[list_id]">
+				
+				<posy>-115</posy>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				
+				<height>350</height>
+                <include>Widget_Touch_width</include>
+				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick_action]</onclick>
+                
+				<orientation>horizontal</orientation>
+				<itemlayout width="300" height="450">
+					<control type="group">
+				<control type="image">
+					<left>64</left>
+					<top>9</top>
+					<width>200</width>
+					<height>200</height>
+					<texture>masks/circle.png</texture>
+					<bordertexture border="21" infill="false">shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+				</control>
+				<control type="image">
+					<left>64</left>
+					<top>9</top>
+					<width>200</width>
+					<height>200</height>
+					<texture colordiffuse="grey">masks/circle.png</texture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				<control type="textbox">
+					<left>40</left>
+					<top>204</top>
+					<width>242</width>
+					<height>120</height>
+					<font>dialogTitle</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label]</label>
+					<autoscroll time="2000" delay="3000" repeat="5000">$PARAM[focused]</autoscroll>
+					<visible>!ListItem.IsParentFolder</visible>
+				</control>
+				<control type="image">
+					<left>64</left>
+					<top>9</top>
+					<width>200</width>
+					<height>200</height>
+					<texture fallback="DefaultMovies.png" diffuse="masks/circle.png" border="0" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<bordersize>20</bordersize>
+				</control>					
+			</control>
+			</itemlayout>
+				<focusedlayout width="300" height="450">
+				
+				<control type="group">
+				
+				<control type="image">
+					<left>59</left>
+					<top>4,8</top>
+					<width>210</width>
+					<height>210</height>
+					<texture colordiffuse="$VAR[highlight]">masks/circle.png</texture>
+					<bordertexture border="15" infill="false" colordiffuse="$VAR[highlight]">shadow.png</bordertexture>
+					<bordersize>15</bordersize>
+				</control>
+				<control type="image">
+					<left>59</left>
+					<top>4,8</top>
+					<width>210</width>
+					<height>210</height>
+					<texture colordiffuse="$VAR[highlight]">masks/circle.png</texture>
+					<bordersize>15</bordersize>
+					<visible>$PARAM[focused]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				
+						
+					
+				<control type="textbox">
+					<left>40</left>
+					<top>204</top>
+					<width>242</width>
+					<height>120</height>
+					<font>dialogTitle</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>$VAR[selected]</textcolor>
+					<autoscroll time="2000" delay="3000" repeat="5000">$PARAM[focused]</autoscroll>
+					<visible>!ListItem.IsParentFolder</visible>
+				</control>
+				<control type="image">
+					<left>64</left>
+					<top>9</top>
+					<width>200</width>
+					<height>200</height>
+					<texture fallback="DefaultMovies.png" diffuse="masks/circle.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<bordertexture border="15" infill="false" colordiffuse="$VAR[highlight]">shadow.png</bordertexture>
+					<bordersize>15</bordersize>
+				</control>
+			</control>
+                    
+			
+					
+				</focusedlayout>
+				
+
+
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="200" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
+			</control>
+            
+		</definition>
+	</include>
+
+
     <include name="CategoryLabel1">
 		<param name="visible">true</param>
 		<param name="item_treshold">0</param>

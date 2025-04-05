@@ -125,7 +125,7 @@
 				            <ondown>5100</ondown>
 				            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.themoviedb.helper/?info=watch_providers&amp;tmdb_type=tv&quot;,return)</onclick>
 			            </control>
-						<include content="WidgetListPoster">
+						<include content="WidgetListPosterProvider">
 							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=watch_providers&amp;tmdb_type=tv"/>
 							<param name="widget_header" value="Anbieter"/>
 							<param name="widget_target" value="videos"/>

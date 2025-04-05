@@ -1,3 +1,5 @@
+Version 2.0.153 Anbieter Aussehen in Rund geändert
+
 Version 2.0.152 Filme/Serien Empfehlungen nach kürzlich und meist gesehene hinzugefügt ( Dafür ist ein Trakt Account nötig)
 
 Version 2.0.151 Programmübersicht angepasst, Uhrzeit hinzugefügt
