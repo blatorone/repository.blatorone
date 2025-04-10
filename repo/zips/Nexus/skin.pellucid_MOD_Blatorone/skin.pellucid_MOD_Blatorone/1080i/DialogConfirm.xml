@@ -14,17 +14,17 @@
             <include>modalDialogInOut</include>
             <control type="image">
                 <posx>-60</posx>
-                <posy>-12</posy>
+                <posy>20</posy>
                 <width>650</width>
                 <height>400</height>
                 <texture>colors/black.png</texture>
                 <colordiffuse>black</colordiffuse>
                 <aspectratio>stretch</aspectratio>
-            </control>
+            </control> 
             <control type="image">
                 <visible>control.isvisible(12)</visible>
                 <posx>-60</posx>
-                <posy>385</posy>
+                <posy>295</posy>
                 <width>650</width>
                 <height>120</height>
                 <texture>colors/black.png</texture>
@@ -35,7 +35,7 @@
             <control type="image">
                 <visible>!String.IsEmpty(Control.GetLabel(1))</visible>
                 <posx>-60</posx>
-                <posy>-12</posy>
+                <posy>-92</posy>
                 <width>650</width>
                 <height>115</height>
                 <texture>masks/discsurface.png</texture>
@@ -91,7 +91,7 @@
             <control type="label" id="1">
                 <description>heading</description>
                 <posx>10</posx>
-                <posy>20</posy>
+                <posy>-65</posy>
                 <width>8-col-gutter</width>
                 <height>2-row</height>
                 <wrapmultiline>true</wrapmultiline>
@@ -101,9 +101,9 @@
             
             <control type="textbox" id="9">
                 <posx>10</posx>
-                <posy>110</posy>
+                <posy>40</posy>
                 <width>8-col-gutter</width>
-                <height>124</height>
+                <height>224</height>
                 <font>textbox</font>
                 <textcolor>textActive</textcolor>
                 <autoscroll delay="3000" time="2000" repeat="5000"/>
