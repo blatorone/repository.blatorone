@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1192">
+    <onload>AlarmClock(hidemenu,action(close),00:02,true)</onload>
+	<onunload>CancelAlarm(hidemenu,true)</onunload>
+                
+    <controls>
+    <control type="image">
+                    
+	                <posx></posx>
+	                <posy></posy>
+	                <width>fullscreenWidth</width>
+	                <height>fullscreenHeight</height>
+	                <texture>special://skin/extras/intro.png</texture>
+	                <colordiffuse>ffffffff</colordiffuse>
+	                <aspectratio>stretch</aspectratio>
+	            </control>
+    </controls>
+</window>
