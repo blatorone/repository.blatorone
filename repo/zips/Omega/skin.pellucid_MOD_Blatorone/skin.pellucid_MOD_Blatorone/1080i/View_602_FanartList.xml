@@ -314,7 +314,18 @@
 						<bordertexture border="0" infill="false" colordiffuse="$VAR[highlight]">shadow.png</bordertexture>
 					</control>
                     <control type="image">
-						<visible>control.IsVisible(602) + String.IsEqual(Container.Viewmode,$LOCALIZE[31311])</visible>
+						<visible>control.IsVisible(602) + String.IsEqual(Container.Viewmode,$LOCALIZE[31311]) + !String.IsEmpty(ListItem.Art(poster))</visible>
+						<posx>1250</posx>
+						<posy>200</posy>
+						<width>650</width>
+						<height>500</height>
+						<aspectratio>stretch</aspectratio>
+						<texture fallback="defaultposter.png">$INFO[listitem.art(poster)]</texture>
+						<bordersize>5</bordersize>
+						
+					</control>
+                    <control type="image">
+						<visible>control.IsVisible(602) + String.IsEqual(Container.Viewmode,$LOCALIZE[31311]) + String.IsEmpty(ListItem.Art(poster))</visible>
 						<posx>1250</posx>
 						<posy>200</posy>
 						<width>650</width>

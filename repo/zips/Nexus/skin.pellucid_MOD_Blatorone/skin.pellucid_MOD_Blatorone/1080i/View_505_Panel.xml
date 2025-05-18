@@ -73,7 +73,7 @@
 						<width>290</width>
 						<height>450</height>
 						<aspectratio>stretch</aspectratio>
-						<texture fallback="defaultposter.png">$INFO[listitem.icon]</texture>
+						<texture fallback="defaultposter.png">$INFO[listitem.art(poster)]</texture>
 						<bordersize>6</bordersize>
 						<colordiffuse>overlay</colordiffuse>
 					</control>
@@ -84,7 +84,7 @@
 						<width>290</width>
 						<height>450</height>
 						<aspectratio>stretch</aspectratio>
-						<texture>$INFO[ListItem.icon]</texture>
+						<texture>$INFO[listitem.art(poster)]</texture>
 						<bordersize>6</bordersize>
 						<colordiffuse>99ffffff</colordiffuse>
 					</control>
@@ -283,7 +283,7 @@
 							<width>290</width>
 							<height>450</height>
 							<aspectratio>stretch</aspectratio>
-							<texture fallback="defaultposter.png">$INFO[listitem.icon]</texture>
+							<texture fallback="defaultposter.png">$INFO[listitem.art(poster)]</texture>
 							<bordersize>5</bordersize>
 							<colordiffuse>overlay</colordiffuse>
 						</control>
@@ -293,7 +293,7 @@
 							<width>290</width>
 							<height>450</height>
 							<aspectratio>stretch</aspectratio>
-							<texture fallback="defaultposter.png">$INFO[listitem.icon]</texture>
+							<texture fallback="defaultposter.png">$INFO[listitem.art(poster)]</texture>
 							<bordersize>6</bordersize>
 						</control>
 						<control type="textbox">

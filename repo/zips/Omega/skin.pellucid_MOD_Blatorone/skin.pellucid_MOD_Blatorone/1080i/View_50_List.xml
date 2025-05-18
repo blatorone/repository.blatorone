@@ -17,13 +17,25 @@
             <onup>50</onup>
             <pagecontrol>61</pagecontrol>
             <itemlayout width="24-col" height="2-row" condition='!Skin.HasSetting(touch)'>
+            
                 <control type="image">
+                    <visible>!String.IsEmpty(ListItem.Art(poster))</visible>
                     <posx>0</posx>
                     <posy>3</posy>
                     <width>66</width>
                     <height>66</height>
                     <aspectratio scalediffuse="false">stretch</aspectratio>
                     <texture fallback="kodilogo.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
+					<colordiffuse>overlay</colordiffuse>
+                </control>
+                 <control type="image">
+                    <visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+                    <posx>0</posx>
+                    <posy>3</posy>
+                    <width>66</width>
+                    <height>66</height>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
+                    <texture fallback="kodilogo.png" diffuse="masks/circle.png" border="0">$INFO[listitem.art(poster)]</texture>
 					<colordiffuse>overlay</colordiffuse>
                 </control>
                 <control type="image">
@@ -76,12 +88,23 @@
             </itemlayout>
             <itemlayout width="20-col" height="3-row" condition='Skin.HasSetting(touch)'>
                 <control type="image">
+                    <visible>String.IsEmpty(ListItem.Art(poster))</visible>
                     <posx>0</posx>
                     <posy>3</posy>
                     <width>100</width>
                     <height>100</height>
                     <aspectratio scalediffuse="false">stretch</aspectratio>
                     <texture fallback="kodilogo.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
+					<colordiffuse>overlay</colordiffuse>
+                </control>
+                <control type="image">
+                    <visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+                    <posx>0</posx>
+                    <posy>3</posy>
+                    <width>100</width>
+                    <height>100</height>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
+                    <texture fallback="kodilogo.png" diffuse="masks/circle.png" border="0">$INFO[listitem.art(poster)]</texture>
 					<colordiffuse>overlay</colordiffuse>
                 </control>
                 <control type="image">
@@ -134,6 +157,7 @@
             </itemlayout>
             <focusedlayout width="24-col" height="2-row" condition='!Skin.HasSetting(touch)'>
                 <control type="image">
+                    <visible>String.IsEmpty(ListItem.Art(poster))</visible>
                     <posx>0</posx>
                     <posy>3</posy>
                     <width>66</width>
@@ -145,6 +169,21 @@
                         <effect type="rotatey" end="360" center="33" tween="back" easing="out" time="1000"/>
                     </animation>
                 </control>
+                <control type="image">
+                    <visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+                    <posx>0</posx>
+                    <posy>3</posy>
+                    <width>66</width>
+                    <height>66</height>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
+                    <texture fallback="kodilogo.png" diffuse="masks/circle.png" border="0">$INFO[listitem.art(poster)]</texture>
+                    <animation type="focus" loop="false" reversible="false">
+                        <effect type="fade" time="500"/>
+                        <effect type="rotatey" end="360" center="33" tween="back" easing="out" time="1000"/>
+                    </animation>
+                </control>
+
+                
                 <control type="image">
                     <posx>1-col</posx>
                     <posy>0</posy>
@@ -195,12 +234,26 @@
             </focusedlayout>
             <focusedlayout width="20-col" height="5-row" condition='Skin.HasSetting(touch)'>
                 <control type="image">
+                    <visible>String.IsEmpty(ListItem.Art(poster))</visible>
                     <posx>0</posx>
                     <posy>3</posy>
                     <width>100</width>
                     <height>100</height>
                     <aspectratio scalediffuse="false">stretch</aspectratio>
                     <texture fallback="kodilogo.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
+                    <animation type="focus" loop="false" reversible="false">
+                        <effect type="fade" time="500"/>
+                        <effect type="rotatey" end="360" center="50" tween="back" easing="out" time="1000"/>
+                    </animation>
+                </control>
+                <control type="image">
+                    <visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+                    <posx>0</posx>
+                    <posy>3</posy>
+                    <width>100</width>
+                    <height>100</height>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
+                    <texture fallback="kodilogo.png" diffuse="masks/circle.png" border="0">$INFO[ListItem.Art(poster)]</texture>
                     <animation type="focus" loop="false" reversible="false">
                         <effect type="fade" time="500"/>
                         <effect type="rotatey" end="360" center="50" tween="back" easing="out" time="1000"/>

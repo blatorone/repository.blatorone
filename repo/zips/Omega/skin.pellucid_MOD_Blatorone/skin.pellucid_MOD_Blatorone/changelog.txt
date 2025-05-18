@@ -1,3 +1,5 @@
+Version 2.0.157 View Bilder werden nun in allen Addons angezeigt, StartIntro Deaktivieren ist wieder möglich
+
 Version 2.0.156 Icons geändert und Startup Bild geändert
 
 Version 2.0.155 Anpassung an dialog.Confirm vorgenommen

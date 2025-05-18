@@ -482,15 +482,15 @@
                     <onclick>Skin.Togglesetting(Further_apart)</onclick>
                     <selected>Skin.HasSetting(Further_apart)</selected>
                 </control>
-                <control type="radiobutton" id="31">
-                    <visible>Container(8000).Hasfocus(4)</visible>
+                 <control type="radiobutton" id="31">
+                    <visible>Container(8000).Hasfocus(1)</visible>
                     <description>Intro enable</description>
                     <width>14-col</width>
                     <label>31293</label>
                     <onclick>Skin.Togglesetting(StartupIntro)</onclick>
                     <onclick condition="Skin.HasSetting(StartupIntro)">Skin.SetString(StartupIntro,special://skin/extras/intro.mov)</onclick>
-                    <onclick condition="!Skin.HasSetting(StartupIntro)">Skin.Reset(StartupIntro)</onclick>
-                    <selected>Skin.HasSetting(StartupIntro)</selected>
+                    <onclick condition="Skin.HasSetting(StartupIntro)">Skin.Reset(StartupIntro)</onclick>
+                    <selected>Skin.HasSetting(StartupIntro)</selected> 
                 </control>
 
                 

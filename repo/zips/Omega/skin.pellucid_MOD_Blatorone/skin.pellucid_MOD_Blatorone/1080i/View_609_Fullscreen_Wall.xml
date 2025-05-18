@@ -77,7 +77,7 @@
 						<width>252</width>
 						<height>372</height>
 						<aspectratio>stretch</aspectratio>
-						<texture>$INFO[ListItem.icon]</texture>
+						<texture>$INFO[listitem.art(poster)]</texture>
 						<bordersize>6</bordersize>
 						
 						<colordiffuse>99ffffff</colordiffuse>
@@ -267,7 +267,7 @@
 						<width>252</width>
 						<height>372</height>
 						<aspectratio>stretch</aspectratio>
-							<texture fallback="defaultposter.png">$INFO[listitem.icon]</texture>
+							<texture fallback="defaultposter.png">$INFO[listitem.art(poster)]</texture>
 							<bordersize>5</bordersize>
 							
 						</control>
