@@ -327,7 +327,7 @@
                 <control type="button" id="34">
 					<visible>Container(8000).Hasfocus(4)</visible>
 					<width>14-col</width>
-                    <label>Addon Einstellungen</label>
+                    <label>31355</label>
 					<onclick>ActivateWindow(10040,"addons://user/",return)</onclick>
                 </control>
                 <control type="radiobutton" id="20">

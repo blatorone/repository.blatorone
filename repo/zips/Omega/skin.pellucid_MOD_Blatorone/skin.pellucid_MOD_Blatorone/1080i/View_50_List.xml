@@ -19,7 +19,7 @@
             <itemlayout width="24-col" height="2-row" condition='!Skin.HasSetting(touch)'>
             
                 <control type="image">
-                    <visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+                    <visible>String.IsEmpty(ListItem.Art(poster))</visible>
                     <posx>0</posx>
                     <posy>3</posy>
                     <width>66</width>
