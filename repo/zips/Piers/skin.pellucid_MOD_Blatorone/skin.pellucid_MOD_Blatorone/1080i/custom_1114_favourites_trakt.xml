@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="1114" type="window">
+    <defaultcontrol always="true">9600</defaultcontrol>
+    <controls>
+        <!--background-->
+        <control type="image">
+			    		<include>ViewAnimation</include>
+	            		<include>dimensionsFullscreen</include>
+	            		<texture fallback="$INFO[listitem.thumb]">$INFO[listitem.art(fanart)]</texture>
+	            		<colordiffuse>FF555555</colordiffuse>
+	            		<aspectratio>scale</aspectratio>
+						<fadetime>250</fadetime>
+	        </control>
+			<control type="image">
+						<visible>String.IsEmpty(listitem.art(fanart)) + String.IsEmpty(listitem.thumb)</visible>
+			    		<include>ViewAnimation</include>
+	            		<include>dimensionsFullscreen</include>
+	            		<texture>backgroundimage.jpg</texture>
+	            		<colordiffuse>FF555555</colordiffuse>
+	            		<aspectratio>scale</aspectratio>
+						<fadetime>250</fadetime>
+	        </control>
+        
+        
+         <!--Backbutton touchscreen-->
+        <include>Backbutton</include>
+        <control type="group">
+            <posx>0</posx>
+            <posy>0</posy>
+            <!--animations-->
+            <include>fadeInOut</include>
+            
+            <control type="image">
+                    			<posx>-450</posx>
+                    			<posy>-3</posy>
+                    			<width>fullscreenwidth</width>
+                    			<height>136</height>
+                    			<texture>masks/discsurface30%.png</texture>
+                    			<colordiffuse>$VAR[highlight_Shadow]</colordiffuse>
+                    			<aspectratio>stretch</aspectratio>
+                			</control>
+            <!--title-->
+            <control type="label">
+                <posx>24</posx>
+                <posy>0</posy>
+                <width>14-col</width>
+                <height>2-row</height>
+                <font>sectionTitle</font>
+                <label>$VAR[listTitle]</label>
+                <textcolor>$VAR[Home]</textcolor>
+                <shadowcolor></shadowcolor>
+            </control>
+			<control type="label">
+                <posx>35</posx>
+                <posy>45</posy>
+                <width>14-col</width>
+                <height>2-row</height>
+                <font>dialogTitle</font>
+                <label>$VAR[listSubTitle]</label>
+                <textcolor>$VAR[selected]</textcolor>
+                <shadowcolor></shadowcolor>
+            </control>
+			<!--Battery level-->
+        <include>Battery</include>
+		</control>
+            
+            <!--options-->
+
+
+
+					 <control type="panel" id="9015">
+                <posx>825</posx>
+                <posy>25</posy>
+                <width>9-col</width>
+                <height>12-row</height>
+                <itemgap>0</itemgap>
+                <onup>5700</onup>
+				<ondown>5100</ondown>
+                <itemlayout width="324" height="2-row">
+					
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1-col</width>
+                        <height>2-row</height>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <font>symbolLarge</font>
+                        <textcolor>$VAR[Home]</textcolor>
+                        <label>$INFO[ListItem.label2]</label>
+                    </control>
+                    <control type="label">
+                        <posx>1-col-indent</posx>
+                        <posy>0</posy>
+                        <width>224</width>
+                        <height>2-row</height>
+                        <aligny>center</aligny>
+						<align>left</align>
+                        <font>dialogTitle</font>
+                        <textcolor>$VAR[HOME]</textcolor>
+                        <label>$INFO[ListItem.label]</label>
+                    </control>
+					 
+					
+                </itemlayout>
+                <focusedlayout width="324" height="2-row">
+                    
+                   
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1-col</width>
+                        <height>2-row</height>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <font>symbolLarge</font>
+                        <textcolor>$VAR[selected]</textcolor>
+                        <label>$INFO[ListItem.label2]</label>
+                        <shadowcolor></shadowcolor>
+                    </control>
+                    <control type="label">
+                        <posx>1-col-indent</posx>
+                        <posy>0</posy>
+                        <width>224</width>
+                        <height>2-row</height>
+                        <aligny>center</aligny>
+						<align>left</align>
+                        <font>dialogTitle</font>
+                        <textcolor>$VAR[selected]</textcolor>
+                        <label>$INFO[ListItem.label]</label>
+                    </control>
+					
+					
+                </focusedlayout>
+                <content>
+                    <item>
+                        <label>184</label>
+                        <label2></label2>
+                        <thumb></thumb>
+                        <onclick>ReloadSkin()</onclick>
+                    </item>
+                </content>
+            </control>
+					<control type="grouplist" id="9600">
+                         <posx>0</posx>
+                            <posy>row-4-begin</posy>
+                            <!--animations-->
+                            <include>OpenClose_FadeSlide_Left</include>
+							<onup>9015</onup>
+                    <control type="label" id="9011">
+				            <font>dialogTitle</font>
+				            
+				            <include>Text_Movie_Series_width</include>
+                
+				            <align>left</align>
+				            <textoffsetx>30</textoffsetx>
+				            <textcolor>textActive</textcolor>
+				            <focusedcolor>$VAR[selected]</focusedcolor>
+				            
+                            <texturefocus></texturefocus>
+                            <alttexturefocus></alttexturefocus>
+                            <alttexturenofocus></alttexturenofocus>
+				            <label>[COLOR $VAR[highlight]]Film Favoriten:[/COLOR] [B]$INFO[container(5100).Listitem.label][/B]</label>
+				            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.themoviedb.helper/?info=trakt_favorites&amp;list_name=Filme%20Favoriten&amp;tmdb_type=movie&quot;,return)</onclick>
+			            	<visible>!Container(5100).IsUpdating + integer.IsGreater(Container(5100).NumItems,0)</visible>
+						</control>
+						<include content="WidgetListPoster">
+							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trakt_favorites&amp;list_name=Filme%20Favoriten&amp;tmdb_type=movie"/>
+							<param name="widget_header" value=""/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="5100"/>
+						</include>
+						
+						
+						<control type="label" id="9013">
+				            <font>dialogTitle</font>
+				            
+				            <include>Text_Movie_Series_width</include>
+                
+				            <align>left</align>
+				            <textoffsetx>30</textoffsetx>
+				            <textcolor>textActive</textcolor>
+				            <focusedcolor>$VAR[selected]</focusedcolor>
+				            <focusedcolor></focusedcolor>
+				            <texturefocus></texturefocus>
+                            
+                            <alttexturefocus></alttexturefocus>
+                            <alttexturenofocus></alttexturenofocus>
+				            <label>[COLOR $VAR[highlight]]Serien Favoriten:[/COLOR] [B]$INFO[container(5300).Listitem.label][/B]</label>
+				            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.themoviedb.helper/?info=trakt_favorites&amp;list_name=Serien%20Favoriten&amp;tmdb_type=tv&quot;,return)</onclick>
+			            	<visible>!Container(5300).IsUpdating + integer.IsGreater(Container(5300).NumItems,0)</visible>
+						</control>
+                        <include content="WidgetListPoster">
+							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trakt_favorites&amp;list_name=Serien%20Favoriten&amp;tmdb_type=tv"/>
+							<param name="widget_header" value="Serien Favoriten"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="5300"/>
+						</include>
+						
+						<control type="label" id="9017">
+				            <font>dialogTitle</font>
+				            
+				            <include>Text_Movie_Series_width</include>
+                
+				            <align>left</align>
+				            <textoffsetx>30</textoffsetx>
+				            <textcolor>textActive</textcolor>
+				            <focusedcolor>$VAR[selected]</focusedcolor>
+				            <focusedcolor></focusedcolor>
+				            <texturefocus></texturefocus>
+                            
+                            <alttexturefocus></alttexturefocus>
+                            <alttexturenofocus></alttexturenofocus>
+				            <label>[COLOR $VAR[highlight]]Allgemeine Standard Favoriten:[/COLOR] [B]$INFO[container(5700).Listitem.label][/B]</label>
+				            <onclick>ActivateWindow(FavouritesBrowser,return)</onclick>
+			            	<visible>!Container(5700).IsUpdating + integer.IsGreater(Container(5700).NumItems,0)</visible>
+						</control>
+						<include content="WidgetListPoster">
+							<param name="content_path" value="favourites://"/>
+							<param name="widget_header" value="Allgemeine Standard Favoriten"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="5700"/>
+						</include> 
+                        </control>
+        <!--mini window-->
+        <include>miniVideoPlayer</include>
+	</controls>
+</window>

@@ -1,3 +1,5 @@
+Version 2.0.159 Anpassungen für Piers, Letztes vorrausichtliches Update für Nexus
+
 Version 2.0.158 Installation von Addons nun möglich, fehler beseitigt ansicht Liste icons darstellung
 
 Version 2.0.157 View Bilder werden nun in allen Addons angezeigt, StartIntro Deaktivieren ist wieder möglich

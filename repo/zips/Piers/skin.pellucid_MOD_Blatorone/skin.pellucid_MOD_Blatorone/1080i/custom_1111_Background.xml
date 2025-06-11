@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="1111" type="window">
+    <defaultcontrol always="true">200</defaultcontrol>
+    <controls>
+        <!--background-->
+        <include>globalBackground</include>
+        <control type="multiimage">
+					<visible>String.IsEmpty(Skin.String(homeBackgroundimage))</visible>
+					<animation effect="fade" start="0" end="100" time="1000">WindowOpen</animation>
+					<include>dimensionsFullscreen</include>
+					<imagepath>$VAR[homeBackgroundLocation]</imagepath>
+					<timeperimage>45000</timeperimage>
+					<fadetime>4000</fadetime>
+					<pauseatend>10000</pauseatend>
+					<randomize>true</randomize>
+					<loop>yes</loop>
+					<aspectratio>scale</aspectratio>
+					<colordiffuse>99ffffff</colordiffuse>
+				</control>
+				<control type="image">
+					<animation effect="fade" start="0" end="100" time="1000">WindowOpen</animation>
+					<include>dimensionsFullscreen</include>
+					<texture>$VAR[homeBackgroundLocation]</texture>
+					<fadetime>200</fadetime>
+					<aspectratio>keep</aspectratio>
+				</control>
+        <!--Battery level-->
+        <include>Battery</include>
+         <!--Backbutton touchscreen-->
+        <include>Backbutton</include>
+        <control type="group">
+            <posx>490</posx>
+            <posy>row-5-begin</posy>
+            <!--animations-->
+            <include>fadeInOut</include>
+            <control type="image">
+                <posx>-12</posx>
+                <posy>-12</posy>
+                <width>1030</width>
+                <height>720</height>
+                <texture>colors/black.png</texture>
+                <colordiffuse>overlay</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>14-col</width>
+                <height>2-row</height>
+                <texture>masks/discsurface.png</texture>
+                <colordiffuse>$VAR[highlight]</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <!--title-->
+            <control type="label">
+                <posx>24</posx>
+                <posy>0</posy>
+                <width>14-col</width>
+                <height>2-row</height>
+                <font>dialogTitle</font>
+                <label>$LOCALIZE[33068] $LOCALIZE[5]</label>
+                <textcolor>$VAR[Home]</textcolor>
+                <shadowcolor></shadowcolor>
+            </control>
+            
+            <!--options-->
+            
+            <control type="grouplist" id="200">
+                <posx>0</posx>
+                <posy>84</posy>
+                <width>14-col</width>
+                <height>17-row</height>
+                <onleft>8000</onleft>
+                <itemgap>0</itemgap>
+                <orientation>vertical</orientation>
+                <control type="label" id="1">
+                    <description>Set home background image directory</description>
+                    <width>14-col</width>
+                    <height>2-col</height>
+                    <aligny>center</aligny>
+					<align>center</align>
+                    <label>[COLOR $VAR[highlight]]--------------------------------------------------------------------------[/COLOR][CR]$LOCALIZE[31269][COLOR $VAR[highlight]][CR]--------------------------------------------------------------------------[/COLOR]</label>
+                    <font>dialogTitle</font>
+                     
+                </control>
+                <control type="button" id="2">
+                    <description>Set home background image directory</description>
+                    <width>14-col</width>
+                    <label>$LOCALIZE[31267]</label>
+                   <label2>$INFO[Skin.String(homeBackgroundpath)]</label2> 
+                    <onclick>Skin.SetPath(homeBackgroundpath)</onclick>
+                    <onclick>Skin.Reset(homeBackgroundimage)</onclick>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="3">
+                    <description>Set home background image directory</description>
+                    <width>14-col</width>
+                    <label>$LOCALIZE[31266]</label>
+                    <label2>$INFO[Skin.String(homeBackgroundimage)]</label2>
+                    <onclick>Skin.SetImage(homeBackgroundimage)</onclick>
+                    <onclick>Skin.Reset(homeBackgroundpath)</onclick>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="4">
+                    <description>Reset home background image directory</description>
+                    <width>14-col</width>
+                    <label>31268</label>
+                    <onclick>Skin.Reset(homeBackgroundimage)</onclick>
+                    <onclick>Skin.Reset(homeBackgroundpath)</onclick>
+                    <textwidth>8-col</textwidth>
+                </control>
+
+                <control type="label" id="5">
+                    <description>Set settingsBackground image directory</description>
+                    <width>14-col</width>
+                    <height>2-col</height>
+                    <aligny>center</aligny>
+					<align>center</align>
+                    <label>[COLOR $VAR[highlight]]--------------------------------------------------------------------------[/COLOR][CR]$LOCALIZE[31270][COLOR $VAR[highlight]][CR]--------------------------------------------------------------------------[/COLOR]</label>
+                    <font>dialogTitle</font>
+                    
+                </control>
+                <control type="button" id="6">
+                    <description>Set settingsBackground image directory</description>
+                    <width>14-col</width>
+                    <label>$LOCALIZE[31267]</label>
+                    <label2>$INFO[Skin.String(settingsBackgroundpath)]</label2>
+                    <onclick>Skin.SetPath(settingsBackgroundpath)</onclick>
+                    <onclick>Skin.Reset(settingsBackgroundimage)</onclick>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="7">
+                    <description>Set settingsBackground image directory</description>
+                    <width>14-col</width>
+                    <label>$LOCALIZE[31266]</label>
+                    <label2>$INFO[Skin.String(settingsBackgroundimage)]</label2>
+                    <onclick>Skin.SetImage(settingsBackgroundimage)</onclick>
+                    <onclick>Skin.Reset(settingsBackgroundpath)</onclick>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="8">
+                    <description>Reset settingsBackground image directory</description>
+                    <width>14-col</width>
+                    <label>31268</label>
+                    <onclick>Skin.Reset(settingsBackgroundpath)</onclick>
+                    <onclick>Skin.Reset(settingsBackgroundimage)</onclick>
+                    <textwidth>8-col</textwidth>
+                </control>
+
+                <control type="label" id="9">
+                    <description>Set settingscategorysettings background image directory</description>
+                    <width>14-col</width>
+                    <height>2-col</height>
+                    <aligny>center</aligny>
+					<align>center</align>
+                    <label>[COLOR $VAR[highlight]]--------------------------------------------------------------------------[/COLOR][CR]$LOCALIZE[31271][COLOR $VAR[highlight]][CR]--------------------------------------------------------------------------[/COLOR]</label>
+                    <font>dialogTitle</font>
+                    
+                </control>
+                <control type="button" id="10">
+                    <description>Set SettingsCategoryBackground image directory</description>
+                    <width>14-col</width>
+                    <label>$LOCALIZE[31267]</label>
+                    <label2>$INFO[Skin.String(SettingsCategoryBackgroundpath)]</label2>
+                    <onclick>Skin.SetPath(SettingsCategoryBackgroundpath)</onclick>
+                    <onclick>Skin.Reset(SettingsCategoryBackgroundimage)</onclick>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="11">
+                    <description>Set SettingsCategoryBackground image directory</description>
+                    <width>14-col</width>
+                    <label>$LOCALIZE[31266]</label>
+                    <label2>$INFO[Skin.String(SettingsCategoryBackgroundimage)]</label2>
+                    <onclick>Skin.SetImage(SettingsCategoryBackgroundimage)</onclick>#
+                    <onclick>Skin.Reset(SettingsCategoryBackgroundpath)</onclick>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="12">
+                    <description>Reset SettingsCategoryBackground image directory</description>
+                    <width>14-col</width>
+                    <label>31268</label>
+                    <onclick>Skin.Reset(SettingsCategoryBackgroundpath)</onclick>
+                    <onclick>Skin.Reset(SettingsCategoryBackgroundimage)</onclick>
+                    <textwidth>8-col</textwidth>
+                </control>
+
+                <control type="label" id="13">
+                    <description>Set DialogAddonSettingsBackground background image directory</description>
+                    <width>14-col</width>
+                    <height>2-col</height>
+                    <aligny>center</aligny>
+					<align>center</align>
+                    <label>[COLOR $VAR[highlight]]--------------------------------------------------------------------------[/COLOR][CR]$LOCALIZE[31272][COLOR $VAR[highlight]][CR]--------------------------------------------------------------------------[/COLOR]</label>
+                    <font>dialogTitle</font>
+                    
+                </control>
+                <control type="button" id="14">
+                    <description>Set DialogAddonSettingsBackground image directory</description>
+                    <width>14-col</width>
+                    <label>$LOCALIZE[31267]</label>
+                    <label2>$INFO[Skin.String(DialogAddonSettingsBackgroundpath)]</label2>
+                    <onclick>Skin.SetPath(DialogAddonSettingsBackgroundpath)</onclick>
+                    <onclick>Skin.Reset(DialogAddonSettingsBackgroundimage)</onclick>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="15">
+                    <description>Set DialogAddonSettingsBackground image directory</description>
+                    <width>14-col</width>
+                    <label>$LOCALIZE[31266]</label>
+                    <label2>$INFO[Skin.String(DialogAddonSettingsBackgroundimage)]</label2>
+                    <onclick>Skin.SetImage(DialogAddonSettingsBackgroundimage)</onclick>
+                    <onclick>Skin.Reset(DialogAddonSettingsBackgroundpath)</onclick>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="16">
+                    <description>Reset DialogAddonSettingsBackground image directory</description>
+                    <width>14-col</width>
+                    <label>31268</label>
+                    <onclick>Skin.Reset(DialogAddonSettingsBackgroundpath)</onclick>
+                    <onclick>Skin.Reset(DialogAddonSettingsBackgroundimage)</onclick>
+                    <textwidth>8-col</textwidth>
+                </control>
+
+                <control type="label" id="17">
+                    <description>Set FileBrowserBackground image directory</description>
+                    <width>14-col</width>
+                    <height>2-col</height>
+                    <aligny>center</aligny>
+					<align>center</align>
+                    <label>[COLOR $VAR[highlight]]--------------------------------------------------------------------------[/COLOR][CR]$LOCALIZE[31273][COLOR $VAR[highlight]][CR]--------------------------------------------------------------------------[/COLOR]</label>
+                    <font>dialogTitle</font>
+                    
+                </control>
+                <control type="button" id="18">
+                    <description>Set FileBrowserBackground image directory</description>
+                    <width>14-col</width>
+                    <label>$LOCALIZE[31267]</label>
+                    <label2>$INFO[Skin.String(FileBrowserBackgroundpath)]</label2>
+                    <onclick>Skin.SetPath(FileBrowserBackgroundpath)</onclick>
+                    <onclick>Skin.Reset(FileBrowserBackgroundimage)</onclick>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="19">
+                    <description>Set FileBrowserBackground image directory</description>
+                    <width>14-col</width>
+                    <label>$LOCALIZE[31266]</label>
+                    <label2>$INFO[Skin.String(FileBrowserBackgroundimage)]</label2>
+                    <onclick>Skin.SetImage(FileBrowserBackgroundimage)</onclick>
+                    <onclick>Skin.Reset(FileBrowserBackgroundpath)</onclick>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="20">
+                    <description>Reset FileBrwoserBackground image directory</description>
+                    <width>14-col</width>
+                    <label>31268</label>
+                    <onclick>Skin.Reset(FileBrowserBackgroundpath)</onclick>
+                    <onclick>Skin.Reset(FileBrowserBackgroundimage)</onclick>
+                    <textwidth>8-col</textwidth>
+                </control>
+
+                <control type="label" id="21">
+                    <description>Set FileManagerBackground image directory</description>
+                    <width>14-col</width>
+                    <height>2-col</height>
+                    <aligny>center</aligny>
+					<align>center</align>
+                    <label>[COLOR $VAR[highlight]]--------------------------------------------------------------------------[/COLOR][CR]$LOCALIZE[31274][COLOR $VAR[highlight]][CR]--------------------------------------------------------------------------[/COLOR]</label>
+                    <font>dialogTitle</font>
+                    
+                </control>
+                <control type="button" id="22">
+                    <description>Set FileManagerBackground image directory</description>
+                    <width>14-col</width>
+                    <label>$LOCALIZE[31267]</label>
+                    <label2>$INFO[Skin.String(FileManagerBackgroundpath)]</label2>
+                    <onclick>Skin.SetPath(FileManagerBackgroundpath)</onclick>
+                    <onclick>Skin.Reset(FileManagerBackgroundimage)</onclick>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="23">
+                    <description>Set FileManagerBackground image directory</description>
+                    <width>14-col</width>
+                    <label>$LOCALIZE[31266]</label>
+                    <label2>$INFO[Skin.String(FileManagerBackgroundimage)]</label2>
+                    <onclick>Skin.SetImage(FileManagerBackgroundimage)</onclick>
+                    <onclick>Skin.Reset(FileManagerBackgroundpath)</onclick>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="24">
+                    <description>Reset FileManagerBackground image directory</description>
+                    <width>14-col</width>
+                    <label>31268</label>
+                    <onclick>Skin.Reset(FileManagerBackgroundpath)</onclick>
+                    <onclick>Skin.Reset(FileManagerBackgroundimage)</onclick>
+                    <textwidth>8-col</textwidth>
+                </control>
+
+                <control type="label" id="25">
+                    <description>Set SkinSettingsBackground image directory</description>
+                    <width>14-col</width>
+                    <height>2-col</height>
+                    <aligny>center</aligny>
+					<align>center</align>
+                    <label>[COLOR $VAR[highlight]]--------------------------------------------------------------------------[/COLOR][CR]$LOCALIZE[31275][COLOR $VAR[highlight]][CR]--------------------------------------------------------------------------[/COLOR]</label>
+                    <font>dialogTitle</font>
+                     
+                </control>
+                <control type="button" id="26">
+                    <description>Set home background image directory</description>
+                    <width>14-col</width>
+                    <label>$LOCALIZE[31267]</label>
+                    <label2>$INFO[Skin.String(SkinSettingsBackgroundpath)]</label2>
+                    <onclick>Skin.SetPath(SkinSettingsBackgroundpath)</onclick>
+                    <onclick>Skin.Reset(SkinSettingsBackgroundimage)</onclick>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="27">
+                    <description>Set home background image directory</description>
+                    <width>14-col</width>
+                    <label>$LOCALIZE[31266]</label>
+                    <label2>$INFO[Skin.String(SkinSettingsBackgroundimage)]</label2>
+                    <onclick>Skin.SetImage(SkinSettingsBackgroundimage)</onclick>
+                    <onclick>Skin.Reset(SkinSettingsBackgroundpath)</onclick>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="28">
+                    <description>Reset home background image directory</description>
+                    <width>14-col</width>
+                    <label>31268</label>
+                    <onclick>Skin.Reset(SkinSettingsBackgroundpath)</onclick>
+                    <onclick>Skin.Reset(SkinSettingsBackgroundimage)</onclick>
+                </control>
+
+                <control type="label" id="29">
+                    <description>Set SettingsSystemInfoBackground image directory</description>
+                    <width>14-col</width>
+                    <height>2-col</height>
+                    <aligny>center</aligny>
+					<align>center</align>
+                    <label>[COLOR $VAR[highlight]]--------------------------------------------------------------------------[/COLOR][CR]$LOCALIZE[31276][COLOR $VAR[highlight]][CR]--------------------------------------------------------------------------[/COLOR]</label>
+                    <font>dialogTitle</font>
+                    
+                </control>
+                <control type="button" id="30">
+                    <description>Set SettingsSystemInfoBackground image directory</description>
+                    <width>14-col</width>
+                    <label>$LOCALIZE[31267]</label>
+                    <label2>$INFO[Skin.String(SettingsSystemInfoBackgroundpath)]</label2>
+                    <onclick>Skin.SetPath(SettingsSystemInfoBackgroundpath)</onclick>
+                    <onclick>Skin.Reset(SettingsSystemInfoBackgroundimage)</onclick>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="31">
+                    <description>Set SettingsSystemInfoBackground image directory</description>
+                    <width>14-col</width>
+                    <label>$LOCALIZE[31266]</label>
+                    <label2>$INFO[Skin.String(SettingsSystemInfoBackgroundimage)]</label2>
+                    <onclick>Skin.SetImage(SettingsSystemInfoBackgroundimage)</onclick>
+                    <onclick>Skin.Reset(SettingsSystemInfoBackgroundpath)</onclick>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="32">
+                    <description>Reset SettingsSystemInfoBackground image directory</description>
+                    <width>14-col</width>
+                    <label>31268</label>
+                    <onclick>Skin.Reset(SettingsSystemInfoBackgroundpath)</onclick>
+                    <onclick>Skin.Reset(SettingsSystemInfoBackgroundimage)</onclick>
+                    <textwidth>8-col</textwidth>
+                </control>
+
+                <control type="label" id="33">
+                    <description>Set DialogAddonInfoBackground image directory</description>
+                    <width>14-col</width>
+                    <height>2-col</height>
+                    <aligny>center</aligny>
+					<align>center</align>
+                    <label>[COLOR $VAR[highlight]]--------------------------------------------------------------------------[/COLOR][CR]$LOCALIZE[31277][COLOR $VAR[highlight]][CR]--------------------------------------------------------------------------[/COLOR]</label>
+                    <font>dialogTitle</font>
+                    
+                </control>
+                <control type="button" id="34">
+                    <description>Set DialogAddonInfoBackground image directory</description>
+                    <width>14-col</width>
+                    <label>$LOCALIZE[31267]</label>
+                    <label2>$INFO[Skin.String(DialogAddonInfoBackgroundpath)]</label2>
+                    <onclick>Skin.SetPath(DialogAddonInfoBackgroundpath)</onclick>
+                    <onclick>Skin.Reset(DialogAddonInfoBackgroundimage)</onclick>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="35">
+                    <description>Set DialogAddonInfoBackground image directory</description>
+                    <width>14-col</width>
+                    <label>$LOCALIZE[31266]</label>
+                    <label2>$INFO[Skin.String(DialogAddonInfoBackgroundimage)]</label2>
+                    <onclick>Skin.SetImage(DialogAddonInfoBackgroundimage)</onclick>
+                    <onclick>Skin.Reset(DialogAddonInfoBackgroundpath)</onclick>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="36">
+                    <description>Reset DialogAddonInfoBackground image directory</description>
+                    <width>14-col</width>
+                    <label>31268</label>
+                    <onclick>Skin.Reset(DialogAddonInfoBackgroundpath)</onclick>
+                    <onclick>Skin.Reset(DialogAddonInfoBackgroundimage)</onclick>
+                    <textwidth>8-col</textwidth>
+                </control>
+
+                <control type="label" id="37">
+                    <description>Set AddonBrowserBackground image directory</description>
+                    <width>14-col</width>
+                    <height>2-col</height>
+                    <aligny>center</aligny>
+					<align>center</align>
+                    <label>[COLOR $VAR[highlight]]--------------------------------------------------------------------------[/COLOR][CR]$LOCALIZE[31278][COLOR $VAR[highlight]][CR]--------------------------------------------------------------------------[/COLOR]</label>
+                    <font>dialogTitle</font>
+                    
+                </control>
+                <control type="button" id="38">
+                    <description>Set AddonBrowserBackground image directory</description>
+                    <width>14-col</width>
+                    <label>$LOCALIZE[31267]</label>
+                    <label2>$INFO[Skin.String(AddonBrowserBackgroundpath)]</label2>
+                    <onclick>Skin.SetPath(AddonBrowserBackgroundpath)</onclick>
+                    <onclick>Skin.Reset(AddonBrowserBackgroundimage)</onclick>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="39">
+                    <description>Set AddonBrowserBackground image directory</description>
+                    <width>14-col</width>
+                    <label>$LOCALIZE[31266]</label>
+                    <label2>$INFO[Skin.String(AddonBrowserBackgroundimage)]</label2>
+                    <onclick>Skin.SetImage(AddonBrowserBackgroundimage)</onclick>
+                    <onclick>Skin.Reset(AddonBrowserBackgroundpath)</onclick>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="40">
+                    <description>Reset AddonBrowserBackground image directory</description>
+                    <width>14-col</width>
+                    <label>31268</label>
+                    <onclick>Skin.Reset(AddonBrowserBackgroundpath)</onclick>
+                    <onclick>Skin.Reset(AddonBrowserBackgroundimage)</onclick>
+                    <textwidth>8-col</textwidth>
+                </control>
+
+                <!-- not in use
+                <control type="label" id="41">
+                    <description>Set MyProgramsBackground image directory</description>
+                    <width>14-col</width>
+                    <label>[COLOR $VAR[highlight]]$LOCALIZE[31279][/COLOR]</label>
+                    <font>buttonTitle</font>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="42">
+                    <description>Set MyProgramsBackground image directory</description>
+                    <width>14-col</width>
+                    <label>$LOCALIZE[31267]</label>
+                    <label2>$INFO[Skin.String(MyProgramsBackground)]</label2>
+                    <onclick>Skin.SetPath(MyProgramsBackground)</onclick>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="43">
+                    <description>Set MyProgramsBackground image directory</description>
+                    <width>14-col</width>
+                    <label>$LOCALIZE[31266]</label>
+                    <label2>$INFO[Skin.String(MyProgramsBackground)]</label2>
+                    <onclick>Skin.SetImage(MyProgramsBackground)</onclick>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="44">
+                    <description>Reset MyProgramsBackground image directory</description>
+                    <width>14-col</width>
+                    <label>31268</label>
+                    <onclick>Skin.Reset(MyProgramsBackground)</onclick>
+                    <textwidth>8-col</textwidth>
+                </control>
+
+                <control type="label" id="45">
+                    <description>Set musicBackground image directory</description>
+                    <width>14-col</width>
+                    <label>[COLOR $VAR[highlight]]$LOCALIZE[31280][/COLOR]</label>
+                    <font>buttonTitle</font>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="46">
+                    <description>Set musicBackground image directory</description>
+                    <width>14-col</width>
+                    <label>$LOCALIZE[31267]</label>
+                    <label2>$INFO[Skin.String(musicBackground)]</label2>
+                    <onclick>Skin.SetPath(musicBackground)</onclick>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="47">
+                    <description>Set musicBackground image directory</description>
+                    <width>14-col</width>
+                    <label>$LOCALIZE[31266]</label>
+                    <label2>$INFO[Skin.String(musicBackground)]</label2>
+                    <onclick>Skin.SetImage(musicBackground)</onclick>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="48">
+                    <description>Reset musicBackground directory</description>
+                    <width>14-col</width>
+                    <label>31268</label>
+                    <onclick>Skin.Reset(musicBackground)</onclick>
+                    <textwidth>8-col</textwidth>
+                </control>
+                -->
+
+                <control type="label" id="41">
+                    <description>Set musicfullscreenBackground image directory</description>
+                    <width>14-col</width>
+                    <height>2-col</height>
+                    <aligny>center</aligny>
+					<align>center</align>
+                    <label>[COLOR $VAR[highlight]]--------------------------------------------------------------------------[/COLOR][CR]$LOCALIZE[31281][COLOR $VAR[highlight]][CR]--------------------------------------------------------------------------[/COLOR]</label>
+                    <font>dialogTitle</font>
+                     
+                </control>
+                <control type="button" id="42">
+                    <description>Set musicfullscreenBackground image directory</description>
+                    <width>14-col</width>
+                    <label>$LOCALIZE[31267]</label>
+                    <label2>$INFO[Skin.String(musicfullscreenBackgroundpath)]</label2>
+                    <onclick>Skin.SetPath(musicfullscreenBackgroundpath)</onclick>
+                    <onclick>Skin.Reset(musicfullscreenBackgroundimage)</onclick>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="43">
+                    <description>Set musicfullscreenBackground image directory</description>
+                    <width>14-col</width>
+                    <label>$LOCALIZE[31266]</label>
+                    <label2>$INFO[Skin.String(musicfullscreenBackgroundimage)]</label2>
+                    <onclick>Skin.SetImage(musicfullscreenBackgroundimage)</onclick>
+                    <onclick>Skin.Reset(musicfullscreenBackgroundpath)</onclick>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="44">
+                    <description>Reset musicfullscreenBackground image directory</description>
+                    <width>14-col</width>
+                    <label>31268</label>
+                    <onclick>Skin.Reset(musicfullscreenBackgroundpath)</onclick>
+                    <onclick>Skin.Reset(musicfullscreenBackgroundimage)</onclick>
+                    <textwidth>8-col</textwidth>
+                </control>
+
+
+                <control type="label" id="45">
+                    <description>reset all</description>
+                    <width>14-col</width>
+                    <height>2-col</height>
+                    <aligny>center</aligny>
+					<align>center</align>
+                    <label>[COLOR $VAR[highlight]]--------------------------------------------------------------------------[/COLOR][CR]$LOCALIZE[31282][COLOR $VAR[highlight]][CR]--------------------------------------------------------------------------[/COLOR]</label>
+                    <font>dialogTitle</font>
+                    
+                </control>
+                <control type="button" id="46">
+                    <description>Set Background for all image directory</description>
+                    <width>14-col</width>
+                    <label>$LOCALIZE[31267]</label>
+                    <label2>$INFO[Skin.String(all)]</label2>
+                    <onclick>Skin.SetPath(all)</onclick>
+                    <textwidth>8-col</textwidth> 
+                </control>
+                <control type="button" id="47">
+                    <description>Set Background for all image directory</description>
+                    <width>14-col</width>
+                    <label>$LOCALIZE[31266]</label>
+                    <label2>$INFO[Skin.String(all)]</label2>
+                    <onclick>Skin.SetImage(all)</onclick>
+                    <textwidth>8-col</textwidth> 
+                </control>
+
+                <control type="label" id="48">
+                    <description>reset all</description>
+                    <width>14-col</width>
+                    <height>2-col</height>
+                    <aligny>center</aligny>
+					<align>center</align>
+                    <label>[COLOR $VAR[highlight]]--------------------------------------------------------------------------[/COLOR][CR]$LOCALIZE[10041][COLOR $VAR[highlight]][CR]--------------------------------------------------------------------------[/COLOR]</label>
+                    <font>dialogTitle</font>
+                    
+                </control>
+                <control type="button" id="49">
+                    <description>Reset home background image directory</description>
+                    <width>14-col</width>
+                    <label>10041</label>
+                    <onclick>Skin.Reset(homeBackground)</onclick>
+                    <onclick>Skin.Reset(settingsBackground)</onclick>
+                    <onclick>Skin.Reset(SettingsCategoryBackground)</onclick>
+                    <onclick>Skin.Reset(DialogAddonSettingsBackground)</onclick>
+                    <onclick>Skin.Reset(FileBrowserBackground)</onclick>
+                    <onclick>Skin.Reset(FileManagerBackground)</onclick>
+                    <onclick>Skin.Reset(SkinSettingsBackground)</onclick>
+                    <onclick>Skin.Reset(SettingsSystemInfoBackground)</onclick>
+                    <onclick>Skin.Reset(DialogAddonInfoBackground)</onclick>
+                    <onclick>Skin.Reset(AddonBrowserBackground)</onclick>
+                    <onclick>Skin.Reset(MyProgramsBackground)</onclick>
+                    <onclick>Skin.Reset(musicsBackground)</onclick>
+                    <onclick>Skin.Reset(musicfullscreenBackground)</onclick>
+                    <onclick>Skin.Reset(all)</onclick>
+                    <textwidth>8-col</textwidth>
+                </control>
+            </control>
+        </control>
+        <!--debugging-->
+        <include>DebugGrid</include>
+        <control type="label">
+            <include>DialogID</include>
+            <label>Custom_Background.xml</label>
+        </control>
+    </controls>
+</window>

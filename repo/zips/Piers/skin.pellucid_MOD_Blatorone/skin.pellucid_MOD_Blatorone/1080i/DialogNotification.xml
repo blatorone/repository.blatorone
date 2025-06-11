@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <controls>
+        <control type="group">
+            <posx>0</posx>
+            <posy>0</posy>
+            <include condition="!window.isactive(progressdialog)">progressPosition1</include>
+            <include condition="window.isactive(progressdialog)">progressPosition2</include>
+            <!--<visible>!Window.IsActive(fullscreenvideo)</visible>-->
+            <!--animations-->
+            <animation type="Windowclose">
+                <effect type="slide" start="0,0" end="0,-200" time="2500" tween="cubic" easing="out" />
+            </animation>
+            <control type="group">
+                <!--animations-->
+                <animation type="Windowopen">
+                    <effect type="fade" start="0" end="100" time="500"/>
+			        <effect type="slide" start="0,-200" end="0,0" time="500" tween="cubic" easing="out" />
+                   
+                </animation>
+                <control type="image">
+                   <include>notificationposimage</include>
+                    <texture>masks/discsurface.png</texture>
+                    <colordiffuse>FFFFFFFF</colordiffuse>
+                    <bordertexture colordiffuse="$VAR[highlight]">masks/discsurface.png</bordertexture>
+                    <bordersize>6,6,6,6</bordersize>
+                </control>
+                
+               
+                <control type="image" id="400">
+				    <description>avatar</description>
+				    <include>notificationposimageaddon</include>
+				    <top>6</top>
+				    <width>96</width>
+				    <height>96</height>
+				    <aspectratio>stretch</aspectratio>
+                </control>
+                <control type="image" id="400">
+				    <description>avatar</description>
+				    <include>notificationposimageaddon</include>
+				    <top>50</top>
+				    <width>96</width>
+				    <height>96</height>
+				    <aspectratio>stretch</aspectratio>
+                </control>
+                <control type="label" id="401">
+                    <description>heading</description>
+                    <visible>!String.IsEqual(control.getlabel(401),control.getlabel(402))</visible>
+                    <include>notificationposlabel</include>
+                    <posy>0</posy>
+                    <font>itemSubTitle</font>
+                    <width>24-col</width>
+                    <height>60</height>
+                    <aligny>center</aligny>
+                    <label></label>
+                    <textcolor>black</textcolor>
+                    <shadowcolor></shadowcolor>
+                    <!--animations-->
+                    <animation type="Windowopen">
+                        <effect type="fade" start="0" end="100" delay="400" time="400" tween="sine"/>
+                    </animation>
+                </control>
+                <control type="label">
+                    <visible>String.IsEqual(control.getlabel(401),control.getlabel(402))</visible>
+                    <include>notificationposlabel</include>
+                    <posy>0</posy>
+                    <font>itemSubTitle</font>
+                    <width>24-col</width>
+                    <height>60</height>
+                    <aligny>center</aligny>
+                    <label>31023</label>
+                    <textcolor>black</textcolor>
+                    <shadowcolor></shadowcolor>
+                    <!--animations-->
+                    <animation type="Windowopen">
+                        <effect type="fade" start="0" end="100" delay="400" time="400" tween="sine"/>
+                    </animation>
+                </control>
+                <control type="label" id="402">
+                    <description>message</description>
+                    <include>notificationposlabel</include>
+                    <posy>1-row</posy>
+                    <font>dialogTitle</font>
+                    <textcolor>black</textcolor>
+                    <width>24-col</width>
+                    <height>2-row</height>
+                    <aligny>center</aligny>
+                    <label></label>
+                    <scroll>true</scroll>
+                    <scrollspeed>100</scrollspeed>
+                    <!--animations-->
+                    <animation type="Windowopen">
+                        <effect type="fade" start="0" end="100" delay="600" time="400" tween="sine"/>
+                    </animation>
+                </control>
+            </control>
+        </control>
+        <!--debugging-->
+        <include>DebugGrid</include>
+        <control type="label">
+            <include>WindowID</include>
+            <label>DialogNotification.xml</label>
+        </control>
+    </controls>
+</window>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+   
+    <onload condition="String.IsEmpty(Window(Home).Property(TMDbHelper.TraktIsAuth))">ReplaceWindow(1116)</onload>
+    <onload condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.TraktIsAuth))">ReplaceWindow(1114)</onload>
+    
+    <controls>
+        <!--debugging-->
+        <include>DebugGrid</include>
+        <control type="label">
+            <include>WindowID</include>
+            <label>MyFavourites.xml</label>
+        </control>
+    </controls>
+</window>
