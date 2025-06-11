@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="repository.blatorone" name="Blatorone Repository" provider-name="blatorone" version="1.0.11">
+<addon id="repository.blatorone" name="Blatorone Repository" provider-name="blatorone" version="1.0.12">
 	    <extension point="xbmc.addon.repository" name="Blatorone repo">
             <dir>
                 <info compressed="false">https://blatorone.github.io/repository.blatorone/repo/addons.xml</info>
                 <checksum>https://blatorone.github.io/repository.blatorone/repo/addons.xml.md5</checksum>
                 <datadir zip="true">https://blatorone.github.io/repository.blatorone/repo/</datadir>
             </dir>
-            <dir minversion="21.0.0"  maxversion="21.9.700">
+            <dir minversion="21.0.0"  maxversion="21.2.0">
                 <info compressed="false">https://blatorone.github.io/repository.blatorone/repo/zips/Omega/addons.xml</info>
                 <checksum>https://blatorone.github.io/repository.blatorone/repo/zips/Omega/addons.xml.md5</checksum>
                 <datadir zip="true">https://blatorone.github.io/repository.blatorone/repo/zips/Omega/</datadir>
@@ -17,7 +17,7 @@
                 <checksum>https://blatorone.github.io/repository.blatorone/repo/zips/Nexus/addons.xml.md5</checksum>
                 <datadir zip="true">https://blatorone.github.io/repository.blatorone/repo/zips/Nexus/</datadir>
             </dir>
-            <dir minversion="21.9.700" maxversion="22.9.700">
+            <dir minversion="21.3.700" maxversion="22.9.700">
                 <info compressed="false">https://blatorone.github.io/repository.blatorone/repo/zips/Piers/addons.xml</info>
                 <checksum>https://blatorone.github.io/repository.blatorone/repo/zips/Piers/addons.xml.md5</checksum>
                 <datadir zip="true">https://blatorone.github.io/repository.blatorone/repo/zips/Piers/</datadir>
