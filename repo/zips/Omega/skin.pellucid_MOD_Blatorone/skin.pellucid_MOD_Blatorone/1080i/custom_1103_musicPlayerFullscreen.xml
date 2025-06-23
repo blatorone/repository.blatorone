@@ -33,7 +33,7 @@
 					<include>dimensionsFullscreen</include>
 					<texture>$VAR[musicfullscreenBackgroundLocation]</texture>
 					<fadetime>200</fadetime>
-					<aspectratio>keep</aspectratio>
+					<aspectratio>stretch</aspectratio>
 				</control>
 				<!--Battery level-->
 				<include>Battery</include>

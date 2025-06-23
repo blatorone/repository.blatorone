@@ -23,7 +23,7 @@
 					<include>dimensionsFullscreen</include>
 					<texture>$VAR[SkinSettingsBackgroundLocation]</texture>
 					<fadetime>200</fadetime>
-					<aspectratio>keep</aspectratio>
+					<aspectratio>stretch</aspectratio>
 				</control>
         <!--Battery Level-->
         <include>Battery</include>

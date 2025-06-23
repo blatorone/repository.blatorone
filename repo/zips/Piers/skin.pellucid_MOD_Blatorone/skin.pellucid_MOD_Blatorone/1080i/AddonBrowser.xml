@@ -24,7 +24,7 @@
 					<include>dimensionsFullscreen</include>
 					<texture>$VAR[AddonBrowserBackgroundLocation]</texture>
 					<fadetime>200</fadetime>
-					<aspectratio>keep</aspectratio>
+					<aspectratio>stretch</aspectratio>
 				</control>
 		<!--mini window-->
 		<include>miniVideoPlayer</include>

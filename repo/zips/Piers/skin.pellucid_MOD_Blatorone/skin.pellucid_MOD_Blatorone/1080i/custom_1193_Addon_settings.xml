@@ -25,7 +25,7 @@
 					<include>dimensionsFullscreen</include>
 					<texture>$VAR[DialogAddonSettingsBackgroundLocation]</texture>
 					<fadetime>200</fadetime>
-					<aspectratio>keep</aspectratio>
+					<aspectratio>stretch</aspectratio>
 				</control>
         <control type="group">
             <posx>col-9-begin</posx>
