@@ -513,7 +513,7 @@
                         <onclick>PlayerControl(stop)</onclick>
                     </item>
                     <item>
-                        <visible>Player.Playing</visible>
+                        <visible>Player.Playing + Player.PauseEnabled</visible>
                         <description>Play/Pause</description>
                         <label2></label2>
                         <label>112</label>

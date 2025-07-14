@@ -78,15 +78,15 @@
                 <orientation>vertical</orientation>
                 
                 <control type="radiobutton" id="10">
-                    <description>change color Lightblue</description>
+                    <description>change color Pellucid</description>
                     <width>8-col</width>
-                    <textureradioonfocus colordiffuse="textactive">Colors/Lightblue.png</textureradioonfocus>
-                    <textureradioonnofocus colordiffuse="textActive">Colors/Lightblue.png</textureradioonnofocus>
-                    <textureradioofffocus colordiffuse="textactive">Colors/Lightblue.png</textureradioofffocus>
-                    <textureradiooffnofocus colordiffuse="textactive">Colors/Lightblue.png</textureradiooffnofocus>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Default.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Default.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Default.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Default.png</textureradiooffnofocus>
                     <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
-                    <label>Lightblue</label> 
-                    <onclick>Skin.Togglesetting(lightblue)</onclick>
+                    <label>Pellucid</label> 
+                    <onclick>Skin.Togglesetting(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
                     <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
                     <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
@@ -103,20 +103,20 @@
                     <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
                     <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
                     <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
-                    <selected>Skin.HasSetting(lightblue)</selected>
-                    <visible>!Skin.HasSetting(lightblue)</visible>
+                    <selected>Skin.HasSetting(Pellucid)</selected>
+                    <visible>!Skin.HasSetting(Pellucid)</visible>
                     
                 </control>
                 <control type="radiobutton" id="11">
-                    <description>change color Lightblue</description>
+                    <description>change color Pellucid</description>
                     <width>8-col</width>
-                    <textureradioonfocus colordiffuse="textactive">Colors/Lightblue.png</textureradioonfocus>
-                    <textureradioonnofocus colordiffuse="textActive">Colors/Lightblue.png</textureradioonnofocus>
-                    <textureradioofffocus colordiffuse="textactive">Colors/Lightblue.png</textureradioofffocus>
-                    <textureradiooffnofocus colordiffuse="textactive">Colors/Lightblue.png</textureradiooffnofocus>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Default.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Default.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Default.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Default.png</textureradiooffnofocus>
                     <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
-                    <label>[COLOR $VAR[selected]]Lightblue[/COLOR]</label> 
-                    <onclick>Skin.Togglesetting(lightblue)</onclick>
+                    <label>[COLOR $VAR[selected]]Pellucid[/COLOR]</label> 
+                    <onclick>Skin.Togglesetting(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
                     <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
                     <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
@@ -133,8 +133,8 @@
                     <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
                     <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
                     <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
-                    <selected>Skin.HasSetting(lightblue)</selected>
-                    <visible>Skin.HasSetting(lightblue)</visible>
+                    <selected>Skin.HasSetting(Pellucid)</selected>
+                    <visible>Skin.HasSetting(Pellucid)</visible>
                 </control>
 
                 <control type="radiobutton" id="12">
@@ -153,7 +153,7 @@
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
@@ -182,7 +182,7 @@
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
@@ -212,7 +212,7 @@
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
@@ -241,7 +241,7 @@
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
@@ -258,10 +258,10 @@
                 <control type="radiobutton" id="16">
                     <description>Enable Home Button Further apart</description>
                     <width>8-col</width>
-                    <textureradioonfocus colordiffuse="textactive">Colors/Default.png</textureradioonfocus>
-                    <textureradioonnofocus colordiffuse="textActive">Colors/Default.png</textureradioonnofocus>
-                    <textureradioofffocus colordiffuse="textactive">Colors/Default.png</textureradioofffocus>
-                    <textureradiooffnofocus colordiffuse="textactive">Colors/Default.png</textureradiooffnofocus>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Lightblue.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Lightblue.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Lightblue.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Lightblue.png</textureradiooffnofocus>
                     <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
                     <label>$LOCALIZE[15109]</label>
                     <onclick>Skin.Togglesetting(Default)</onclick>
@@ -271,7 +271,7 @@
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
@@ -282,16 +282,16 @@
                     <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
                     <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
                     <selected>Skin.HasSetting(Default)</selected>
-                    <visible>!Skin.HasSetting(Default) + [Skin.HasSetting(Bluewood) | Skin.HasSetting(Darkblue) | Skin.HasSetting(Dribble) | Skin.HasSetting(Gold) | Skin.HasSetting(Green) | Skin.HasSetting(Interest) | Skin.HasSetting(lightblue) | Skin.HasSetting(Medium) | Skin.HasSetting(Orange) | Skin.HasSetting(PellucidV1) | Skin.HasSetting(Razzmatazz) | Skin.HasSetting(Tumble) | Skin.HasSetting(Turquoise) | Skin.HasSetting(Turquoise) | Skin.HasSetting(Vine) | Skin.HasSetting(VK) | Skin.HasSetting(custom)]</visible>
+                    <visible>!Skin.HasSetting(Default) + [Skin.HasSetting(Bluewood) | Skin.HasSetting(Darkblue) | Skin.HasSetting(Dribble) | Skin.HasSetting(Gold) | Skin.HasSetting(Green) | Skin.HasSetting(Interest) | Skin.HasSetting(Pellucid) | Skin.HasSetting(Medium) | Skin.HasSetting(Orange) | Skin.HasSetting(PellucidV1) | Skin.HasSetting(Razzmatazz) | Skin.HasSetting(Tumble) | Skin.HasSetting(Turquoise) | Skin.HasSetting(Turquoise) | Skin.HasSetting(Vine) | Skin.HasSetting(VK) | Skin.HasSetting(custom)]</visible>
                 </control>
 
                  <control type="radiobutton" id="44">
                     <description>Enable Home Button Further apart</description>
                     <width>8-col</width>
-                    <textureradioonfocus colordiffuse="textactive">Colors/Default.png</textureradioonfocus>
-                    <textureradioonnofocus colordiffuse="textActive">Colors/Default.png</textureradioonnofocus>
-                    <textureradioofffocus colordiffuse="textactive">Colors/Default.png</textureradioofffocus>
-                    <textureradiooffnofocus colordiffuse="textactive">Colors/Default.png</textureradiooffnofocus>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Lightblue.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Lightblue.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Lightblue.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Lightblue.png</textureradiooffnofocus>
                     <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
                     <label>[COLOR $VAR[selected]]$LOCALIZE[15109][/COLOR]</label>
                     <onclick>Skin.Togglesetting(Default)</onclick>
@@ -301,7 +301,7 @@
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
@@ -312,16 +312,16 @@
                     <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
                     <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
                     <selected>Skin.HasSetting(Default)</selected>
-                    <visible>!Skin.HasSetting(Default) + !Skin.HasSetting(Bluewood) + !Skin.HasSetting(Darkblue) + !Skin.HasSetting(Dribble) + !Skin.HasSetting(Gold) + !Skin.HasSetting(Green) + !Skin.HasSetting(Interest) + !Skin.HasSetting(lightblue) + !Skin.HasSetting(Medium) + !Skin.HasSetting(Orange) + !Skin.HasSetting(PellucidV1) + !Skin.HasSetting(Razzmatazz) + !Skin.HasSetting(Tumble) + !Skin.HasSetting(Turquoise) + !Skin.HasSetting(Turquoise) + !Skin.HasSetting(Vine) + !Skin.HasSetting(VK) + !Skin.HasSetting(custom)</visible>
+                    <visible>!Skin.HasSetting(Default) + !Skin.HasSetting(Bluewood) + !Skin.HasSetting(Darkblue) + !Skin.HasSetting(Dribble) + !Skin.HasSetting(Gold) + !Skin.HasSetting(Green) + !Skin.HasSetting(Interest) + !Skin.HasSetting(Pellucid) + !Skin.HasSetting(Medium) + !Skin.HasSetting(Orange) + !Skin.HasSetting(PellucidV1) + !Skin.HasSetting(Razzmatazz) + !Skin.HasSetting(Tumble) + !Skin.HasSetting(Turquoise) + !Skin.HasSetting(Turquoise) + !Skin.HasSetting(Vine) + !Skin.HasSetting(VK) + !Skin.HasSetting(custom)</visible>
                 </control>
 
                 <control type="radiobutton" id="17">
                     <description>Enable Home Button Further apart</description>
                     <width>8-col</width>
-                    <textureradioonfocus colordiffuse="textactive">Colors/Default.png</textureradioonfocus>
-                    <textureradioonnofocus colordiffuse="textActive">Colors/Default.png</textureradioonnofocus>
-                    <textureradioofffocus colordiffuse="textactive">Colors/Default.png</textureradioofffocus>
-                    <textureradiooffnofocus colordiffuse="textactive">Colors/Default.png</textureradiooffnofocus>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Lightblue.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Lightblue.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Lightblue.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Lightblue.png</textureradiooffnofocus>
                     <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
                     <label>[COLOR $VAR[selected]]$LOCALIZE[15109][/COLOR]</label>
                     <onclick>Skin.Togglesetting(Default)</onclick>
@@ -331,7 +331,7 @@
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
@@ -361,7 +361,7 @@
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
@@ -390,7 +390,7 @@
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
@@ -420,7 +420,7 @@
                     <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
@@ -449,7 +449,7 @@
                     <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
@@ -479,7 +479,7 @@
                     <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
@@ -508,7 +508,7 @@
                     <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
@@ -538,7 +538,7 @@
                     <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
@@ -567,7 +567,7 @@
                     <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
@@ -598,7 +598,7 @@
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
                     <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
@@ -627,7 +627,7 @@
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
                     <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
@@ -657,7 +657,7 @@
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
                     <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
@@ -686,7 +686,7 @@
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
                     <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
@@ -716,7 +716,7 @@
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
@@ -745,7 +745,7 @@
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
@@ -775,7 +775,7 @@
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
@@ -804,7 +804,7 @@
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
@@ -834,7 +834,7 @@
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
@@ -863,7 +863,7 @@
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
@@ -893,7 +893,7 @@
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
@@ -922,7 +922,7 @@
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
@@ -952,7 +952,7 @@
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
@@ -981,7 +981,7 @@
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
@@ -1011,7 +1011,7 @@
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
@@ -1040,7 +1040,7 @@
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
@@ -1073,7 +1073,7 @@
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
@@ -1104,7 +1104,7 @@
                     <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
                     <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
                     <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
-                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Pellucid)">Skin.Reset(Pellucid)</onclick>
                     <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
                     <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
                     <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>

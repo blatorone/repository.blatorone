@@ -81,7 +81,7 @@
                     
                     <label>31286</label>
 					<onclick>SetProperty(Reset.Color,highlight_color)</onclick>
-					<onclick>Skin.SetColor(highlight_color, 31286, ffad1e4e, special://skin/extras/colors.xml)</onclick>
+					<onclick>Skin.SetColor(highlight_color, ff87cefa, ff87cefa, special://skin/extras/colors.xml)</onclick>
                     <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
                     <textureradioonfocus colordiffuse="$VAR[highlight]">masks/discsurface.png</textureradioonfocus>
                     <textureradioonnofocus colordiffuse="$VAR[highlight]">masks/discsurface.png</textureradioonnofocus>
@@ -95,7 +95,7 @@
                     
                     <label>31287</label>
 					<onclick>SetProperty(Reset.Color,highlight_Shadow_color)</onclick>
-					<onclick>Skin.SetColor(highlight_Shadow_color, 31287, 77ad1e4e, special://skin/extras/colors.xml)</onclick>
+					<onclick>Skin.SetColor(highlight_Shadow_color, 31287, 7787cefa, special://skin/extras/colors.xml)</onclick>
                     <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
                     <textureradioonfocus colordiffuse="$VAR[highlight_Shadow]">masks/discsurface.png</textureradioonfocus>
                     <textureradioonnofocus colordiffuse="$VAR[highlight_Shadow]">masks/discsurface.png</textureradioonnofocus>
@@ -109,7 +109,7 @@
                     
                     <label>31288</label>
 					<onclick>SetProperty(Reset.Color,Home_color)</onclick>
-					<onclick>Skin.SetColor(Home_color, 31288, fff0f0f0, special://skin/extras/colors.xml)</onclick>
+					<onclick>Skin.SetColor(Home_color, 31288, ff111111, special://skin/extras/colors.xml)</onclick>
                     <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
                     <textureradioonfocus colordiffuse="$VAR[Home]">masks/discsurface.png</textureradioonfocus>
                     <textureradioonnofocus colordiffuse="$VAR[Home]">masks/discsurface.png</textureradioonnofocus>

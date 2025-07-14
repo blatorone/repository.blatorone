@@ -414,7 +414,7 @@
 	                    	<description>weather</description>
 	                    	<label2></label2>
 	                    	<thumb></thumb>
-	                    	<onclick>ActivateWindow(ServiceSettings,weather)</onclick>
+	                    	<onclick>ActivateWindow(10040,"addons://user/xbmc.python.weather",return)</onclick>
 	                	</item>
 	                </content>
 	            </control>

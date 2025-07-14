@@ -221,11 +221,14 @@
 								<onclick>activateWindow(musicplaylist)</onclick>
 		                    </item> 
 		                    <item>
-		                        <description>Previous</description>
-		                        <label2></label2>
-		                        <thumb></thumb>
-		                        <onclick>PlayerControl(previous)</onclick>
-		                    </item>
+								<visible>MusicPlayer.HasPrevious</visible>
+	                        	<description>Previous</description>
+	                        	<label2></label2>
+								<label>31373</label>
+	                        	<thumb></thumb>
+	                        	<onclick>PlayerControl(previous)</onclick>
+	                    	</item>
+							
 							<item>
                        			<description>Rewind</description>
                         		<label2></label2>
@@ -240,7 +243,7 @@
 		                        <onclick>Dialog.Close(1103)</onclick>
 		                    </item>
 							<item>
-	                        	<visible>Player.Playing + !player.rewinding + !Player.Forwarding</visible>
+	                        	<visible>Player.Playing + !player.rewinding + !Player.Forwarding + Player.PauseEnabled</visible>
 	                        	<description>Play/Pause</description>
 	                        	<label2></label2>
 	                        	<thumb></thumb>
@@ -267,11 +270,13 @@
 		                        <onclick>PlayerControl(forward)</onclick>
 		                    </item>
 		                    <item>
-		                        <description>Next Chapter</description>
-		                        <label2></label2>
-		                        <thumb></thumb>
-		                        <onclick>PlayerControl(next)</onclick>
-		                    </item>
+								<visible>MusicPlayer.HasNext</visible>
+	                        	<description>Next Chapter</description>
+	                        	<label2></label2>
+								<label>31372</label>
+	                        	<thumb></thumb>
+	                        	<onclick>PlayerControl(next)</onclick>
+	                    	</item>
 							<item>
 								<visible>Skin.HasSetting(Touch)</visible>
 	                        	<description>back</description>

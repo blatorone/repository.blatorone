@@ -15,7 +15,7 @@
                 <posx>390</posx>
                 <posy>-12</posy>
                 <width>520</width>
-                <height>360</height>
+                <height>360</height> 
                 <texture>colors/black.png</texture>
                 <colordiffuse>black</colordiffuse>
                 <aspectratio>stretch</aspectratio>
@@ -155,11 +155,11 @@
                         <description>Reset Colors</description>
                         <label>107</label>
                         <label2></label2>
-                        <onclick>Skin.SetString(highlight_color,ffad1e4e)</onclick>
-						<onclick>Skin.SetString(highlight_Shadow_color,ffad1e4e)</onclick>
-                        <onclick>Skin.SetString(Home_color,fff0f0f0)</onclick>
+                        <onclick>Skin.SetString(highlight_color,ff87cefa)</onclick>
+						<onclick>Skin.SetString(highlight_Shadow_color,ff87cefa)</onclick>
+                        <onclick>Skin.SetString(Home_color,ff111111)</onclick>
                         <onclick>Skin.SetString(Selected_color,yellow)</onclick>
-                        <onclick>Skin.SetString(Selected_box_color,white)</onclick>
+                        <onclick>Skin.SetString(Selected_box_color,lightgrey)</onclick>
 						<onclick>action(close)</onclick>
                     </item>
                     <item>

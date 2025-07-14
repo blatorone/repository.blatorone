@@ -1009,3 +1009,25 @@ msgstr "Versionsänderung:"
 msgctxt "#31368"
 msgid "In Cinema"
 msgstr "Im Kino"
+
+msgctxt "#31369"
+msgid "Install Addons"
+msgstr "Addons installieren"
+
+msgctxt "#31370"
+msgid "Video Playlist"
+msgstr "Videoabspielliste"
+
+msgctxt "#31371"
+msgid "Music Playlist"
+msgstr "Musikabspielliste"
+
+msgctxt "#31372"
+msgid "Next Title"
+msgstr "Nächster Titel"
+
+msgctxt "#31373"
+msgid "Previous Title"
+msgstr "Vorheriger Titel"
+
+

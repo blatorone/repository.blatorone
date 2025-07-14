@@ -1010,3 +1010,23 @@ msgstr ""
 msgctxt "#31368"
 msgid "In Cinema"
 msgstr ""
+
+msgctxt "#31369"
+msgid "Install Addons"
+msgstr ""
+
+msgctxt "#31370"
+msgid "Video Playlist"
+msgstr ""
+
+msgctxt "#31371"
+msgid "Music Playlist"
+msgstr ""
+
+msgctxt "#31372"
+msgid "Next Title"
+msgstr ""
+
+msgctxt "#31373"
+msgid "Previous Title"
+msgstr ""

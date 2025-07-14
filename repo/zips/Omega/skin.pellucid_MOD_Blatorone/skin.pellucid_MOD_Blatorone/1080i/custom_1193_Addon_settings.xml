@@ -29,7 +29,7 @@
 				</control>
         <control type="group">
             <posx>col-9-begin</posx>
-            <posy>row-8-begin</posy>
+            <posy>row-11-begin</posy>
             <!--animations-->
             <include>modalDialogInOut</include>
 			
@@ -37,7 +37,7 @@
                 <posx>-60</posx>
                 <posy>20</posy>
                 <width>650</width>
-                <height>600</height>
+                <height>275</height>
                 <texture>colors/black.png</texture>
                 <colordiffuse>black</colordiffuse>
                 <aspectratio>stretch</aspectratio>
@@ -75,7 +75,7 @@
                     <posx>45</posx>
                     <posy>84</posy>
                     <width>8-col</width>
-                    <height>600</height>
+                    <height>420</height>
                     <ondown>50</ondown>
                     <itemgap>0</itemgap>
                     <itemlayout width="8-col" height="84">
@@ -110,7 +110,7 @@
                         <control type="label">
                             <posx>1-col-indent</posx>
                             <posy>-1</posy>
-                            <width>6-col-gutter</width>
+                            <width>5-col</width>
                             <height>2-row</height>
                             <aligny>center</aligny>
                             <font>buttonTitle</font>
@@ -166,7 +166,7 @@
                         <control type="label">
                             <posx>1-col-indent</posx>
                             <posy>-1</posy>
-                            <width>6-col-gutter</width>
+                            <width>350</width>
                             <height>2-row</height>
                             <aligny>center</aligny>
                             <font>buttonTitle</font>
@@ -177,47 +177,22 @@
                     </focusedlayout>
 					<content>
                     <item id="1">
-                        <description>Install Repos Addons</description>
-                        <label>Repositorys $LOCALIZE[24038]</label>
+                        <description>Install Addons</description>
+                        <label>$LOCALIZE[31369]</label>
                         <label2></label2>
                         <thumb></thumb>
-                        <onclick>ActivateWindow(10040,"addons://all/xbmc.addon.repository",return)</onclick>
+                        <onclick>ActivateWindow(1195,return)</onclick>
                     </item>
-                    <item id="2">
-                        <description>Install video Addons</description>
-                        <label>$LOCALIZE[31088] $LOCALIZE[24038]</label>
-                        <label2></label2>
+                   
+                    
+                    <item id="8">
+                        <description>User Video Addons</description>
+                        <label>$LOCALIZE[24998]</label>
+                        <label2></label2>
                         <thumb></thumb>
-                        <onclick>ActivateWindow(10040,"addons://all/xbmc.addon.video",return)</onclick>
+                        <onclick>ActivateWindow(1194,return)</onclick>
                     </item>
-                    <item id="3">
-                        <description>Defaults Button</description>
-                        <label>$LOCALIZE[858] $LOCALIZE[31088]</label>
-                        <label2></label2>
-                        <thumb></thumb>
-                        <onclick>ActivateWindow(10040,"addons://user/xbmc.addon.video",return)</onclick>
-                    </item>
-					<item id="3">
-                        <description>Defaults Button</description>
-                        <label>$LOCALIZE[858] $LOCALIZE[1038]</label>
-                        <label2></label2>
-                        <thumb></thumb>
-                        <onclick>ActivateWindow(10040,"addons://user/xbmc.addon.audio",return)</onclick>
-                    </item>
-					<item id="3">
-                        <description>Defaults Button</description>
-                        <label>$LOCALIZE[858] $LOCALIZE[1043]</label>
-                        <label2></label2>
-                        <thumb></thumb>
-                        <onclick>ActivateWindow(10040,"addons://user/xbmc.addon.executable",return)</onclick>
-                    </item>
-					<item id="3">
-                        <description>Defaults Button</description>
-                        <label>$LOCALIZE[858] $LOCALIZE[14036]</label>
-                        <label2></label2>
-                        <thumb></thumb>
-                        <onclick>ActivateWindow(10040,"addons://user/xbmc.service",return)</onclick>
-                    </item>
+					
                     
                     
                 </content>
