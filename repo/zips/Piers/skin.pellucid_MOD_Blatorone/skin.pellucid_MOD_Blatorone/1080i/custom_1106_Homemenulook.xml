@@ -3,7 +3,7 @@
     <defaultcontrol always="true">200</defaultcontrol>
     <controls>
         <!--background-->
-        <include>globalBackground</include>
+        <include>globalBackground</include> 
         <control type="multiimage">
 					<visible>String.IsEmpty(Skin.String(homeBackgroundimage))</visible>
 					<animation effect="fade" start="0" end="100" time="1000">WindowOpen</animation>

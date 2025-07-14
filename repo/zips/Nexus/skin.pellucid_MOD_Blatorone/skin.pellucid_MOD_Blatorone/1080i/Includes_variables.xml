@@ -530,9 +530,9 @@
         <value condition="Skin.HasSetting(Turquoise)">ff00868B</value>
         <value condition="Skin.HasSetting(Vine)">ff00b489</value>
         <value condition="Skin.HasSetting(VK)">ff4c75a3</value>
-        <value condition="!Skin.HasSetting(VK) + !Skin.HasSetting(Vine) + !Skin.HasSetting(Turquoise) + !Skin.HasSetting(Tumble) + !Skin.HasSetting(Razzmatazz) + !Skin.HasSetting(PellucidV1) + !Skin.HasSetting(Orange) + !Skin.HasSetting(Medium) + !Skin.HasSetting(Pellucid) + !Skin.HasSetting(Interest) + !Skin.HasSetting(Green) + !Skin.HasSetting(Gold) + !Skin.HasSetting(Dribble) + !Skin.HasSetting(Default) + !Skin.HasSetting(Darkblue) + !Skin.HasSetting(Bluewood) + !Skin.HasSetting(custom)">ffad1e4e</value>
+        <value condition="!Skin.HasSetting(VK) + !Skin.HasSetting(Vine) + !Skin.HasSetting(Turquoise) + !Skin.HasSetting(Tumble) + !Skin.HasSetting(Razzmatazz) + !Skin.HasSetting(PellucidV1) + !Skin.HasSetting(Orange) + !Skin.HasSetting(Medium) + !Skin.HasSetting(Pellucid) + !Skin.HasSetting(Interest) + !Skin.HasSetting(Green) + !Skin.HasSetting(Gold) + !Skin.HasSetting(Dribble) + !Skin.HasSetting(Default) + !Skin.HasSetting(Darkblue) + !Skin.HasSetting(Bluewood) + !Skin.HasSetting(custom)">ff87cefa</value>
         <value condition="Skin.HasSetting(custom) + !String.IsEmpty(Skin.String(highlight_color))">$INFO[Skin.String(highlight_color)]</value>
-        <value condition="String.IsEmpty(Skin.String(highlight_color))">ffad1e4e</value>
+        <value condition="String.IsEmpty(Skin.String(highlight_color))">ff87cefa</value>
     </variable>
 
     <variable name="highlight_Shadow">
@@ -552,9 +552,9 @@
         <value condition="Skin.HasSetting(Turquoise)">ff00868B</value>
         <value condition="Skin.HasSetting(Vine)">ff00b489</value>
         <value condition="Skin.HasSetting(VK)">ff4c75a3</value>
-        <value condition="!Skin.HasSetting(VK) + !Skin.HasSetting(Vine) + !Skin.HasSetting(Turquoise) + !Skin.HasSetting(Tumble) + !Skin.HasSetting(Razzmatazz) + !Skin.HasSetting(PellucidV1) + !Skin.HasSetting(Orange) + !Skin.HasSetting(Medium) + !Skin.HasSetting(Pellucid) + !Skin.HasSetting(Interest) + !Skin.HasSetting(Green) + !Skin.HasSetting(Gold) + !Skin.HasSetting(Dribble) + !Skin.HasSetting(Default) + !Skin.HasSetting(Darkblue) + !Skin.HasSetting(Bluewood) + !Skin.HasSetting(custom)">ffad1e4e</value>
+        <value condition="!Skin.HasSetting(VK) + !Skin.HasSetting(Vine) + !Skin.HasSetting(Turquoise) + !Skin.HasSetting(Tumble) + !Skin.HasSetting(Razzmatazz) + !Skin.HasSetting(PellucidV1) + !Skin.HasSetting(Orange) + !Skin.HasSetting(Medium) + !Skin.HasSetting(Pellucid) + !Skin.HasSetting(Interest) + !Skin.HasSetting(Green) + !Skin.HasSetting(Gold) + !Skin.HasSetting(Dribble) + !Skin.HasSetting(Default) + !Skin.HasSetting(Darkblue) + !Skin.HasSetting(Bluewood) + !Skin.HasSetting(custom)">ff87cefa</value>
         <value condition="Skin.HasSetting(custom) + !String.IsEmpty(Skin.String(highlight_Shadow_color))">$INFO[Skin.String(highlight_Shadow_color)]</value>
-        <value condition="String.IsEmpty(Skin.String(highlight_Shadow_color))">ffad1e4e</value>
+        <value condition="String.IsEmpty(Skin.String(highlight_Shadow_color))">ff87cefa</value>
     </variable>
     
     <variable name="Home">
@@ -575,8 +575,8 @@
         <value condition="Skin.HasSetting(Vine)">fff0f0f0</value>
         <value condition="Skin.HasSetting(VK)">fff0f0f0</value>
         <value condition="Skin.HasSetting(custom) + !String.IsEmpty(Skin.String(Home_color))">$INFO[Skin.String(Home_color)]</value>
-        <value condition="!Skin.HasSetting(VK) + !Skin.HasSetting(Vine) + !Skin.HasSetting(Turquoise) + !Skin.HasSetting(Tumble) + !Skin.HasSetting(Razzmatazz) + !Skin.HasSetting(PellucidV1) + !Skin.HasSetting(Orange) + !Skin.HasSetting(Medium) + !Skin.HasSetting(Pellucid) + !Skin.HasSetting(Interest) + !Skin.HasSetting(Green) + !Skin.HasSetting(Gold) + !Skin.HasSetting(Dribble) + !Skin.HasSetting(Default) + !Skin.HasSetting(Darkblue) + !Skin.HasSetting(Bluewood) + !Skin.HasSetting(custom)">fff0f0f0</value>
-        <value condition="String.IsEmpty(Skin.String(Home_Color))">fff0f0f0</value>
+        <value condition="!Skin.HasSetting(VK) + !Skin.HasSetting(Vine) + !Skin.HasSetting(Turquoise) + !Skin.HasSetting(Tumble) + !Skin.HasSetting(Razzmatazz) + !Skin.HasSetting(PellucidV1) + !Skin.HasSetting(Orange) + !Skin.HasSetting(Medium) + !Skin.HasSetting(Pellucid) + !Skin.HasSetting(Interest) + !Skin.HasSetting(Green) + !Skin.HasSetting(Gold) + !Skin.HasSetting(Dribble) + !Skin.HasSetting(Default) + !Skin.HasSetting(Darkblue) + !Skin.HasSetting(Bluewood) + !Skin.HasSetting(custom)">ff111111</value>
+        <value condition="String.IsEmpty(Skin.String(Home_Color))">ff111111</value>
     </variable>
     <variable name="selected">
 		<value condition="Skin.HasSetting(Bluewood)">yellow</value>
@@ -617,8 +617,8 @@
         <value condition="Skin.HasSetting(Vine)">white</value>
         <value condition="Skin.HasSetting(VK)">white</value>
         <value condition="Skin.HasSetting(custom) + !String.IsEmpty(Skin.String(Selected_box_Color))">$INFO[Skin.String(Selected_box_color)]</value>
-        <value condition="!Skin.HasSetting(VK) + !Skin.HasSetting(Vine) + !Skin.HasSetting(Turquoise) + !Skin.HasSetting(Tumble) + !Skin.HasSetting(Razzmatazz) + !Skin.HasSetting(PellucidV1) + !Skin.HasSetting(Orange) + !Skin.HasSetting(Medium) + !Skin.HasSetting(Pellucid) + !Skin.HasSetting(Interest) + !Skin.HasSetting(Green) + !Skin.HasSetting(Gold) + !Skin.HasSetting(Dribble) + !Skin.HasSetting(Default) + !Skin.HasSetting(Darkblue) + !Skin.HasSetting(Bluewood) + !Skin.HasSetting(custom)">white</value>
-        <value condition="String.IsEmpty(Skin.String(Selected_box_Color))">white</value>
+        <value condition="!Skin.HasSetting(VK) + !Skin.HasSetting(Vine) + !Skin.HasSetting(Turquoise) + !Skin.HasSetting(Tumble) + !Skin.HasSetting(Razzmatazz) + !Skin.HasSetting(PellucidV1) + !Skin.HasSetting(Orange) + !Skin.HasSetting(Medium) + !Skin.HasSetting(Pellucid) + !Skin.HasSetting(Interest) + !Skin.HasSetting(Green) + !Skin.HasSetting(Gold) + !Skin.HasSetting(Dribble) + !Skin.HasSetting(Default) + !Skin.HasSetting(Darkblue) + !Skin.HasSetting(Bluewood) + !Skin.HasSetting(custom)">lightgrey</value>
+        <value condition="String.IsEmpty(Skin.String(Selected_box_Color))">lightgrey</value>
     </variable>
 
     <variable name="PVRListlook">
@@ -630,7 +630,7 @@
 		<value condition="Skin.HasSetting(homemenugrid)">[COLOR $VAR[selected]]$LOCALIZE[31262][/COLOR]</value>
 		<value condition="Skin.HasSetting(homemenuslide)">[COLOR $VAR[selected]]$LOCALIZE[31263][/COLOR]</value>
         <value condition="Skin.HasSetting(homemenuside)">[COLOR $VAR[selected]]$LOCALIZE[31264][/COLOR]</value>
-        <value condition="!Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenuside) + !Skin.HasSetting(homemenugrid)">[COLOR $VAR[selected]]$LOCALIZE[31262][/COLOR]</value>
+        <value condition="!Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenuside) + !Skin.HasSetting(homemenugrid)">[COLOR $VAR[selected]]$LOCALIZE[31264][/COLOR]</value>
 	</variable>
 
 	<variable name="weatherbuttonskinicon">

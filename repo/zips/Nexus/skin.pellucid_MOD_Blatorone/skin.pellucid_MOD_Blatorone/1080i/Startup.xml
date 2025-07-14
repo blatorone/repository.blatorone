@@ -8,6 +8,7 @@
 	-->
 	<onload>Skin.Reset(DebugInfo)</onload>
     <onload>Skin.Reset(DebugGrid)</onload>
+	<onload condition="!Skin.HasSetting(homemenuside) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid)">Skin.ToggleSetting(homemenuside)</onload>
 	<onload condition="!Skin.HasSetting(StartupIntro)">activateWindow(1192)</onload>
 	<onload>ReplaceWindow(Home)</onload>
 </window>

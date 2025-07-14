@@ -7,6 +7,7 @@
 	<onload>AlarmClock(hidemenu,setfocus(9999),01:00,true)</onload>
 	<onunload>CancelAlarm(hidemenu,true)</onunload>
 	<onload condition="System.IsMaster">Mastermode</onload>
+	
 	<controls>
 		<include>globalBackground</include>
 		<control type="group">

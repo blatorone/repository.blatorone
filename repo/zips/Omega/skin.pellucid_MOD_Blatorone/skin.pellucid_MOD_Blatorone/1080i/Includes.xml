@@ -1356,7 +1356,7 @@
         <include  condition="Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid) + !Skin.HasSetting(homemenuside)">homemenuslide1</include>
         <include  condition="Skin.HasSetting(homemenugrid) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenuside)">homemenuslide2</include>
         <include  condition="Skin.HasSetting(homemenuside) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid)">homemenuslide3</include>
-        <include  condition="!Skin.HasSetting(homemenuside) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid)">homemenuslide2</include>
+        <include  condition="!Skin.HasSetting(homemenuside) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid)">homemenuslide3</include>
     </include>
     <include name="homemenuslide1">
         <width>fullscreenWidth</width>
@@ -1400,7 +1400,7 @@
         <include  condition="Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid) + !Skin.HasSetting(homemenuside)">homemenuslide1color</include>
         <include  condition="Skin.HasSetting(homemenugrid) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenuside)">homemenuslide2color</include>
         <include  condition="Skin.HasSetting(homemenuside) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid)">homemenuslide3color</include>
-        <include  condition="!Skin.HasSetting(homemenuside) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid)">homemenuslide2color</include>
+        <include  condition="!Skin.HasSetting(homemenuside) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid)">homemenuslide3color</include>
     </include>
     <include name="homemenuslide1color">
         
@@ -1419,7 +1419,7 @@
         <include  condition="Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid) + !Skin.HasSetting(homemenuside)">homemenukeycontrol1</include>
         <include  condition="Skin.HasSetting(homemenugrid) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenuside)">homemenukeycontrol2</include>
         <include  condition="Skin.HasSetting(homemenuside) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid)">homemenukeycontrol3</include>
-        <include  condition="!Skin.HasSetting(homemenuside) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid)">homemenukeycontrol2</include>
+        <include  condition="!Skin.HasSetting(homemenuside) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid)">homemenukeycontrol3</include>
     </include>
     <include name="homemenukeycontrol1">
         <onup>9000</onup>
@@ -1444,7 +1444,7 @@
         <include  condition="Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid) + !Skin.HasSetting(homemenuside)">homemenukeycontrol1android</include>
         <include  condition="Skin.HasSetting(homemenugrid) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenuside)">homemenukeycontrol2android</include>
         <include  condition="Skin.HasSetting(homemenuside) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid)">homemenukeycontrol3android</include>
-        <include  condition="!Skin.HasSetting(homemenuside) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid)">homemenukeycontrol2android</include>
+        <include  condition="!Skin.HasSetting(homemenuside) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid)">homemenukeycontrol3android</include>
     </include>
     <include name="homemenukeycontrol1android">
         <onup>9000</onup>

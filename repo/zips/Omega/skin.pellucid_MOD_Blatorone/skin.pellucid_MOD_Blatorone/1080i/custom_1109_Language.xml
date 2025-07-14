@@ -78,10 +78,10 @@
                     
                     <description>Grid Menu</description>
                     <width>14-col</width>
-                    <textureradioonfocus>lang/United-Kingdom.png</textureradioonfocus>
-                    <textureradioonnofocus>lang/United-Kingdom.png</textureradioonnofocus>
-                    <textureradioofffocus>lang/United-Kingdom.png</textureradioofffocus>
-                    <textureradiooffnofocus>lang/United-Kingdom.png</textureradiooffnofocus>
+                    <textureradioonfocus>Colors/VK.png</textureradioonfocus>
+                    <textureradioonnofocus>Colors/VK.png</textureradioonnofocus>
+                    <textureradioofffocus>Colors/VK.png</textureradioofffocus>
+                    <textureradiooffnofocus>Colors/VK.png</textureradiooffnofocus>
                     <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
                     <label>English</label>
                     <onclick>InstallAddon(resource.language.en_gb)</onclick>
