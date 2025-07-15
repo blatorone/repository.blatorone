@@ -36,10 +36,11 @@
 	                <posy>0</posy>
 	                <width>fullscreenWidth</width>
 	                <height>3-row</height>
-	                <texture>colors/black.png</texture>
-	                <colordiffuse>ffffffff</colordiffuse>
+	                <texture>masks/discsurface30%.png</texture>
+	                <colordiffuse>overlay</colordiffuse>
 	                <aspectratio>stretch</aspectratio>
 	            </control>
+				
 				<!--player controls-->
 				<control type="panel" id="8001">
 					<posx>col-1-begin</posx>
@@ -105,7 +106,7 @@
 	                        <onclick>activateWindow(1114,return)</onclick>
 	                    </item>
 						<item>
-							<visible>!player.hasvideo + !player.hasaudio + !VideoPlayer.Content(LiveTV)</visible>
+							<visible>!player.hasvideo + !player.hasaudio + !VideoPlayer.Content(LiveTV) + Integer.IsGreater(Playlist.Length(video),1)</visible>
 	                        <description>Playlist</description>
 	                        <label2></label2>
 							<label>31370</label>
@@ -113,7 +114,7 @@
 	                        <onclick>activateWindow(videoplaylist)</onclick>
 	                    </item>
 						<item>
-							<visible>player.hasvideo + !VideoPlayer.Content(LiveTV)</visible>
+							<visible>player.hasvideo + !VideoPlayer.Content(LiveTV) + Integer.IsGreater(Playlist.Length(video),1)</visible>
 	                        <description>Playlist</description>
 	                        <label2></label2>
 							<label>31370</label>
@@ -121,7 +122,7 @@
 	                        <onclick>activateWindow(videoplaylist)</onclick>
 	                    </item>
 						<item>
-							<visible>player.hasaudio + !player.hasvideo</visible>
+							<visible>player.hasaudio + !player.hasvideo + Integer.IsGreater(Playlist.Length(music),1)</visible>
 	                        <description>Playlist</description>
 	                        <label2></label2>
 							<label>31371</label>
@@ -137,7 +138,15 @@
                         	<onclick>activateWindow(10700),return</onclick> 
                     	</item>
 	                    <item>
-							<visible>!VideoPlayer.Content(LiveTV) + !Player.HasAudio</visible>
+							<visible>!VideoPlayer.Content(LiveTV) + !Player.HasAudio + VideoPlayer.Content(episodes)</visible>
+	                        <description>Previous</description>
+	                        <label2></label2>
+							<label>12021</label>
+	                        <thumb></thumb>
+	                        <onclick>PlayerControl(previous)</onclick>
+	                    </item>
+						<item>
+							<visible>!VideoPlayer.Content(LiveTV) + !Player.HasAudio + VideoPlayer.Content(movies)</visible>
 	                        <description>Previous</description>
 	                        <label2></label2>
 							<label>12021</label>
@@ -162,6 +171,7 @@
                         	<visible>Pvr.IsPlayingTv</visible>
                     	</item>
 						<item>
+						<visible>Player.HasMedia</visible>
                         <description>Rewind</description>
                         <label2></label2>
 						<label>31364</label>
@@ -169,6 +179,7 @@
                         <onclick>PlayerControl(rewind)</onclick>
                     	</item>
 	                    <item>
+							<visible>Player.HasMedia</visible>
 	                        <description>Stop</description>
 	                        <label2></label2>
 							<label>36044</label>
@@ -201,6 +212,7 @@
 	                        <onclick>PlayerControl(play)</onclick>
 	                    </item>
 						<item>
+						<visible>Player.HasMedia</visible>
                         <description>Fast forward</description>
                         <label2></label2>
 						<label>31363</label>
@@ -208,7 +220,15 @@
                         <onclick>PlayerControl(forward)</onclick>
                     	</item>
 	                    <item>
-							<visible>!VideoPlayer.Content(LiveTV) + !PlayerControl.HasAudio</visible>
+							<visible>!VideoPlayer.Content(LiveTV) + !PlayerControl.HasAudio + VideoPlayer.Content(episodes)</visible>
+	                        <description>Next Chapter</description>
+	                        <label2></label2>
+							<label>10008</label>
+	                        <thumb></thumb>
+	                        <onclick>PlayerControl(next)</onclick>
+	                    </item>
+						<item>
+							<visible>!VideoPlayer.Content(LiveTV) + !PlayerControl.HasAudio + !VideoPlayer.Content(episodes) + VideoPlayer.Content(movies)</visible>
 	                        <description>Next Chapter</description>
 	                        <label2></label2>
 							<label>10008</label>
@@ -316,9 +336,9 @@
 	                </content>
 	            </control> 
 				<control type="label">
-                        <visible>control.hasfocus(8001)</visible>
                         
-                        <posx>40%</posx>
+                        
+                        <posx>31%</posx>
                         <posy>0</posy>
                         <width>10-col</width>
                         <height>2-row</height>
@@ -326,23 +346,10 @@
                         <aligny>center</aligny>
                         <font>regular</font>
                         <textcolor>textActive</textcolor>
-                        <label>$INFO[Container(8001).ListItem.Label]</label>
+                        <label>$INFO[ListItem.Label]</label>
                         <shadowcolor></shadowcolor>
                     </control>
-                    <control type="label">
-                        <visible>control.hasfocus(8002)</visible>
-                        
-                        <posx>40%</posx>
-                        <posy>0</posy>
-                        <width>10-col</width>
-                        <height>2-row</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <font>regular</font>
-                        <textcolor>textActive</textcolor>
-                        <label>$INFO[Container(8002).ListItem.Label]</label>
-                        <shadowcolor></shadowcolor>
-                    </control>                      
+                                    
 			</control>
 			
 			<control type="group">
@@ -401,7 +408,7 @@
 	                <height>700</height>
 					<animation effect="fade" start="0" end="100" time="1000">WindowOpen</animation>
 					<include>dimensionsFullscreen</include>
-					<imagepath>https://blatorone.github.io/blatorone/repo/Skin.Backgrounds/winter/MerryChristmas</imagepath>
+					<imagepath>https://blatorone.github.io/repository.blatorone/repo/Skin.Backgrounds/winter/MerryChristmas</imagepath>
 					<timeperimage>45000</timeperimage>
 					<fadetime>4000</fadetime>
 					<pauseatend>10000</pauseatend>

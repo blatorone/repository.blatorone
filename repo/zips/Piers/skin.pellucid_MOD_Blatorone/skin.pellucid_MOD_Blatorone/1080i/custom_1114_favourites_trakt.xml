@@ -222,6 +222,18 @@
 							<param name="list_id" value="5700"/>
 						</include> 
                         </control>
+                <control type="textbox">
+					<left>1250</left>
+					<top>300</top>
+					<width>650</width>
+					<height>400</height>
+					<font>veryLarge</font>
+					<align>center</align>
+					<aligny>center</aligny>
+                    <wrapmultiline>true</wrapmultiline>
+					<label>$INFO[ListItem.Label]</label>
+					<visible>Skin.Hassetting(touch)</visible>
+				</control>
         <!--mini window-->
         <include>miniVideoPlayer</include>
 	</controls>
