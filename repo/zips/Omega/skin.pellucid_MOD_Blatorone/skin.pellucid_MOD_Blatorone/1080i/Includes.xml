@@ -1430,12 +1430,15 @@
 		<ondown>8001</ondown>
     </include>
     <include name="homemenukeycontrol3">
-        <onup condition="!Skin.HasSetting(widget) + !string.isempty(Control.GetLabel(7001))">5200</onup>
-        <onup condition="!Skin.HasSetting(widget) + !System.Platform.Android">5300</onup><!-- + string.isempty(Control.GetLabel(7001))-->
+        <!--<onup condition="!Skin.HasSetting(widget) + !string.isempty(Control.GetLabel(7001))">5200</onup>-->
+        <onup condition="!Skin.HasSetting(widget) + !System.Platform.Android + !Container(5200).IsUpdating + !Container(5300).IsUpdating">5300</onup><!-- + string.isempty(Control.GetLabel(7001))-->
         <onup condition="!Skin.HasSetting(widget) + System.Platform.Android">5300</onup><!-- + string.isempty(Control.GetLabel(7001))-->
         <onup condition="Skin.HasSetting(widget) + System.Platform.Android">9005</onup>
         <onup condition="Skin.HasSetting(widget) + !System.Platform.Android">9000</onup>
-        <ondown>8001</ondown>
+		<onup condition="Container(5200).IsUpdating + Container(5300).IsUpdating + !Skin.HasSetting(widget)">9000</onup>
+        <onup condition="Container(5200).IsUpdating + !Skin.HasSetting(widget)">5300</onup>
+		<onup condition="Container(5300).IsUpdating + !Skin.HasSetting(widget)">5200</onup>
+		<ondown>8001</ondown>
 		<onright>9000</onright>
         <onleft>9000</onleft>
     </include>

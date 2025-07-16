@@ -669,6 +669,7 @@
 				</control>
 			</control>
 			-->
+			<control type="group" id="2000">
 				<include content="WidgetListPostertrendmovieshome" condition="Skin.HasSetting(homemenuside) + !Skin.HasSetting(widget)">
 							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trending_week&amp;tmdb_type=movie"/>
 							<param name="widget_headertrendmovieshome" value="Filme im Trend:"/>
@@ -683,7 +684,7 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="5300"/>
 						</include>
-						
+			</control>
 					<control type="label">
 							 <animation type="conditional" condition="control.hasfocus(9999)" reversible="true">
 								<effect type="fade" start="100" end="0" time="500" delay="0"/>
