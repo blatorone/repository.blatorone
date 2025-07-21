@@ -505,7 +505,7 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6500"/>
 						</include>
-						
+						<!-- Aussortiert
 						<control type="togglebutton" id="9026">
 				            <font>dialogTitle</font>
 				            
@@ -614,6 +614,7 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6900"/>
 						</include>
+						-->
 						</control>
 						
 						<!--

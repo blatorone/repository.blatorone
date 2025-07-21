@@ -8,7 +8,7 @@
     <include file="Includes_hubMenu.xml"/>
     <include file="Includes_hubOptionsItems.xml"/>
     <include file="View_LiveTVChannels.xml"/>
-    <include file="Variables.xml" />
+  
     <include file="View_50_List.xml"/>
     <include file="View_51_InfoWall.xml"/>
     <include file="View_52_Landscape.xml"/>
@@ -23,23 +23,13 @@
     <include file="View_591_BigFan.xml"/>
     <include file="View_602_FanartList.xml"/>
     <include file="View_609_Fullscreen_Wall.xml"/>
-    <include file="View_TVShows.xml"/>
-    <include file="View_MusicGenres.xml"/>
-    <include file="View_VideoFiles.xml"/>
-    <include file="View_Photos.xml"/>
-    <include file="View_Artists.xml"/>
-    <include file="View_Albums.xml"/>
-    <include file="View_Songs.xml"/>
-    <include file="View_MusicFiles.xml"/> 
-    <include file="View_MusicPlaylist.xml"/>
-    <include file="View_ArtistAlbums.xml"/>
-    <include file="View_MusicVideos.xml"/>
-	<include file="View_Games.xml"/>
+   
+
     <include file="script-skinshortcuts-includes.xml"/>
     <include file="Includes_mediaShowcase.xml"/>
     <constant name="DepthOSD">0.40</constant>
 	<constant name="DepthOSD+">0.44</constant>
-    <include file="MyVideoNav"/>
+
 	
 
     
@@ -727,7 +717,7 @@
 				<animation type="conditional" condition="player.hasmedia + Integer.IsGreater(System.AddonUpdateCount,0) + !Skin.HasSetting(Further_apart) + !System.IsMaster + !System.HasLocks" reversible="true">
 		    		<effect type="slide" start="0" end="-38" time="0" delay="0"/>
         		</animation>
-				<animation type="conditional" condition="!player.hasmedia + Integer.IsGreater(System.AddonUpdateCount,0) + !Skin.HasSetting(Further_apart + !System.IsMaster + !System.HasLocks" reversible="true">
+				<animation type="conditional" condition="!player.hasmedia + Integer.IsGreater(System.AddonUpdateCount,0) + !Skin.HasSetting(Further_apart) + !System.IsMaster + !System.HasLocks" reversible="true">
 		    		<effect type="slide" start="0" end="0" time="0" delay="0"/>
         		</animation>
                 
@@ -3126,7 +3116,7 @@
 	</include>
 
 
-    <include name="CategoryLabel1">
+    <include name="CategoryLabel">
 		<param name="visible">true</param>
 		<param name="item_treshold">0</param>
 		<definition>

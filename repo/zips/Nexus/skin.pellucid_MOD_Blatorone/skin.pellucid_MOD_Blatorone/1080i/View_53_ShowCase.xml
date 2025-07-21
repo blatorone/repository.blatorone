@@ -731,7 +731,7 @@
 				<include>ShowCaseRollingMovieSetDiscs</include>
 			</control>
 			<control type="group">
-				<include>OpenCaseAnimation</include>
+				
 				<control type="multiimage">
 					<left>16</left>
 					<top>10</top>

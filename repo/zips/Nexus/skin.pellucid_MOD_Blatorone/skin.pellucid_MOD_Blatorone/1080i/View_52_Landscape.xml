@@ -211,7 +211,7 @@
 					<top>50</top>
 					<width>1000</width>
 					<height>135</height>
-					<include>VisibleFadeAnimation</include>
+					
 					<visible>!Skin.HasSetting(Disable.Landscape.Info) + Control.IsVisible(52)</visible>
 
 					<control type="group">

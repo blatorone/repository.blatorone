@@ -47,7 +47,7 @@
 					<top>100</top>
 					<width>1000</width>
 					<height>135</height>
-					<include>VisibleFadeAnimation</include>
+				
 					<visible>!Skin.HasSetting(Disable.MyFlixInfo)</visible>
 					<control type="group">
 						<visible>!String.IsEmpty(ListItem.Top250)</visible>
@@ -573,7 +573,7 @@
 			<control type="group">
 				<top>530</top>
 				<visible>[[[Container.Content(movies) + !Skin.HasSetting(Enable.MyFlix.MovieLandscape)] | Container.Content(sets)] + !Control.IsVisible(7000)]</visible>
-				<include>MyFlixModAnimation</include>
+				
 				<include>FlixPoster</include>
 				<control type="image">
 					<include>FlixCaseVars</include>

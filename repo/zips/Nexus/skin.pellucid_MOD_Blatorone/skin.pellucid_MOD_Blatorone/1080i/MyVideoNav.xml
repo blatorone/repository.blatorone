@@ -72,7 +72,7 @@
                 <texturenofocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturenofocus>
                 <textoffsetx>2</textoffsetx>
 				<onclick>setfocus(9000)</onclick>
-                <visible>skin.hassetting(Touch) + !controlgroup(500).hasfocus + !controlgroup(9000).hasfocus + !window.isactive(1130) + !window.isactive(MyMusicNav)</visible>
+                <visible>skin.hassetting(Touch) + !controlgroup(500).hasfocus + !controlgroup(9000).hasfocus + !window.isactive(1130) + !window.isactive(10502)</visible>
             </control>
            
 			<control type="button" id="3002">
@@ -106,7 +106,7 @@
                     <param name="right">right</param>
                     <param name="select">select</param>
                     <param name="back">back</param>
-					<param name="visible">skin.hassetting(Touch) + !controlgroup(500).hasfocus + !control.hasfocus(9001) + !window.isactive(1130) + !window.isactive(1132) + !window.isactive(MyMusicNav)</param>
+					<param name="visible">skin.hassetting(Touch) + !controlgroup(500).hasfocus + !control.hasfocus(9001) + !window.isactive(1130) + !window.isactive(1132) + !window.isactive(10502)</param>
                     <param name="upview">true</param>
 					<param name="downview">true</param>
 					<param name="leftview">true</param>
@@ -208,7 +208,7 @@
             </control>        
             
 				
-
+            -->
                   
             <!--page header-->
             

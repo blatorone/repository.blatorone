@@ -1075,15 +1075,15 @@
 		<value condition="Control.HasFocus(10056)">$ADDON[script.embuary.info 32018]</value>
 	</variable>
 	<variable name="MinsToHourDurationVar">
-		<value condition="Integer.IsEqual(ListItem.Duration(mins),60) + !string.IsEqual(System.Time,ListItem.EndTimeResume | Integer.IsEqual(ListItem.Duration(mins),120) + !string.IsEqual(System.Time,ListItem.EndTimeResume | Integer.IsEqual(ListItem.Duration(mins),180) + !string.IsEqual(System.Time,ListItem.EndTimeResume | Integer.IsEqual(ListItem.Duration(mins),240) + !string.IsEqual(System.Time,ListItem.EndTimeResume | Integer.IsEqual(ListItem.Duration(mins),300) + !string.IsEqual(System.Time,ListItem.EndTimeResume | Integer.IsEqual(ListItem.Duration(mins),360) + !string.IsEqual(System.Time,ListItem.EndTimeResume | Integer.IsEqual(ListItem.Duration(mins),420) + !string.IsEqual(System.Time,ListItem.EndTimeResume | Integer.IsEqual(ListItem.Duration(mins),480) + !string.IsEqual(System.Time,ListItem.EndTimeResume | Integer.IsEqual(ListItem.Duration(mins),540) + !string.IsEqual(System.Time,ListItem.EndTimeResume | Integer.IsEqual(ListItem.Duration(mins),600) + !string.IsEqual(System.Time,ListItem.EndTimeResume">$LOCALIZE[180]: $INFO[ListItem.Duration(hours),,h]       </value>
-		<value condition="Integer.IsLess(ListItem.Duration(mins),60) + !string.IsEqual(System.Time,ListItem.EndTimeResume + !string.IsEmpty(ListItem.EndTimeResume">$LOCALIZE[180]: $INFO[ListItem.Duration(m),,m]       </value>
-		<value condition="string.IsEqual(System.Time,ListItem.EndTimeResume |  string.IsEmpty(ListItem.EndTimeResume"></value>
-		<value condition="Integer.IsLess(ListItem.Duration(mins),1) + !string.IsEqual(System.Time,ListItem.EndTimeResume">$LOCALIZE[180]: $INFO[ListItem.Duration(ss),,$LOCALIZE[31338]]       </value>
+		<value condition="Integer.IsEqual(ListItem.Duration(mins),60) + !string.IsEqual(System.Time,ListItem.EndTimeResume) | Integer.IsEqual(ListItem.Duration(mins),120) + !string.IsEqual(System.Time,ListItem.EndTimeResume) | Integer.IsEqual(ListItem.Duration(mins),180) + !string.IsEqual(System.Time,ListItem.EndTimeResume) | Integer.IsEqual(ListItem.Duration(mins),240) + !string.IsEqual(System.Time,ListItem.EndTimeResume) | Integer.IsEqual(ListItem.Duration(mins),300) + !string.IsEqual(System.Time,ListItem.EndTimeResume) | Integer.IsEqual(ListItem.Duration(mins),360) + !string.IsEqual(System.Time,ListItem.EndTimeResume) | Integer.IsEqual(ListItem.Duration(mins),420) + !string.IsEqual(System.Time,ListItem.EndTimeResume) | Integer.IsEqual(ListItem.Duration(mins),480) + !string.IsEqual(System.Time,ListItem.EndTimeResume) | Integer.IsEqual(ListItem.Duration(mins),540) + !string.IsEqual(System.Time,ListItem.EndTimeResume) | Integer.IsEqual(ListItem.Duration(mins),600) + !string.IsEqual(System.Time,ListItem.EndTimeResume)">$LOCALIZE[180]: $INFO[ListItem.Duration(hours),,h]       </value>
+		<value condition="Integer.IsLess(ListItem.Duration(mins),60) + !string.IsEqual(System.Time,ListItem.EndTimeResume) + !string.IsEmpty(ListItem.EndTimeResume)">$LOCALIZE[180]: $INFO[ListItem.Duration(m),,m]       </value>
+		<value condition="string.IsEqual(System.Time,ListItem.EndTimeResume) |  string.IsEmpty(ListItem.EndTimeResume)"></value>
+		<value condition="Integer.IsLess(ListItem.Duration(mins),1) + !string.IsEqual(System.Time,ListItem.EndTimeResume)">$LOCALIZE[180]: $INFO[ListItem.Duration(ss),,$LOCALIZE[31338]]       </value>
 		<value>$LOCALIZE[180]: $INFO[ListItem.Duration(h),,h] $INFO[.ListItem.Duration(m),,m]       </value>
 	</variable>
 	<variable name="EndTimeResumeVar">
-		<value condition="!string.IsEmpty(ListItem.EndTimeResume">$LOCALIZE[31245]: $INFO[ListItem.EndTimeResume]       </value>
-		<value condition="string.IsEmpty(ListItem.EndTimeResume"></value>
+		<value condition="!string.IsEmpty(ListItem.EndTimeResume)">$LOCALIZE[31245]: $INFO[ListItem.EndTimeResume]       </value>
+		<value condition="string.IsEmpty(ListItem.EndTimeResume)"></value>
 	</variable>
 	<variable name="premieredVar">
 		<value condition="!string.IsEmpty(ListItem.premiered)">$LOCALIZE[20473]: $INFO[ListItem.premiered]</value>

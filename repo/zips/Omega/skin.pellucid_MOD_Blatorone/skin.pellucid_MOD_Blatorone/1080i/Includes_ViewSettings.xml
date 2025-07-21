@@ -174,8 +174,8 @@
         	<textureradioofffocus colordiffuse="$VAR[selected]">buttons/radio-button-off.png</textureradioofffocus>
         	<textureradiooffnofocus colordiffuse="$VAR[Home]">buttons/radio-button-off.png</textureradiooffnofocus>
 			<onclick>Skin.ToggleSetting(Disable.ShowCase.MovieGenre)</onclick>
-			<selected>!Skin.HasSetting(Disable.ShowCase.MovieGenre)</selected>)
-			<visible>[Container.Content(movies) + !Skin.HasSetting(Disable.ShowCase.MovieInfo)] | [Container.Content(sets) + !Skin.HasSetting(Disable.ShowCase.SetInfo)]</visible>
+			<selected>!Skin.HasSetting(Disable.ShowCase.MovieGenre)</selected>
+			<visible>[Container.Content(movies) + !Skin.HasSetting(Disable.ShowCase.MovieInfo)] | [Container.Content(sets) + !Skin.HasSetting(Disable.ShowCase.Info)]</visible>
 		</control>
 		
 		<control type="radiobutton" id="1516">
@@ -189,7 +189,7 @@
         	<textureradioofffocus colordiffuse="$VAR[selected]">buttons/radio-button-off.png</textureradioofffocus>
         	<textureradiooffnofocus colordiffuse="$VAR[Home]">buttons/radio-button-off.png</textureradiooffnofocus>
 			<onclick>Skin.ToggleSetting(Enable.ShowCase.TVShowGenre)</onclick>
-			<selected>Skin.HasSetting(Enable.ShowCase.TVShowGenre)</selected>)
+			<selected>Skin.HasSetting(Enable.ShowCase.TVShowGenre)</selected>
 			<visible>Container.Content(tvshows) + !Skin.HasSetting(Disable.ShowCase.TVInfo)</visible>
 		</control>
 		
