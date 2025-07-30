@@ -1030,3 +1030,11 @@ msgstr ""
 msgctxt "#31373"
 msgid "Previous Title"
 msgstr ""
+
+msgctxt "#31374"
+msgid "New Value"
+msgstr ""
+
+msgctxt "#31375"
+msgid "Disable This Show"
+msgstr ""

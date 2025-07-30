@@ -1030,4 +1030,11 @@ msgctxt "#31373"
 msgid "Previous Title"
 msgstr "Vorheriger Titel"
 
+msgctxt "#31374"
+msgid "New Value"
+msgstr "Neuer Wert"
+
+msgctxt "#31375"
+msgid "Disable This Show"
+msgstr "Diese Sendung ignorieren"
 
