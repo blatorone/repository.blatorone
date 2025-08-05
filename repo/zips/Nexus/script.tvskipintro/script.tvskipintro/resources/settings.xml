@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+	<category label="Allgemein">
+		<setting id="default.skip" type="slider" label="Standard überspringen für neue Shows" default="45" range="10,120" option="int" />
+	</category>
+
+
+</settings>
