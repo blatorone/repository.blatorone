@@ -1,3 +1,7 @@
+Version 2.0.168 Skip Intro angepasst
+
+Version 2.0.167 Skip Intro Fenster hinzugefügt
+
 Version 2.0.166 Paar fixes und bisschen aufgeräumt
 
 Version 2.0.165 Button erreichbarkeit im Homescreen angepasst

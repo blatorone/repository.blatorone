@@ -18,7 +18,7 @@
                 <visible>!window.isactive(FullscreenInfo)</visible>
             </control>
 		<control type="grouplist" id="9001">
-			<posx>25%</posx>
+			<posx>35%</posx>
 			<bottom>-75</bottom>
 			<width>1200</width>
 			<height>150</height>
@@ -54,7 +54,8 @@
 				<font>buttonTitle</font>
 				<textoffsetx>10</textoffsetx>
 			</control>
-			<control type="button" id="210">
+			
+			<control type="button" id="9998">
 				<top>100</top>
 				<description>Never Button</description>
 				
@@ -62,14 +63,17 @@
         		<width>auto</width>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label>$LOCALIZE[31375]</label>
+				<label>$LOCALIZE[36028]</label>
 				<textcolor>textActive</textcolor>
         		<focusedcolor>$VAR[Home]</focusedcolor>
 				<texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>			
 				<font>buttonTitle</font>
 				<textoffsetx>10</textoffsetx>
+				<onclick>action(close)</onclick>
 			</control>
+		
 		</control>
+		
 		<control type="button" id="9999">
             <posx>-500</posx>
             <posy>0</posy>
@@ -78,6 +82,7 @@
 			<onfocus>action(close)</onfocus>
 			
         </control>
+		
 	</controls>
 	
 </window>
