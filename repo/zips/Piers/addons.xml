@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="skin.pellucid_MOD_Blatorone" version="2.0.168-test" name="Pellucid MOD Blatorone" provider-name="Blatorone">
+<addon id="skin.pellucid_MOD_Blatorone" version="2.0.169" name="Pellucid MOD Blatorone" provider-name="Blatorone">
 <requires>
 <import addon="xbmc.gui" version="5.18.0"/>
 <import addon="script.skinshortcuts" version="1.1.4"/>
