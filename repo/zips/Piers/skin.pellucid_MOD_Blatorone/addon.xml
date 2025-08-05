@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.pellucid_MOD_Blatorone" version="2.0.167" name="Pellucid MOD Blatorone" provider-name="Blatorone">
+<addon id="skin.pellucid_MOD_Blatorone" version="2.0.168-test" name="Pellucid MOD Blatorone" provider-name="Blatorone">
     <requires>
         <import addon="xbmc.gui" version="5.18.0"/>
         <import addon="script.skinshortcuts" version="1.1.4"/>
@@ -7,6 +7,7 @@
         <import addon="script.embuary.helper" version="1.2.14"/>
         <import addon="plugin.video.themoviedb.helper" version="0.0.1"/>
         <import addon="service.upnext" version="1.1.0"/>
+        <import addon="script.tvskipintro" version="1.0.0"/>
         <import addon="plugin.program.autocompletion" version="1.0.0"/>
     </requires>
     <extension point="xbmc.gui.skin" debugging="false">
