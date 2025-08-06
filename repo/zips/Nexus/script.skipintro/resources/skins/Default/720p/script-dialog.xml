@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="9999">
+	<onload>AlarmClock(hidemenu,setfocus(9999),02:00,true)</onload>
+	<onunload>CancelAlarm(hidemenu,true)</onunload>
 	<defaultcontrol always="true">9001</defaultcontrol>
 	<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
 	<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
@@ -30,7 +32,7 @@
         		<width>auto</width>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label>$ADDON[script.skipintro 30006]</label>
+				<label></label>
 				<font>buttonTitle</font>
 				<textcolor>white</textcolor>
         		<focusedcolor>black</focusedcolor>
@@ -45,7 +47,7 @@
         		<width>auto</width>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label>new value</label>
+				<label></label>
 				<textcolor>white</textcolor>
         		<focusedcolor>black</focusedcolor>
 				<texturefocus colordiffuse="ff87cefa">discsurface.png</texturefocus>				
@@ -60,13 +62,38 @@
         		<width>auto</width>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label>disable this show</label>
+				<label></label>
 				<textcolor>white</textcolor>
         		<focusedcolor>black</focusedcolor>
 				<texturefocus colordiffuse="ff87cefa">discsurface.png</texturefocus>			
 				<font>buttonTitle</font>
 				<textoffsetx>10</textoffsetx>
+				
 			</control>
+			<control type="button" id="9999">
+            <posx>-500</posx>
+            <posy>0</posy>
+            <width>1-col</width>
+            <height>2-row</height>
+			<onfocus>action(close)</onfocus>
+			
+        </control>
+			<!--
+			<control type="button" id="211">
+    			<top>150</top>
+    			<description>Toggle Service</description>
+    			<height>50</height>
+    			<width>auto</width>
+    			<align>center</align>
+    			<aligny>center</aligny>
+    			<label>Service ein/aus</label>
+    			<textcolor>white</textcolor>
+    			<focusedcolor>black</focusedcolor>
+    			<texturefocus colordiffuse="ff87cefa">discsurface.png</texturefocus>
+    			<font>buttonTitle</font>
+    			<textoffsetx>10</textoffsetx>
+			</control>
+			-->
 		</control>
 	</controls>
 </window>
