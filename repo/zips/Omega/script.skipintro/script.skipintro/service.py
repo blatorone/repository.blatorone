@@ -20,7 +20,6 @@
 
 import xbmc,xbmcvfs,xbmcaddon,json,os,xbmcgui,time,re
 
-from resources.lib.kodiUtilities.py import getSettingAsBool
 KODI_VERSION = int(xbmc.getInfoLabel("System.BuildVersion").split(".")[0])
 addonInfo = xbmcaddon.Addon().getAddonInfo
 settings = xbmcaddon.Addon().getSetting
@@ -66,8 +65,6 @@ def newskip(title, seconds, start=0):
     data.append(newIntro)
     with open(skipFile, 'w') as f:
         json.dump(data, f, indent=2)
-
-   
 
 def getSkip(title):
     try:
@@ -135,7 +132,7 @@ class Service():
         try:
             if not xbmc.Player().isPlayingVideo(): raise Exception() 
             
-           
+            time.sleep(2)
             timeNow = xbmc.Player().getTime()
             status = checkService(tvshow)
             
@@ -152,8 +149,6 @@ class Service():
             del Dialog  
             
         except:pass
-
-   
 
 OK_BUTTON = 201
 NEW_BUTTON = 202
@@ -212,7 +207,5 @@ class CustomDialog(xbmcgui.WindowXMLDialog):
 
         if control in [OK_BUTTON, NEW_BUTTON, DISABLE_BUTTON]:
             self.close()
-
-    
-        
+            
 Service().ServiceEntryPoint()
