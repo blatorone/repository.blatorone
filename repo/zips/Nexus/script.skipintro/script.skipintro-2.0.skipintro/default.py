@@ -6,7 +6,9 @@ _ = xbmcaddon.Addon().getLocalizedString
 from resources.lib.series_manager import (
     toggle_service_dialog,
     toggle_auto_dialog,
-    delete_series_dialog
+    delete_series_dialog,
+    set_skiptime_dialog,
+    set_starttime_dialog
 )
 
 def main():
@@ -24,6 +26,10 @@ def main():
         toggle_auto_dialog()
     elif "delete" in mode_param:
         delete_series_dialog()
+    elif "set_skip" in mode_param:
+        set_skiptime_dialog()
+    elif "set_start" in mode_param:
+        set_starttime_dialog()
     else:
         xbmcgui.Dialog().ok("SkipIntro", _(32013))
 

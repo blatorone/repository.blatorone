@@ -29,8 +29,8 @@ msgid "Start Promt At (seconds)"
 msgstr "Aufforderung ab (Sekunden)"
 
 msgctxt "#32004"
-msgid "Enable Auto-Skip?"
-msgstr "Auto-Skip aktivieren?"
+msgid "Enable Off/On"
+msgstr "Auto-Skip Aus/An"
 
 msgctxt "#32005"
 msgid "Auto-Skip"
@@ -119,6 +119,52 @@ msgstr "Serie löschen"
 msgctxt "#32026"
 msgid "Auto Skip"
 msgstr "Automatisch übersprungen"
+
+msgctxt "#32027"
+msgid "Change start time"
+msgstr "Start-Zeit ändern"
+
+msgctxt "#32028"
+msgid "Change skip time"
+msgstr "Skip-Zeit ändern"
+
+msgctxt "#32029"
+msgid "New start time (in seconds) for '%s':"
+msgstr "Neue Start-Zeit (Sekunden) für '%s':"
+
+msgctxt "#32030"
+msgid "New skip time (in seconds) for '%s':"
+msgstr "Neue Skip-Zeit (Sekunden) für '%s':"
+
+msgctxt "#32031"
+msgid "%s: Start time set to %ss"
+msgstr "%s: Start-Zeit auf %ss gesetzt"
+
+msgctxt "#32032"
+msgid "%s: Skip time set to %ss"
+msgstr "%s: Skip-Zeit auf %ss gesetzt"
+
+msgctxt "#32033"
+msgid "Delete"
+msgstr "Löschen"
+
+msgctxt "#32034"
+msgid "Change Skip Time"
+msgstr "Überspringen Zeit ändern"
+
+msgctxt "#32035"
+msgid "Change Start Time"
+msgstr "Start Zeit ändern"
+
+msgctxt "#32036"
+msgid "Default Value"
+msgstr "Standardwert"
+
+msgctxt "#32037"
+msgid "Settings"
+msgstr "Einstellungen"
+
+
 
 
 

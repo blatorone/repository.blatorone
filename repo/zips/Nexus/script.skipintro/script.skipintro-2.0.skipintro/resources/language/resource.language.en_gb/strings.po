@@ -31,7 +31,7 @@ msgid "Start Promt At (seconds)"
 msgstr ""
 
 msgctxt "#32004"
-msgid "Enable Auto-Skip?"
+msgid "Enable Off/On"
 msgstr ""
 
 msgctxt "#32005"
@@ -122,3 +122,46 @@ msgctxt "#32026"
 msgid "Auto Skip"
 msgstr ""
 
+msgctxt "#32027"
+msgid "Change start time"
+msgstr ""
+
+msgctxt "#32028"
+msgid "Change skip time"
+msgstr ""
+
+msgctxt "#32029"
+msgid "New start time (in seconds) for '%s':"
+msgstr ""
+
+msgctxt "#32030"
+msgid "New skip time (in seconds) for '%s':"
+msgstr ""
+
+msgctxt "#32031"
+msgid "%s: Start time set to %ss"
+msgstr ""
+
+msgctxt "#32032"
+msgid "%s: Skip time set to %ss"
+msgstr ""
+
+msgctxt "#32033"
+msgid "Delete"
+msgstr ""
+
+msgctxt "#32034"
+msgid "Change Skip Time"
+msgstr ""
+
+msgctxt "#32035"
+msgid "Change Start Time"
+msgstr ""
+
+msgctxt "#32036"
+msgid "Default Value"
+msgstr "Standardwert"
+
+msgctxt "#32037"
+msgid "Settings"
+msgstr ""

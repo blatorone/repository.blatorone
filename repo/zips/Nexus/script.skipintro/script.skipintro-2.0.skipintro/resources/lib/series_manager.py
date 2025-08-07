@@ -101,3 +101,55 @@ def delete_series_dialog():
 
 
 
+
+def set_skiptime_dialog():
+    data = load_json()
+    if not isinstance(data, dict):
+        xbmcgui.Dialog().ok(_(32015), _(32016))
+        return
+
+    shows = list(data.keys())
+    if not shows:
+        xbmcgui.Dialog().ok("SkipIntro", _(32017))
+        return
+
+    while True:
+        idx = xbmcgui.Dialog().select(_(32028), shows)
+        if idx == -1:
+            break
+
+        selected = shows[idx]
+        current_skip = data[selected].get("skip", 0)
+        new_skip = xbmcgui.Dialog().input(_(32030) % selected, str(current_skip), type=xbmcgui.INPUT_NUMERIC)
+
+        if new_skip:
+            data[selected]["skip"] = int(new_skip)
+            save_json(data)
+            xbmcgui.Dialog().notification("SkipIntro",_(32032) %  (selected, new_skip))
+
+
+def set_starttime_dialog():
+    data = load_json()
+    if not isinstance(data, dict):
+        xbmcgui.Dialog().ok(_(32015), _(32016))
+        return
+
+    shows = list(data.keys())
+    if not shows:
+        xbmcgui.Dialog().ok("SkipIntro", _(32017))
+        return
+
+    while True:
+        idx = xbmcgui.Dialog().select(_(32027), shows)
+        if idx == -1:
+            break
+
+        selected = shows[idx]
+        current_start = data[selected].get("start", 0)
+        new_start = xbmcgui.Dialog().input(_(32029) % selected, str(current_start), type=xbmcgui.INPUT_NUMERIC)
+
+        if new_start:
+            data[selected]["start"] = int(new_start)
+            save_json(data)
+            xbmcgui.Dialog().notification("SkipIntro", _(32031) %  (selected, new_start))
+
