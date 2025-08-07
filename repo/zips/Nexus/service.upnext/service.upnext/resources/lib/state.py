@@ -43,7 +43,7 @@ class UpNextState(object):  # pylint: disable=too-many-public-methods
         self.data = None
         self.encoding = 'base64'
         # Current video details
-        self.current_item = utils.create_item_details('empty')
+        self.current_item = utils.create_item_details(item=None, reset=True)
         self.filename = None
         self.total_time = 0
         # Popup state variables
@@ -74,7 +74,10 @@ class UpNextState(object):  # pylint: disable=too-many-public-methods
         if self.next_item:
             self.current_item = self.next_item
         else:
-            self.current_item = utils.create_item_details('empty')
+            self.current_item = utils.create_item_details(
+                item=self.current_item,
+                reset=True,
+            )
         self.next_item = None
 
     def get_tracked_file(self):
@@ -97,8 +100,13 @@ class UpNextState(object):  # pylint: disable=too-many-public-methods
         self.filename = None
         self.log('Tracking reset')
 
-    def reset_queue(self):
+    def reset_queue(self, on_start=False):
         if self.queued:
+            if on_start:
+                playcount = self.played_in_a_row
+                self.played_in_a_row = playcount + 1
+                self.log('Increment group playcount for queued item: {0} to {1}'
+                         .format(playcount, self.played_in_a_row))
             self.queued = api.reset_queue()
 
     def get_next(self):
@@ -192,6 +200,12 @@ class UpNextState(object):  # pylint: disable=too-many-public-methods
     def set_popup_time(self, total_time):
         popup_time = 0
 
+        # Use 1s offset from total_time to try and avoid race condition with
+        # internal Kodi playlist handling
+        self.total_time = total_time
+        if SETTINGS.enable_queue:
+            total_time -= 1
+
         # Alway use plugin data, when available
         if self.get_plugin_type():
             # Some plugins send the time from video end
@@ -230,7 +244,6 @@ class UpNextState(object):  # pylint: disable=too-many-public-methods
             self.popup_cue = SETTINGS.sim_cue == constants.SETTING_ON
 
         self.popup_time = popup_time
-        self.total_time = total_time
         self._set_detect_time()
 
         self.log('Popup: due at {0}s of {1}s (cue: {2})'.format(
@@ -262,10 +275,10 @@ class UpNextState(object):  # pylint: disable=too-many-public-methods
             new_group = new_item['group_name']
             current_group = self.current_item['group_name']
             if new_group != current_group:
+                self.played_in_a_row = 1
                 self.log('Reset playcount: group change - {0} to {1}'.format(
                     current_group, new_group
                 ))
-                self.played_in_a_row = 1
 
             self.current_item = new_item
         return self.current_item
@@ -290,7 +303,7 @@ class UpNextState(object):  # pylint: disable=too-many-public-methods
         return current_video
 
     @classmethod
-    # pylint: disable-next=too-many-branches, too-many-return-statements
+    # pylint: disable-next=too-many-branches,too-many-return-statements,too-many-locals
     def _get_library_now_playing(cls, play_info):
         if 'id' in play_info['item']:
             current_video = api.get_from_library(item=play_info['item'])
@@ -310,9 +323,9 @@ class UpNextState(object):  # pylint: disable=too-many-public-methods
 
         # Previously resolved listitems may lose infotags that are set when the
         # listitem is resolved. Fallback to Player notification data.
+        values_to_ignore = {constants.UNDEFINED, constants.UNKNOWN, ''}
         for info, value in play_info['item'].items():
-            current_value = current_video.get(info, '')
-            if current_value in {constants.UNDEFINED, constants.UNKNOWN, ''}:
+            if current_video.get(info, '') in values_to_ignore:
                 current_video[info] = value
 
         tvshowid = current_video.get('tvshowid', constants.UNDEFINED)
@@ -323,20 +336,26 @@ class UpNextState(object):  # pylint: disable=too-many-public-methods
         if not title or constants.UNDEFINED in {season, episode}:
             return None
 
-        for plugin_url in ('mediapath', 'file'):
-            plugin_url = current_video.get(plugin_url, '')
-            if plugin_url.startswith('plugin://'):
-                addon_id, _, addon_args = utils.parse_url(plugin_url)
-                if addon_id in {constants.ADDON_ID, constants.TMDBH_ADDON_ID}:
-                    if 'player' in addon_args:
-                        addon_id = addon_args['player']
-                        break
-                    addon_id = None
-                    continue
+        plugin_url = None
+        addon_id = None
+        supported_addons = {constants.ADDON_ID, constants.TMDBH_ADDON_ID}
+        params_to_replace = ('player', 'tmdb_id', 'season', 'episode')
+        for plugin_url_type in ('mediapath', 'file'):
+            _plugin_url = current_video.get(plugin_url_type, '')
+            if (_plugin_url == plugin_url
+                    or not _plugin_url.startswith('plugin://')):
+                continue
+            plugin_url = _plugin_url
+            addon_id, _, addon_args = utils.parse_url(plugin_url)
+            if addon_id in supported_addons:
+                addon_id = None
+            else:
                 break
-        else:
-            plugin_url = None
-            addon_id = None
+            for param in params_to_replace:
+                value = addon_args.get(param, '')
+                if value in values_to_ignore:
+                    continue
+                current_video[param] = value
 
         if tvshowid == constants.UNDEFINED or plugin_url:
             # Video plugins can provide a plugin specific tvshowid. Search Kodi
@@ -357,34 +376,57 @@ class UpNextState(object):  # pylint: disable=too-many-public-methods
         episodeid = (utils.get_int(current_video, 'episodeid', None)
                      or utils.get_int(current_video, 'id'))
         if episodeid == constants.UNDEFINED:
-            episodeid = api.get_episodeid(tvshowid, season, episode)
-        # Now playing episode not found in library
-        if episodeid == constants.UNDEFINED:
-            return None
-        current_video['episodeid'] = episodeid
+            details = api.get_episode_info(tvshowid, season, episode)
+            # Now playing episode not found in library
+            if not details:
+                return None
+            current_video = dict(current_video, **details)
+        else:
+            current_video['episodeid'] = episodeid
 
         return current_video
 
     @staticmethod
+    # pylint: disable-next=too-many-locals
     def _get_tmdb_now_playing(current_video, title, season, episode, addon_id):
         # TMDBHelper not importable, use plugin url instead
         if SETTINGS.import_tmdbhelper:
-            from tmdb_helper import Players, TMDb
+            from tmdb_helper import (
+                Players,
+                TMDb,
+                get_item_details,
+                get_next_episodes,
+                queue_episodes,
+            )
 
             no_integration = not TMDb.is_initialised()
         else:
             no_integration = True
 
+        player_name = current_video.get('player', addon_id)
         if no_integration:
-            upnext.send_signal(sender='UpNext.TMDBHelper',
-                               upnext_info={'current_video': current_video,
-                                            'play_url': None,
-                                            'player': addon_id})
+            upnext.send_signal(
+                sender='UpNext.TMDBHelper',
+                upnext_info={
+                    'current_video': current_video,
+                    'play_url': None,
+                    'player': player_name,
+                }
+            )
             return
 
+        season = utils.get_int(current_video, 'season', season)
+        episode = utils.get_int(current_video, 'episode', episode)
         # noinspection PyUnboundLocalVariable
-        # pylint: disable-next=no-value-for-parameter
-        tmdb_id, current_video = TMDb().get_id_details(title, season, episode)
+        # pylint: disable-next=possibly-used-before-assignment,no-value-for-parameter
+        tmdb_id = current_video.get('tmdb_id') or TMDb().get_tmdb_id(
+            tmdb_type='tv', query=title, season=season, episode=episode
+        )
+        # noinspection PyUnboundLocalVariable
+        # pylint: disable-next=possibly-used-before-assignment,not-callable
+        current_video = get_item_details(
+            tmdb_type='tv', tmdb_id=tmdb_id, season=season, episode=episode
+        )
         if not tmdb_id or not current_video:
             return
 
@@ -396,24 +438,28 @@ class UpNextState(object):  # pylint: disable=too-many-public-methods
                           episode=episode,
                           ignore_default=False,
                           islocal=False,
-                          player=addon_id,
+                          player=player_name,
                           mode='play')
 
         player = players.current_player or players.get_default_player()
-        player = (player and player.get('file')) or addon_id
-        episodes = players.get_next_episodes(player)
+        player = (player and player.get('file')) or player_name
+        # noinspection PyUnboundLocalVariable
+        # pylint: disable-next=possibly-used-before-assignment
+        episodes = get_next_episodes(tmdb_id, season, episode, player)
         if not episodes:
             return
 
-        if player and SETTINGS.queue_from_tmdb and players.queue(episodes):
+        # noinspection PyUnboundLocalVariable
+        # pylint: disable-next=possibly-used-before-assignment
+        if player and SETTINGS.queue_from_tmdb and queue_episodes(episodes):
             utils.event('OnAVStart', internal=True)
         else:
             upnext.send_signal(sender='UpNext.TMDBHelper',
                                upnext_info={
                                    'current_video': dict(
-                                       current_video['infolabels'],
+                                       current_video.infolabels,
                                        tmdb_id=tmdb_id,
-                                       art=current_video['art'],
+                                       art=current_video.art,
                                        showtitle=title,
                                    ),
                                    'next_video': dict(

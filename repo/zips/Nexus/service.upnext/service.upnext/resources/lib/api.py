@@ -146,8 +146,10 @@ RECOMMENDATION_PROPERTIES = {
 }
 
 PLAYER_PLAYLIST = {
-    'video': xbmc.PLAYLIST_VIDEO,  # 1
+    'none': -1,
     'audio': xbmc.PLAYLIST_MUSIC,  # 0
+    'video': xbmc.PLAYLIST_VIDEO,  # 1
+    'picture': 2,
 }
 
 JSON_MAP = {
@@ -279,7 +281,17 @@ FILTER_THIS_SEASON = {
     'operator': 'is',
     'value': constants.UNDEFINED_STR
 }
+FILTER_NEXT_SEASON = {
+    'field': 'season',
+    'operator': 'greaterthan',
+    'value': constants.UNDEFINED_STR
+}
 
+FILTER_FIRST_EPISODE = {
+    'field': 'episode',
+    'operator': 'lessthan',
+    'value': '2'
+}
 FILTER_THIS_EPISODE = {
     'field': 'episode',
     'operator': 'is',
@@ -334,6 +346,26 @@ FILTER_UNWATCHED_UPNEXT_EPISODE = {
         FILTER_UNWATCHED,
         FILTER_THIS_SEASON,
         FILTER_NEXT_EPISODE
+    ]
+}
+
+FILTER_UPNEXT_SEASON_EPISODE = {
+    'or': [
+        FILTER_UPNEXT_EPISODE,
+        {'and': [
+            FILTER_NEXT_SEASON,
+            FILTER_FIRST_EPISODE
+        ]}
+    ]
+}
+FILTER_UNWATCHED_UPNEXT_SEASON_EPISODE = {
+    'or': [
+        FILTER_UNWATCHED_UPNEXT_EPISODE,
+        {'and': [
+            FILTER_UNWATCHED,
+            FILTER_NEXT_SEASON,
+            FILTER_FIRST_EPISODE
+        ]}
     ]
 }
 
@@ -697,7 +729,7 @@ def get_playerid(retry=3):
         return None
 
     for player in result:
-        if player.get('type', 'video') in PLAYER_PLAYLIST:
+        if player.get('type') in PLAYER_PLAYLIST:
             playerid = utils.get_int(player, 'playerid')
             break
     else:
@@ -721,7 +753,7 @@ def get_playlistid():
                            params={'playerid': get_playerid(),
                                    'properties': ['playlistid']})
     playlistid = utils.get_int(result.get('result', {}), 'playlistid',
-                               PLAYER_PLAYLIST['video'])
+                               PLAYER_PLAYLIST['none'])
 
     log('Selected playlistid: {0}'.format(playlistid))
     _CACHE['playlistid'] = playlistid
@@ -817,11 +849,19 @@ def get_next_episode_from_library(episode=constants.UNDEFINED,
         sort = SORT_RANDOM
     elif next_season:
         sort = SORT_DATE
-        FILTER_NEXT_EPISODE['value'] = str(episode['episode'])
-        aired = utils.iso_datetime(episode['firstaired'])
-        FILTER_AIRED['value'] = aired.split()[0]
-        FILTER_NEXT_AIRED['value'] = aired
-        filters.append(FILTER_UPNEXT_AIRED)
+        aired = episode['firstaired']
+        if aired:
+            aired = utils.iso_datetime(aired)
+            FILTER_AIRED['value'] = aired.split()[0]
+            FILTER_NEXT_AIRED['value'] = aired
+            FILTER_NEXT_EPISODE['value'] = str(episode['episode'])
+            filters.append(FILTER_UPNEXT_AIRED)
+        else:
+            season = str(episode['season'])
+            FILTER_NEXT_SEASON['value'] = season
+            FILTER_THIS_SEASON['value'] = season
+            FILTER_NEXT_EPISODE['value'] = str(episode['episode'])
+            filters.append(FILTER_UPNEXT_SEASON_EPISODE)
     else:
         sort = SORT_EPISODE
         FILTER_THIS_SEASON['value'] = str(episode['season'])
@@ -954,30 +994,29 @@ def get_tvshowid(title):
     return tvshowid
 
 
-def get_episodeid(tvshowid, season, episode):
-    """Function to search Kodi library for episodeid by tvshowid, season, and
-       episode"""
+def get_episode_info(tvshowid, season, episode):
+    """Function to search Kodi library for episode info by tvshowid, season, and
+       episode number"""
 
     FILTER_THIS_SEASON['value'] = str(season)
     FILTER_THIS_EPISODE['value'] = str(episode)
 
     result, _ = get_videos_from_library(db_type='episodes',
                                         limit=1,
-                                        properties=[],
                                         filters=FILTER_EPISODE,
                                         params={'tvshowid': tvshowid})
 
     if not result:
-        log('episodeid for tvshowid {0} S{1}E{2} not found in library'.format(
+        log('Info for tvshowid {0} S{1}E{2} not found in library'.format(
             tvshowid, season, episode
         ), utils.LOGWARNING)
-        return constants.UNDEFINED
+        return None
 
     episodeid = utils.get_int(result, 'episodeid')
-    log('Found episodeid {0} for tvshowid {1} S{2}E{3}'.format(
+    log('Found info (episodeid {0}) for tvshowid {1} S{2}E{3}'.format(
         episodeid, tvshowid, season, episode
     ))
-    return episodeid
+    return result
 
 
 def get_details_from_library(db_type=None,
@@ -1238,6 +1277,7 @@ def get_upnext_movies_from_library(limit=25,
         set_index.add(set_id)
 
     return upnext_movies
+
 
 # pylint: disable=too-many-arguments, too-many-positional-arguments
 def get_videos_from_library(db_type,

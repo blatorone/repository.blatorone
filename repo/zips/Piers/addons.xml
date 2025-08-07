@@ -260,7 +260,7 @@
 	        </extension>
         </addon>
 
-<addon id="service.upnext" name="UpNext" version="2.0.30+dev.1" provider-name="im85288, MoojMidge">
+<addon id="service.upnext" name="UpNext" version="2.0.30+dev.2" provider-name="im85288, MoojMidge">
 <requires>
 <import addon="xbmc.python" version="3.0.0"/>
 <import addon="script.module.pil" version="1.1.7"/>
@@ -303,7 +303,7 @@
 </assets>
 </extension>
 </addon>
-<addon id="script.skipintro" version="2.0.6" name="TV Skip Intro" provider-name="aenema">
+<addon id="script.skipintro" version="2.0.7" name="TV Skip Intro" provider-name="aenema">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 	</requires>

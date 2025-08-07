@@ -193,7 +193,7 @@ class Service():
             startTime = checkStartTime(tvshow)
             skipTime = int(getSkip(tvshow))
 
-            if int(timeNow) < int(startTime):
+            if int(timeNow) < int(startTime) + 2:
                 print(f"[DEBUG] AutoSkip – Startzeit {startTime} noch nicht erreicht (aktuell {timeNow})")
                 raise Exception()
 

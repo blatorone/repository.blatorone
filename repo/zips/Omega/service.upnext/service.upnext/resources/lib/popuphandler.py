@@ -275,8 +275,10 @@ class UpNextPopupHandler(object):
             # Request playback of next file based on source and type
             keep_playing = self._play_next_video(next_item, popup_state, queued)
             # Update played in a row count if auto_play otherwise reset
-            self.state.played_in_a_row = (1 if popup_state['play_now']
-                                          else self.state.played_in_a_row + 1)
+            if popup_state['play_now']:
+                self.state.played_in_a_row = 1
+            elif not queued:
+                self.state.played_in_a_row += 1
 
         return next_item, play_next, keep_playing, restart
 
@@ -300,6 +302,11 @@ class UpNextPopupHandler(object):
             error = False
         if error or not self._show_popup():
             return self._popup_state(old_state=popup_state, abort=True)
+
+        # Use 1s offset from total_time to try and avoid race condition with
+        # internal Kodi playlist handling
+        if SETTINGS.enable_queue:
+            total_time -= 1
 
         # If cue point was provided then UpNext will auto play after a fixed
         # delay time, rather than waiting for the end of the file
@@ -349,6 +356,19 @@ class UpNextPopupHandler(object):
                 error = False
         else:
             popup_abort = True
+
+
+            # Abbrechen bei Still Watching, wenn nichts gedrückt wurde
+        if (
+            popup_state['show_upnext'] is False  # Nur bei Still Watching
+            and not popup_state.get('cancel')    # Kein "Zurück"
+            and not popup_state.get('play_now')  # Kein "Jetzt abspielen"
+            and not popup_state.get('stop')      # Kein "Stopp"
+            ):
+            self.log('Still Watching? keine Eingabe – Playback wird gestoppt', utils.LOGINFO)
+            popup_abort = True
+            self.player.stop()  # Playback sicher beenden
+
 
         return self._popup_state(old_state=popup_state,
                                  check_focus=True,
