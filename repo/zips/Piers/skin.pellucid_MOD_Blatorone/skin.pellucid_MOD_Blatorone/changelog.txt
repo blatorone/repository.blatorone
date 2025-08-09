@@ -1,3 +1,5 @@
+Version 2.0.174 Play button im pause fenster eingefügt 
+
 Version 2.0.173 Skip Intro Fenster angepasst
 
 Version 2.0.172 Skip Intro Automatisch Installiert Fehler behoben

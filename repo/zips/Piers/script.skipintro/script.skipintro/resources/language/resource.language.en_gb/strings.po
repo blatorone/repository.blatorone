@@ -83,7 +83,7 @@ msgid "JSON format invalid."
 msgstr ""
 
 msgctxt "#32017"
-msgid "No series found in the JSON."
+msgid "No series found in the Database."
 msgstr ""
 
 msgctxt "#32018"

@@ -888,6 +888,25 @@
 	                    <label>$INFO[videoplayer.season]x$INFO[videoplayer.episode] $INFO[videoplayer.Title]</label>
                         <autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
 	                </control>
+                    <control type="togglebutton">
+                    <posx>38%</posx>
+                    <posy>25%</posy>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <height>500</height>
+                    <width>500</width>
+                    <font>buttonTitle</font>
+                    <textcolor>textActive</textcolor>
+                    <focusedcolor>black</focusedcolor>
+                    <texturefocus colordiffuse="white">upnext/nextupicons/00.png</texturefocus>
+                    <texturenofocus colordiffuse="white">upnext/nextupicons/00.png</texturenofocus>
+                    <textoffsetx></textoffsetx>
+                    <disabledcolor>white</disabledcolor>
+                    <invalidcolor>white</invalidcolor>
+                    <pulseonselect>true</pulseonselect>
+                    <onclick>PlayerControl(play)</onclick>
+                    <visible>Skin.HasSetting(Touch) + player.paused</visible>
+                </control>
         <!--Battery Level-->
         <include>Battery</include>
         <!--debugging-->

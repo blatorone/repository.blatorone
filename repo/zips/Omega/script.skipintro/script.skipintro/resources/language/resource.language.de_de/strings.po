@@ -81,8 +81,8 @@ msgid "JSON format invalid."
 msgstr "JSON-Format ungültig."
 
 msgctxt "#32017"
-msgid "No series found in the JSON."
-msgstr "Keine Serien in der JSON gefunden."
+msgid "No series found in the Database."
+msgstr "Keine Serien in der Datenbank gefunden."
 
 msgctxt "#32018"
 msgid "Ignore"

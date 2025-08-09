@@ -2,6 +2,25 @@
 <window>
     <visible>!window.isactive(videoosd) + !window.isactive(osdvideosettings) + !window.isactive(osdaudiosettings) + !Window.IsActive(DialogSubtitles.xml) + !Window.IsVisible(fullscreeninfo) + [VideoPlayer.IsFullscreen + !Window.IsVisible(visualisation)] + [!String.IsEmpty(Player.SeekNumeric) | Player.ShowInfo | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding]</visible>
     <controls>
+        <control type="togglebutton">
+        <posx>38%</posx>
+        <posy>25%</posy>
+        <align>center</align>
+        <aligny>center</aligny>
+        <height>500</height>
+        <width>500</width>
+        <font>buttonTitle</font>
+        <textcolor>textActive</textcolor>
+        <focusedcolor>black</focusedcolor>
+        <texturefocus colordiffuse="white">upnext/nextupicons/00.png</texturefocus>
+        <texturenofocus colordiffuse="white">upnext/nextupicons/00.png</texturenofocus>
+        <textoffsetx></textoffsetx>
+        <disabledcolor>white</disabledcolor>
+        <invalidcolor>white</invalidcolor>
+        <pulseonselect>true</pulseonselect>
+        <onclick>PlayerControl(play)</onclick>
+        <visible>Skin.HasSetting(Touch)</visible>
+    </control>
 		<control type="image">
 			<visible>!String.IsEmpty(player.Art(clearart))</visible>
             <posx>col-17-begin</posx>
