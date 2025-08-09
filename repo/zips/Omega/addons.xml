@@ -303,7 +303,7 @@
 </assets>
 </extension>
 </addon>
-<addon id="script.skipintro" version="2.0.9" name="TV Skip Intro" provider-name="aenema">
+<addon id="script.skipintro" version="2.0.10" name="TV Skip Intro" provider-name="aenema">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 	</requires>

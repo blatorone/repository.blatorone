@@ -35,7 +35,7 @@ def toggle_service_dialog():
 
     while True:
         entries = [
-            f"{show} {_(32009)}: [{_(32006) if data[show].get('service', True) else _(32007)}]"
+            f"{show} {_(32009)}: [{_(32007) if data[show].get('service', True) else _(32006)}]"
             for show in shows
         ]
         idx = xbmcgui.Dialog().select(_(32024), entries)
