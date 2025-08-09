@@ -905,7 +905,7 @@
                     <invalidcolor>white</invalidcolor>
                     <pulseonselect>true</pulseonselect>
                     <onclick>PlayerControl(play)</onclick>
-                    <visible>Skin.HasSetting(Touch) + player.paused</visible>
+                    <visible>Skin.HasSetting(Touch)</visible>
                 </control>
         <!--Battery Level-->
         <include>Battery</include>
