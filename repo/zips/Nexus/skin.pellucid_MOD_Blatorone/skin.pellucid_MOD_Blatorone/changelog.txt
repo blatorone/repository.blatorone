@@ -1,3 +1,5 @@
+Version 2.0.177	Script Skin skip intro entfernt
+
 Version 2.0.176 Play button  in Video osd hinzugefügt
 
 Version 2.0.172 Skip Intro Automatisch Installiert Fehler behoben
