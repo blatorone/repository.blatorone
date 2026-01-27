@@ -7,7 +7,7 @@
                 <checksum>https://blatorone.github.io/repository.blatorone/repo/addons.xml.md5</checksum>
                 <datadir zip="true">https://blatorone.github.io/repository.blatorone/repo/</datadir>
             </dir>
-            <dir minversion="21.0.0"  maxversion="21.2.0">
+            <dir minversion="21.0.0"  maxversion="21.3.500">
                 <info compressed="false">https://blatorone.github.io/repository.blatorone/repo/zips/Omega/addons.xml</info>
                 <checksum>https://blatorone.github.io/repository.blatorone/repo/zips/Omega/addons.xml.md5</checksum>
                 <datadir zip="true">https://blatorone.github.io/repository.blatorone/repo/zips/Omega/</datadir>
