@@ -7,7 +7,7 @@
 	<onload>AlarmClock(hidemenu,setfocus(9999),01:00,true)</onload>
 	<onunload>CancelAlarm(hidemenu,true)</onunload>
 	<onload condition="System.IsMaster">Mastermode</onload>
-	<onload condition="System.Platform.Linux">RunScript(special://home/addons/skin.pellucid_MOD_Blatorone/scripts/delete_files.py)</onload>
+	<!--<onload condition="System.Platform.Linux">RunScript(special://home/addons/skin.pellucid_MOD_Blatorone/scripts/delete_files.py)</onload>-->
 
 	<controls>
 		<include>globalBackground</include>
